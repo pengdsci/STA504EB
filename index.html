@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>STA504 E-Pack: Mathematical Statistics with Calc. Rev.</title>
+  <meta name="description" content="The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="STA504 E-Pack: Mathematical Statistics with Calc. Rev." />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/STA504EB" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="STA504 E-Pack: Mathematical Statistics with Calc. Rev." />
+  
+  <meta name="twitter:description" content="The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Cheng Peng" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="review-of-probability-rules.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<center><li><a href="./"><font color = "darkred"><b>STA 504 E-Pack: Mathematical Statistics w/ Calc. Rev.</b></font></a><br><font color = "navy">Cheng Peng</font></li></center>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#use-of-technologies"><i class="fa fa-check"></i><b>1.1</b> Use of Technologies</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#greek-letters"><i class="fa fa-check"></i><b>1.1.1</b> Greek Letters</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#operators"><i class="fa fa-check"></i><b>1.1.2</b> Operators</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#power-and-indicies"><i class="fa fa-check"></i><b>1.1.3</b> Power and Indicies</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#fractions-and-binomials"><i class="fa fa-check"></i><b>1.1.4</b> Fractions and Binomials</a></li>
+<li class="chapter" data-level="1.1.5" data-path="index.html"><a href="index.html#radical-roots"><i class="fa fa-check"></i><b>1.1.5</b> Radical Roots</a></li>
+<li class="chapter" data-level="1.1.6" data-path="index.html"><a href="index.html#sums-integrals-and-related-symbols"><i class="fa fa-check"></i><b>1.1.6</b> Sums, Integrals, and Related Symbols</a></li>
+<li class="chapter" data-level="1.1.7" data-path="index.html"><a href="index.html#more-special-symbols"><i class="fa fa-check"></i><b>1.1.7</b> More Special Symbols</a></li>
+<li class="chapter" data-level="1.1.8" data-path="index.html"><a href="index.html#brackets"><i class="fa fa-check"></i><b>1.1.8</b> Brackets</a></li>
+<li class="chapter" data-level="1.1.9" data-path="index.html"><a href="index.html#matrix"><i class="fa fa-check"></i><b>1.1.9</b> Matrix</a></li>
+<li class="chapter" data-level="1.1.10" data-path="index.html"><a href="index.html#aligned-equations"><i class="fa fa-check"></i><b>1.1.10</b> Aligned Equations</a></li>
+<li class="chapter" data-level="1.1.11" data-path="index.html"><a href="index.html#piece-wise-function"><i class="fa fa-check"></i><b>1.1.11</b> Piece-wise Function</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#including-images-and-graphics"><i class="fa fa-check"></i><b>1.2</b> Including Images and Graphics</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#r-plot-function"><i class="fa fa-check"></i><b>1.3</b> R plot() Function</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#the-plot-function"><i class="fa fa-check"></i><b>1.3.1</b> The <code>plot()</code> function</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#adding-graphic-components-to-base-plot"><i class="fa fa-check"></i><b>1.3.2</b> Adding Graphic Components to Base Plot</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html"><i class="fa fa-check"></i><b>2</b> Review of Probability Rules</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#definitions-of-probability"><i class="fa fa-check"></i><b>2.1</b> Definitions of Probability</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#experiments-sample-space-and-event"><i class="fa fa-check"></i><b>2.1.1</b> Experiments, Sample Space, and Event</a></li>
+<li class="chapter" data-level="2.1.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#calculation-of-probability"><i class="fa fa-check"></i><b>2.1.2</b> Calculation of Probability</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#general-addition-rule"><i class="fa fa-check"></i><b>2.2</b> General Addition Rule</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#additive-rule"><i class="fa fa-check"></i><b>2.2.1</b> Additive Rule</a></li>
+<li class="chapter" data-level="2.2.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#special-cases"><i class="fa fa-check"></i><b>2.2.2</b> Special Cases</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#multiplicative-rule-and-independence"><i class="fa fa-check"></i><b>2.3</b> Multiplicative Rule and Independence</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#conditional-probability"><i class="fa fa-check"></i><b>2.3.1</b> Conditional Probability</a></li>
+<li class="chapter" data-level="2.3.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#general-multiplication-rule"><i class="fa fa-check"></i><b>2.3.2</b> General Multiplication Rule</a></li>
+<li class="chapter" data-level="2.3.3" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#checking-independence-using-multiplicative-rule"><i class="fa fa-check"></i><b>2.3.3</b> Checking Independence Using Multiplicative Rule</a></li>
+<li class="chapter" data-level="2.3.4" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#bayes-theorem"><i class="fa fa-check"></i><b>2.3.4</b> Bayes’ Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#appendix-calculus-review-topics"><i class="fa fa-check"></i><b>2.4</b> Appendix: Calculus Review Topics</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#notation-domain-and-range"><i class="fa fa-check"></i><b>2.4.1</b> Notation, Domain, and Range</a></li>
+<li class="chapter" data-level="2.4.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#operations-of-functions"><i class="fa fa-check"></i><b>2.4.2</b> Operations of Functions</a></li>
+<li class="chapter" data-level="2.4.3" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#composite-functions"><i class="fa fa-check"></i><b>2.4.3</b> Composite Functions</a></li>
+<li class="chapter" data-level="2.4.4" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#inverse-function"><i class="fa fa-check"></i><b>2.4.4</b> Inverse Function</a></li>
+<li class="chapter" data-level="2.4.5" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#practice-exercises"><i class="fa fa-check"></i><b>2.4.5</b> Practice Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html"><i class="fa fa-check"></i><b>3</b> Discrete Random Variables and Their Distribution</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#characterization-of-distribution-of-random-variables"><i class="fa fa-check"></i><b>3.1</b> Characterization of Distribution of Random Variables</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#definition-of-rv"><i class="fa fa-check"></i><b>3.1.1</b> Definition of RV</a></li>
+<li class="chapter" data-level="3.1.2" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#expectation-and-variance"><i class="fa fa-check"></i><b>3.1.2</b> Expectation and Variance</a></li>
+<li class="chapter" data-level="3.1.3" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#some-properties-of-expectation-and-variance"><i class="fa fa-check"></i><b>3.1.3</b> Some Properties of Expectation and Variance</a></li>
+<li class="chapter" data-level="3.1.4" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#characterization-of-a-random-variable"><i class="fa fa-check"></i><b>3.1.4</b> Characterization of A Random Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#special-discrete-distributions"><i class="fa fa-check"></i><b>3.2</b> Special Discrete Distributions</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#binomial-distribution"><i class="fa fa-check"></i><b>3.2.1</b> Binomial Distribution</a></li>
+<li class="chapter" data-level="3.2.2" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#poisson-distribution"><i class="fa fa-check"></i><b>3.2.2</b> Poisson Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#cumulative-distributions"><i class="fa fa-check"></i><b>3.3</b> Cumulative Distributions</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#definition-and-notations"><i class="fa fa-check"></i><b>3.3.1</b> Definition and Notations</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#appendix-derivatives-of-functions"><i class="fa fa-check"></i><b>3.4</b> Appendix: Derivatives of Functions</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#definitions-and-notations"><i class="fa fa-check"></i><b>3.4.1</b> Definitions and Notations</a></li>
+<li class="chapter" data-level="3.4.2" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#rules-of-calculus"><i class="fa fa-check"></i><b>3.4.2</b> Rules of Calculus</a></li>
+<li class="chapter" data-level="3.4.3" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#properties-of-derivative"><i class="fa fa-check"></i><b>3.4.3</b> Properties of Derivative</a></li>
+<li class="chapter" data-level="3.4.4" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#practice-exercises-1"><i class="fa fa-check"></i><b>3.4.4</b> Practice Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html"><i class="fa fa-check"></i><b>4</b> Continuous Random Variables and Their Distributions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#continuous-random-variable-and-characterization"><i class="fa fa-check"></i><b>4.1</b> Continuous Random Variable and Characterization</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#cummulative-distribution"><i class="fa fa-check"></i><b>4.1.1</b> Cummulative Distribution</a></li>
+<li class="chapter" data-level="4.1.2" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#cdf-of-continuous-random-variable"><i class="fa fa-check"></i><b>4.1.2</b> CDF of Continuous Random Variable</a></li>
+<li class="chapter" data-level="4.1.3" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#properties-of-cdf-and-cdf-of-continuous-r.v."><i class="fa fa-check"></i><b>4.1.3</b> Properties of CDF and CDF of Continuous R.V.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#expectation-and-variance-1"><i class="fa fa-check"></i><b>4.2</b> Expectation and Variance</a></li>
+<li class="chapter" data-level="4.3" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#uniform-probability-distribution"><i class="fa fa-check"></i><b>4.3</b> Uniform Probability Distribution</a></li>
+<li class="chapter" data-level="4.4" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#calculus-review-integrals-of-functions"><i class="fa fa-check"></i><b>4.4</b> Calculus Review: Integrals of Functions</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#antiderivatives"><i class="fa fa-check"></i><b>4.4.1</b> Antiderivatives</a></li>
+<li class="chapter" data-level="4.4.2" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#rules-and-properties-of-integral"><i class="fa fa-check"></i><b>4.4.2</b> Rules and Properties of Integral</a></li>
+<li class="chapter" data-level="4.4.3" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#practice-exercises-2"><i class="fa fa-check"></i><b>4.4.3</b> Practice Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html"><i class="fa fa-check"></i><b>5</b> Special Continuous Distributions: Normal and Gamma Families</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#review-of-probability-distributions"><i class="fa fa-check"></i><b>5.1</b> Review of Probability Distributions</a></li>
+<li class="chapter" data-level="5.2" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#normal-distribution"><i class="fa fa-check"></i><b>5.2</b> Normal Distribution</a></li>
+<li class="chapter" data-level="5.3" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#gamma-distribution"><i class="fa fa-check"></i><b>5.3</b> Gamma Distribution</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#the-gamma-function"><i class="fa fa-check"></i><b>5.3.1</b> The Gamma Function</a></li>
+<li class="chapter" data-level="5.3.2" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#definition-of-gamma-density"><i class="fa fa-check"></i><b>5.3.2</b> Definition of Gamma Density</a></li>
+<li class="chapter" data-level="5.3.3" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#expectation-and-variance-2"><i class="fa fa-check"></i><b>5.3.3</b> Expectation and Variance</a></li>
+<li class="chapter" data-level="5.3.4" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#special-cases-1"><i class="fa fa-check"></i><b>5.3.4</b> Special Cases</a></li>
+<li class="chapter" data-level="5.3.5" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#use-of-technology"><i class="fa fa-check"></i><b>5.3.5</b> Use of Technology</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#calculus-review-integrals-of-functions-1"><i class="fa fa-check"></i><b>5.4</b> Calculus Review: Integrals of Functions</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#antiderivatives-1"><i class="fa fa-check"></i><b>5.4.1</b> Antiderivatives</a></li>
+<li class="chapter" data-level="5.4.2" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#rules-and-properties-of-integral-1"><i class="fa fa-check"></i><b>5.4.2</b> Rules and Properties of Integral</a></li>
+<li class="chapter" data-level="5.4.3" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#practice-exercises-3"><i class="fa fa-check"></i><b>5.4.3</b> Practice Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="mixture-distributions.html"><a href="mixture-distributions.html"><i class="fa fa-check"></i><b>6</b> Mixture Distributions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="mixture-distributions.html"><a href="mixture-distributions.html#definition-of-mixture-model"><i class="fa fa-check"></i><b>6.1</b> Definition of Mixture Model</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="mixture-distributions.html"><a href="mixture-distributions.html#definition-of-k-component-mixture-distributions"><i class="fa fa-check"></i><b>6.1.1</b> Definition of K-component Mixture Distributions</a></li>
+<li class="chapter" data-level="6.1.2" data-path="mixture-distributions.html"><a href="mixture-distributions.html#properties-of-finite-mixture-distributions"><i class="fa fa-check"></i><b>6.1.2</b> Properties of Finite Mixture Distributions</a></li>
+<li class="chapter" data-level="6.1.3" data-path="mixture-distributions.html"><a href="mixture-distributions.html#variance-decomposition"><i class="fa fa-check"></i><b>6.1.3</b> Variance Decomposition</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="mixture-distributions.html"><a href="mixture-distributions.html#two-component-normal-mixture-distribution"><i class="fa fa-check"></i><b>6.2</b> Two-component Normal Mixture Distribution</a></li>
+<li class="chapter" data-level="6.3" data-path="mixture-distributions.html"><a href="mixture-distributions.html#use-mixture-distributions"><i class="fa fa-check"></i><b>6.3</b> Use Mixture Distributions</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="mixture-distributions.html"><a href="mixture-distributions.html#fitting-complex-data-using-mixture-distributions"><i class="fa fa-check"></i><b>6.3.1</b> Fitting Complex Data Using Mixture Distributions</a></li>
+<li class="chapter" data-level="6.3.2" data-path="mixture-distributions.html"><a href="mixture-distributions.html#clustering-with-mixture-distributions"><i class="fa fa-check"></i><b>6.3.2</b> Clustering with Mixture Distributions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html"><i class="fa fa-check"></i><b>7</b> Moment Generating Functions (MGF)</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#moments-of-rv-and-mgf"><i class="fa fa-check"></i><b>7.1</b> Moments of RV and MGF</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#various-moments-revisited"><i class="fa fa-check"></i><b>7.1.1</b> Various Moments Revisited</a></li>
+<li class="chapter" data-level="7.1.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#mgf"><i class="fa fa-check"></i><b>7.1.2</b> MGF</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#properties-of-mgf"><i class="fa fa-check"></i><b>7.2</b> Properties of MGF</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#review-of-taylor-series"><i class="fa fa-check"></i><b>7.2.1</b> Review of Taylor Series</a></li>
+<li class="chapter" data-level="7.2.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#how-mgf-generates-moments"><i class="fa fa-check"></i><b>7.2.2</b> How MGF Generates Moments?</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#mgf-of-some-special-distributions"><i class="fa fa-check"></i><b>7.3</b> MGF of Some Special Distributions</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#exponential-distribution"><i class="fa fa-check"></i><b>7.3.1</b> Exponential Distribution</a></li>
+<li class="chapter" data-level="7.3.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#normal-distribution-1"><i class="fa fa-check"></i><b>7.3.2</b> Normal Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#use-of-mgf---shape-analysis"><i class="fa fa-check"></i><b>7.4</b> Use of MGF - Shape Analysis</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#skewness"><i class="fa fa-check"></i><b>7.4.1</b> Skewness</a></li>
+<li class="chapter" data-level="7.4.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#kurtosis"><i class="fa fa-check"></i><b>7.4.2</b> Kurtosis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html"><i class="fa fa-check"></i><b>8</b> Joint Distributions and Marginal Distributions</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#joint-distribution-of-categorical-variables"><i class="fa fa-check"></i><b>8.1</b> Joint Distribution of Categorical Variables</a></li>
+<li class="chapter" data-level="8.2" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#discrete-bivariate-distributions"><i class="fa fa-check"></i><b>8.2</b> Discrete Bivariate Distributions</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#joint-distribution-and-properties"><i class="fa fa-check"></i><b>8.2.1</b> Joint Distribution and Properties</a></li>
+<li class="chapter" data-level="8.2.2" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#marginal-distributions"><i class="fa fa-check"></i><b>8.2.2</b> Marginal Distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#continuous-bivariate-distributions"><i class="fa fa-check"></i><b>8.3</b> Continuous Bivariate Distributions</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#continuous-bivariate-distribution"><i class="fa fa-check"></i><b>8.3.1</b> Continuous Bivariate Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#a-review-of-double-integral"><i class="fa fa-check"></i><b>8.4</b> A Review of Double Integral</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#type-i-region"><i class="fa fa-check"></i><b>8.4.1</b> Type I Region</a></li>
+<li class="chapter" data-level="8.4.2" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#type-ii-region"><i class="fa fa-check"></i><b>8.4.2</b> Type II Region</a></li>
+<li class="chapter" data-level="8.4.3" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#summarizing-steps-for-setting-up-iterative-integrals"><i class="fa fa-check"></i><b>8.4.3</b> Summarizing Steps for Setting up Iterative Integrals</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#marginal-distributions-1"><i class="fa fa-check"></i><b>8.5</b> Marginal Distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html"><i class="fa fa-check"></i><b>9</b> Conditional Distributions and Independence</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#conditional-distribution-of-categorical-variables"><i class="fa fa-check"></i><b>9.1</b> Conditional Distribution of Categorical Variables</a></li>
+<li class="chapter" data-level="9.2" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#independence-between-two-discrete-random-variables"><i class="fa fa-check"></i><b>9.2</b> Independence Between Two Discrete Random Variables</a></li>
+<li class="chapter" data-level="9.3" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#discrete-bivariate-distributions-1"><i class="fa fa-check"></i><b>9.3</b> Discrete Bivariate Distributions</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#definition-of-conditional-distributions"><i class="fa fa-check"></i><b>9.3.1</b> Definition of Conditional Distributions</a></li>
+<li class="chapter" data-level="9.3.2" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#definition-of-independence"><i class="fa fa-check"></i><b>9.3.2</b> Definition of Independence</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#conditioning-and-independence-between-two-variables"><i class="fa fa-check"></i><b>9.4</b> Conditioning and Independence between Two Variables</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#conditional-distributions"><i class="fa fa-check"></i><b>9.4.1</b> Conditional Distributions</a></li>
+<li class="chapter" data-level="9.4.2" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#independence-of-random-variables"><i class="fa fa-check"></i><b>9.4.2</b> Independence of Random Variables</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html"><i class="fa fa-check"></i><b>10</b> Expectations and Covariance</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#expectations"><i class="fa fa-check"></i><b>10.1</b> Expectations</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#discrete-distributions"><i class="fa fa-check"></i><b>10.1.1</b> Discrete Distributions</a></li>
+<li class="chapter" data-level="10.1.2" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#expectations-of-bivariate-continuous-distribution"><i class="fa fa-check"></i><b>10.1.2</b> Expectations of Bivariate Continuous Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#some-properties-of-expectations"><i class="fa fa-check"></i><b>10.2</b> Some Properties of Expectations</a></li>
+<li class="chapter" data-level="10.3" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#covariance---measuring-linear-correlation"><i class="fa fa-check"></i><b>10.3</b> Covariance - Measuring Linear Correlation</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#covariance"><i class="fa fa-check"></i><b>10.3.1</b> Covariance</a></li>
+<li class="chapter" data-level="10.3.2" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#pearson-correlation-coefficient"><i class="fa fa-check"></i><b>10.3.2</b> Pearson Correlation Coefficient</a></li>
+<li class="chapter" data-level="10.3.3" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#comcluding-remarks"><i class="fa fa-check"></i><b>10.3.3</b> Comcluding Remarks</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html"><i class="fa fa-check"></i><b>11</b> Linear Function of Random Variables and Conditional Expectations</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#linear-combination-of-two-random-variables"><i class="fa fa-check"></i><b>11.1</b> Linear Combination of Two Random Variables</a></li>
+<li class="chapter" data-level="11.2" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#general-linear-functions-of-rvs"><i class="fa fa-check"></i><b>11.2</b> General Linear Functions of RVs</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#general-linear-functions"><i class="fa fa-check"></i><b>11.2.1</b> General Linear Functions</a></li>
+<li class="chapter" data-level="11.2.2" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#linear-functions-of-iid-rvs"><i class="fa fa-check"></i><b>11.2.2</b> Linear Functions of IID RVs</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#conditional-expectation"><i class="fa fa-check"></i><b>11.3</b> Conditional Expectation</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html"><i class="fa fa-check"></i><b>12</b> Functions of Random Variables: CDF Method</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#the-rationale"><i class="fa fa-check"></i><b>12.1</b> The Rationale</a></li>
+<li class="chapter" data-level="12.2" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#review-of-inverse-function-and-inequality"><i class="fa fa-check"></i><b>12.2</b> Review of Inverse Function and Inequality</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#inverse-function-1"><i class="fa fa-check"></i><b>12.2.1</b> Inverse Function</a></li>
+<li class="chapter" data-level="12.2.2" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#definitions-of-monotonic-functions"><i class="fa fa-check"></i><b>12.2.2</b> Definitions of Monotonic Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#method-of-distribution"><i class="fa fa-check"></i><b>12.3</b> Method of Distribution</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#cdf-method"><i class="fa fa-check"></i><b>12.3.1</b> CDF Method</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html"><i class="fa fa-check"></i><b>13</b> Functions of Random Variables: Transformation Method</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#univariate-transformation-method"><i class="fa fa-check"></i><b>13.1</b> Univariate Transformation Method</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#monotonically-increasing-function"><i class="fa fa-check"></i><b>13.1.1</b> Monotonically Increasing Function</a></li>
+<li class="chapter" data-level="13.1.2" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#monotonically-decreasing-function"><i class="fa fa-check"></i><b>13.1.2</b> Monotonically Decreasing Function</a></li>
+<li class="chapter" data-level="13.1.3" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#univariate-transformation"><i class="fa fa-check"></i><b>13.1.3</b> Univariate Transformation</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#review-of-concepts-matrices"><i class="fa fa-check"></i><b>13.2</b> Review of Concepts Matrices</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#matrix-operations"><i class="fa fa-check"></i><b>13.2.1</b> Matrix Operations</a></li>
+<li class="chapter" data-level="13.2.2" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#section"><i class="fa fa-check"></i><b>13.2.2</b> </a></li>
+<li class="chapter" data-level="13.2.3" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#jacobian-matrix-and-determinant"><i class="fa fa-check"></i><b>13.2.3</b> Jacobian Matrix and Determinant</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#bivariate-transformation"><i class="fa fa-check"></i><b>13.3</b> Bivariate Transformation</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#joint-distribution-of-two-functions-of-rvs"><i class="fa fa-check"></i><b>13.3.1</b> Joint Distribution of Two Functions of RVs</a></li>
+<li class="chapter" data-level="13.3.2" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#applications-of-bivariate-transformations"><i class="fa fa-check"></i><b>13.3.2</b> Applications of Bivariate Transformations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="basic-order-statistics.html"><a href="basic-order-statistics.html"><i class="fa fa-check"></i><b>14</b> Basic Order Statistics</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="basic-order-statistics.html"><a href="basic-order-statistics.html#distribution-of-minimum-statistic-x_1"><i class="fa fa-check"></i><b>14.1</b> Distribution of Minimum Statistic <strong><span class="math inline">\(X_{(1)}\)</span></strong></a></li>
+<li class="chapter" data-level="14.2" data-path="basic-order-statistics.html"><a href="basic-order-statistics.html#distribution-of-minimum-statistic-x_m"><i class="fa fa-check"></i><b>14.2</b> Distribution of Minimum Statistic <strong><span class="math inline">\(X_{(m)}\)</span></strong></a></li>
+<li class="chapter" data-level="14.3" data-path="basic-order-statistics.html"><a href="basic-order-statistics.html#combined-reliability-system"><i class="fa fa-check"></i><b>14.3</b> Combined Reliability System</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">STA504 E-Pack: Mathematical Statistics with Calc. Rev.</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">STA504 E-Pack: Mathematical Statistics with Calc. Rev.</h1>
+<p class="author"><em>Cheng Peng</em></p>
+<p class="date"><em>West Chester University</em></p>
+</div>
+<div id="introduction" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Topic 1</span> Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This <em>E-coursepack</em> is a self-contained homegrown Ebook that contains all topics covered in current STA504 at WCU.</p>
+<p>All technical terms used in this Ebook are consistent with those used in the <em>required</em> textbook. Students are not required to buy the Ebook from a publisher.</p>
+<div id="use-of-technologies" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Use of Technologies<a href="index.html#use-of-technologies" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Although it is not required to use any software program in this class, you are still encouraged to use RMarkdown (for R users) or Jupyter Notebook (for Python users) to draft your assignments and practice basic graphical and computational capabilities of these software tools.</p>
+<p>Both RMarkdown and Jupyter Notebook are very convenient to use in drafting technical documents that involves mathematical equations and graphics. To write mathematical formulas, you can use LaTex commands in Rmarkdown and Jupyter notebook.</p>
+<div id="greek-letters" class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Greek Letters<a href="index.html#greek-letters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Symbol</th>
+<th align="left">Script</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\alpha\)</span></td>
+<td align="left"><code>\alpha</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(A\)</span></td>
+<td align="left"><code>A</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\beta\)</span></td>
+<td align="left"><code>\beta</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(B\)</span></td>
+<td align="left"><code>B</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\gamma\)</span></td>
+<td align="left"><code>\gammma</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\Gamma\)</span></td>
+<td align="left"><code>\Gamma</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\pi\)</span></td>
+<td align="left"><code>\pi</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\Pi\)</span></td>
+<td align="left"><code>\Pi</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\phi\)</span></td>
+<td align="left"><code>\phi</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\Phi\)</span></td>
+<td align="left"><code>\Phi</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\varphi\)</span></td>
+<td align="left"><code>\varphi</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\theta\)</span></td>
+<td align="left"><code>\theta</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="operators" class="section level3 hasAnchor" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Operators<a href="index.html#operators" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Symbol</th>
+<th align="left">Script</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\cos\)</span></td>
+<td align="left"><code>\cos</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\sin\)</span></td>
+<td align="left"><code>\sin</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\lim\)</span></td>
+<td align="left"><code>\lim</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\exp\)</span></td>
+<td align="left"><code>\exp</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\to\)</span></td>
+<td align="left"><code>\to</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\infty\)</span></td>
+<td align="left"><code>\infty</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\equiv\)</span></td>
+<td align="left"><code>\equiv</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\bmod\)</span></td>
+<td align="left"><code>\bmod</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\times\)</span></td>
+<td align="left"><code>\times</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="power-and-indicies" class="section level3 hasAnchor" number="1.1.3">
+<h3><span class="header-section-number">1.1.3</span> Power and Indicies<a href="index.html#power-and-indicies" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Symbol</th>
+<th align="left">Script</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(k_{n+1}\)</span></td>
+<td align="left"><code>k_{n+1}</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(n^2\)</span></td>
+<td align="left"><code>n^2</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(k_n^2\)</span></td>
+<td align="left"><code>k_n^2</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="fractions-and-binomials" class="section level3 hasAnchor" number="1.1.4">
+<h3><span class="header-section-number">1.1.4</span> Fractions and Binomials<a href="index.html#fractions-and-binomials" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Symbol</th>
+<th align="left">Script</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\frac{n!}{k!(n-k)!}\)</span></td>
+<td align="left"><code>\frac{n!}{k!(n-k)!}</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\binom{n}{k}\)</span></td>
+<td align="left"><code>\binom{n}{k}</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\frac{\frac{x}{1}}{x - y}\)</span></td>
+<td align="left"><code>\frac{\frac{x}{1}}{x - y}</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(^3/_7\)</span></td>
+<td align="left"><code>^3/_7</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="radical-roots" class="section level3 hasAnchor" number="1.1.5">
+<h3><span class="header-section-number">1.1.5</span> Radical Roots<a href="index.html#radical-roots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Symbol</th>
+<th align="left">Script</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\sqrt{k}\)</span></td>
+<td align="left"><code>\sqrt{k}</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\sqrt[n]{k}\)</span></td>
+<td align="left"><code>\sqrt[n]{k}</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="sums-integrals-and-related-symbols" class="section level3 hasAnchor" number="1.1.6">
+<h3><span class="header-section-number">1.1.6</span> Sums, Integrals, and Related Symbols<a href="index.html#sums-integrals-and-related-symbols" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<colgroup>
+<col width="45%" />
+<col width="55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Symbol</th>
+<th align="left">Script</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\sum_{i=1}^{10} t_i\)</span></td>
+<td align="left"><code>\sum_{i=1}^{10} t_i</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\int_0^\infty \mathrm{e}^{-x},\mathrm{d}x\)</span></td>
+<td align="left"><code>\int_0^\infty \mathrm{e}^{-x},\mathrm{d}x</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\sum\)</span></td>
+<td align="left"><code>\sum</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\prod\)</span></td>
+<td align="left"><code>\prod</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\coprod\)</span></td>
+<td align="left"><code>\coprod</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\bigoplus\)</span></td>
+<td align="left"><code>\bigoplus</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\bigotimes\)</span></td>
+<td align="left"><code>\bigotimes</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\bigodot\)</span></td>
+<td align="left"><code>\bigodot</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\bigcup\)</span></td>
+<td align="left"><code>\bigcup</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\bigcap\)</span></td>
+<td align="left"><code>\bigcap</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\biguplus\)</span></td>
+<td align="left"><code>\biguplus</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\bigsqcup\)</span></td>
+<td align="left"><code>\bigsqcup</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\bigvee\)</span></td>
+<td align="left"><code>\bigvee</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\bigwedge\)</span></td>
+<td align="left"><code>\bigwedge</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\int\)</span></td>
+<td align="left"><code>\int</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\oint\)</span></td>
+<td align="left"><code>\oint</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\iint\)</span></td>
+<td align="left"><code>\iint</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\iiint\)</span></td>
+<td align="left"><code>\iiint</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\idotsint\)</span></td>
+<td align="left"><code>\idotsint</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\sum_{\substack{0&lt;i&lt;m, \ 0&lt;j&lt;n}} P(i, j)\)</span></td>
+<td align="left"><code>\sum_{\substack{0&lt;i&lt;m, \ 0&lt;j&lt;n}} P(i, j)</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\int\limits_a^b\)</span></td>
+<td align="left"><code>\int\limits_a^b</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="more-special-symbols" class="section level3 hasAnchor" number="1.1.7">
+<h3><span class="header-section-number">1.1.7</span> More Special Symbols<a href="index.html#more-special-symbols" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Symbol</th>
+<th align="left">Script</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(a^{\prime}\)</span></td>
+<td align="left"><code>a^{\prime}</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(a^{\prime\prime}\)</span></td>
+<td align="left"><code>a^{\prime\prime}</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\hat{a}\)</span></td>
+<td align="left"><code>\hat{a}</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\bar{a}\)</span></td>
+<td align="left"><code>\bar{a}</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\grave{a}\)</span></td>
+<td align="left"><code>\grave{a}</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\acute{a}\)</span></td>
+<td align="left"><code>\acute{a}</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\dot{a}\)</span></td>
+<td align="left"><code>\dot{a}</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\ddot{a}\)</span></td>
+<td align="left"><code>\ddot{a}</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\not{a}\)</span></td>
+<td align="left"><code>\not{a}</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\mathring{a}\)</span></td>
+<td align="left"><code>\mathring{a}</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\overrightarrow{AB}\)</span></td>
+<td align="left"><code>\overrightarrow{AB}</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\overleftarrow{AB}\)</span></td>
+<td align="left"><code>\overleftarrow{AB}</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(a^{\prime\prime\prime}\)</span></td>
+<td align="left"><code>a^{\prime\prime\prime}</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\overline{aaa}\)</span></td>
+<td align="left"><code>\overline{aaa}</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\check{a}\)</span></td>
+<td align="left"><code>\check{a}</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\vec{a}\)</span></td>
+<td align="left"><code>\vec{a}</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\underline{a}\)</span></td>
+<td align="left"><code>\underline{a}</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\color{red}x\)</span></td>
+<td align="left"><code>\color{red}x</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\pm\)</span></td>
+<td align="left"><code>\pm</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\mp\)</span></td>
+<td align="left"><code>\mp</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\int y \mathrm{d}x\)</span></td>
+<td align="left"><code>\int y \mathrm{d}x</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(,\)</span></td>
+<td align="left"><code>,</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(:\)</span></td>
+<td align="left"><code>:</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(;\)</span></td>
+<td align="left"><code>;</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(!\)</span></td>
+<td align="left"><code>!</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\int y, \mathrm{d}x\)</span></td>
+<td align="left"><code>\int y, \mathrm{d}x</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\dots\)</span></td>
+<td align="left"><code>\dots</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\ldots\)</span></td>
+<td align="left"><code>\ldots</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\cdots\)</span></td>
+<td align="left"><code>\cdots</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\vdots\)</span></td>
+<td align="left"><code>\vdots</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\ddots\)</span></td>
+<td align="left"><code>\ddots</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="brackets" class="section level3 hasAnchor" number="1.1.8">
+<h3><span class="header-section-number">1.1.8</span> Brackets<a href="index.html#brackets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Symbol</th>
+<th align="left">Script</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\((a)\)</span></td>
+<td align="left"><code>(a)</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\([a]\)</span></td>
+<td align="left"><code>[a]</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\{a\}\)</span></td>
+<td align="left"><code>\{a\}</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\langle f \rangle\)</span></td>
+<td align="left"><code>\langle f \rangle</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\lfloor f \rfloor\)</span></td>
+<td align="left"><code>\lfloor f \rfloor</code></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\lceil f \rceil\)</span></td>
+<td align="left"><code>\lceil f \rceil</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\ulcorner f \urcorner\)</span></td>
+<td align="left"><code>\ulcorner f \urcorner</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="matrix" class="section level3 hasAnchor" number="1.1.9">
+<h3><span class="header-section-number">1.1.9</span> Matrix<a href="index.html#matrix" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code>$$
+X_{m,n} = 
+\begin{pmatrix}
+  x_{1,1} &amp; x_{1,2} &amp; \cdots &amp; x_{1,n} \\
+  x_{2,1} &amp; x_{2,2} &amp; \cdots &amp; x_{2,n} \\
+  \vdots  &amp; \vdots  &amp; \ddots &amp; \vdots  \\
+  x_{m,1} &amp; x_{m,2} &amp; \cdots &amp; x_{m,n} 
+\end{pmatrix}
+$$</code></pre>
+<p>produces</p>
+<p><span class="math display">\[
+X_{m,n} =
+\begin{pmatrix}
+  x_{1,1} &amp; x_{1,2} &amp; \cdots &amp; x_{1,n} \\
+  x_{2,1} &amp; x_{2,2} &amp; \cdots &amp; x_{2,n} \\
+  \vdots  &amp; \vdots  &amp; \ddots &amp; \vdots  \\
+  x_{m,1} &amp; x_{m,2} &amp; \cdots &amp; x_{m,n}
+\end{pmatrix}
+\]</span></p>
+<pre><code>$$
+M = 
+\begin{bmatrix}
+\frac{5}{6} &amp; \frac{1}{6} &amp; 0 \\[0.3em]
+\frac{5}{6} &amp; 0 &amp; \frac{1}{6} \\[0.3em]
+0 &amp; \frac{5}{6} &amp; \frac{1}{6}
+\end{bmatrix}
+$$</code></pre>
+<p>produces</p>
+<p><span class="math display">\[
+M =
+\begin{bmatrix}
+\frac{5}{6} &amp; \frac{1}{6} &amp; 0 \\[0.3em]
+\frac{5}{6} &amp; 0 &amp; \frac{1}{6} \\[0.3em]
+0 &amp; \frac{5}{6} &amp; \frac{1}{6}
+\end{bmatrix}
+\]</span></p>
+</div>
+<div id="aligned-equations" class="section level3 hasAnchor" number="1.1.10">
+<h3><span class="header-section-number">1.1.10</span> Aligned Equations<a href="index.html#aligned-equations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code>$$
+\begin{aligned}
+Bias(\hat{\theta})  &amp;= E(\hat{\theta}) - \theta \\
+Bias(\hat{\theta})  &amp;= E(2 \bar{X} -1) - \theta \\
+Bias(\hat{\theta})  &amp;= \frac{2}{n}\sum_{i=1}^n E(X_i) -1 -\theta \\
+Bias(\hat{\theta})  &amp;= 2E(X) - 1 - \theta \\
+Bias(\hat{\theta})  &amp;= 2 \cdot \frac{\theta+1}{2} - 1 - \theta \\
+Bias(\hat{\theta})  &amp;= 0 \\
+\end{aligned}
+$$</code></pre>
+<p>Produces the following system of equations</p>
+<p><span class="math display">\[
+\begin{aligned}
+Bias(\hat{\theta})  &amp;= E(\hat{\theta}) - \theta \\
+Bias(\hat{\theta})  &amp;= E(2 \bar{X} -1) - \theta \\
+Bias(\hat{\theta})  &amp;= \frac{2}{n}\sum_{i=1}^n E(X_i) -1 -\theta \\
+Bias(\hat{\theta})  &amp;= 2E(X) - 1 - \theta \\
+Bias(\hat{\theta})  &amp;= 2 \cdot \frac{\theta+1}{2} - 1 - \theta \\
+Bias(\hat{\theta})  &amp;= 0 \\
+\end{aligned}
+\]</span></p>
+</div>
+<div id="piece-wise-function" class="section level3 hasAnchor" number="1.1.11">
+<h3><span class="header-section-number">1.1.11</span> Piece-wise Function<a href="index.html#piece-wise-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code>$$ f(x) = \begin{cases} \frac{1}{b-a} \\ 0 \end{cases} $$</code></pre>
+<p>produces the following piece-wise function</p>
+<p><span class="math display">\[ f(x) = \begin{cases} \frac{1}{b-a} \\ 0 \end{cases} \]</span></p>
+</div>
+</div>
+<div id="including-images-and-graphics" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Including Images and Graphics<a href="index.html#including-images-and-graphics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>One can write code in either R (in RMarkdown code chunk) or Python (in Jupyter notebook cell) to produce graphics such as density curves or distribution histograms for different random variables. Sometimes, one can also include external (dynamic or static) images in the document.</p>
+<p>Since both RMarkdown and Jupyter notebook support HTML syntax, we can use HTML image tag to include external images into the documet. In the mean while they also support LaTex () style commands, wecould also use LaTex command to include images to the document.</p>
+</div>
+<div id="r-plot-function" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> R plot() Function<a href="index.html#r-plot-function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Every programming language has its base plot functions to make graphics. We use base R <code>plot()</code> function as an example to show how to use it and <strong>related graphical functions</strong> to make high quality graphics in R.</p>
+<p>For illustration, we use the standard normal distribution as an example to demonstrate how to make a nice graph to display important information. The probability density function of the standard normal density has the following form</p>
+<p><span class="math display">\[
+\phi(z) = \frac{1}{\sqrt{2}}e^{-z^2/2}, \mbox{ where } -\infty &lt; z &lt;\infty.
+\]</span></p>
+<p>The x-coordinates to be used are: -3.0, -2.6, -2.2, -1.8, -1.4, -1.0, -0.6, -0.2, 0.2, 0.6, 1.0, 1.4, 1.8, 2.2, 2.6, 3.0. We can then use the above density function to calculate the corresponding y-coordinates. In R, we use the following code to define the coordinates of the above 16 points on the density curve.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="index.html#cb6-1" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.0</span>,<span class="sc">-</span><span class="fl">2.6</span>,<span class="sc">-</span><span class="fl">2.2</span>,<span class="sc">-</span><span class="fl">1.8</span>,<span class="sc">-</span><span class="fl">1.4</span>,<span class="sc">-</span><span class="fl">1.0</span>,<span class="sc">-</span><span class="fl">0.6</span>,<span class="sc">-</span><span class="fl">0.2</span>,<span class="dv">0</span>, <span class="fl">0.2</span>,<span class="fl">0.6</span>,<span class="fl">1.0</span>,<span class="fl">1.4</span>,<span class="fl">1.8</span>, <span class="fl">2.2</span>,<span class="fl">2.6</span>,<span class="fl">3.0</span>)</span>
+<span id="cb6-2"><a href="index.html#cb6-2" tabindex="-1"></a>y <span class="ot">=</span> (<span class="dv">1</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">2</span>))<span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span>x<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">2</span>)</span></code></pre></div>
+<div id="the-plot-function" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> The <code>plot()</code> function<a href="index.html#the-plot-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In R, the base graphics function to create a plot is the plot() function. It has many options and arguments to control many things, such as the plot type, labels, titles and colors. The plotting process is analogous to the hand drawing process: make a base plot and then add additional graphical components to make the graph more informative, understandable, and aesthetically pleasant.</p>
+<p>The syntax of <code>plot()</code> is</p>
+<pre><code>plot(x,y,type,main,xlab,ylab,pch,col,las,bty,bg,cex,…)</code></pre>
+<p>where the graphical arguments(parameters) are given by</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<img src="img01/w01-plotArguments.jpg" alt="plot() arguments" width="70%" />
+<p class="caption">
+Figure 1.1: plot() arguments
+</p>
+</div>
+<p>The two coordinates must be paired (represent the location of the corresponding point), <code>main</code> is a string representing the name of the plot. <code>xlab</code> and <code>ylab</code> are also strings reflecting the labels of x- and y-axes.</p>
+<p>The rest of the listed arguments have different choices. Next, we list the choices you can use to decorate your plot.</p>
+<div id="type-plot-types" class="section level4 hasAnchor" number="1.3.1.1">
+<h4><span class="header-section-number">1.3.1.1</span> <code>type</code>: Plot Types<a href="index.html#type-plot-types" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The argument <code>type</code> is a string argument. Different string value representing different types.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
+<img src="img01/w01-plotType.jpg" alt="Types of plot in R" width="70%" />
+<p class="caption">
+Figure 1.2: Types of plot in R
+</p>
+</div>
+<p>We plot the above normal density function in different types.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="index.html#cb8-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>), <span class="at">mar=</span><span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="fl">0.5</span>), <span class="at">oma =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>))</span>
+<span id="cb8-2"><a href="index.html#cb8-2" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;p&quot;</span>, <span class="at">main =</span> <span class="st">&quot;type=&#39;p&#39;&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb8-3"><a href="index.html#cb8-3" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">main =</span> <span class="st">&quot;type=&#39;l&#39;&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb8-4"><a href="index.html#cb8-4" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">main =</span> <span class="st">&quot;type=&#39;b&#39;&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb8-5"><a href="index.html#cb8-5" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;c&quot;</span>, <span class="at">main =</span> <span class="st">&quot;type=&#39;c&#39;&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb8-6"><a href="index.html#cb8-6" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;o&quot;</span>, <span class="at">main =</span> <span class="st">&quot;type=&#39;o&#39;&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb8-7"><a href="index.html#cb8-7" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;h&quot;</span>, <span class="at">main =</span> <span class="st">&quot;type=&#39;h&#39;&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb8-8"><a href="index.html#cb8-8" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;s&quot;</span>, <span class="at">main =</span> <span class="st">&quot;type=&#39;s&#39;&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb8-9"><a href="index.html#cb8-9" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;S&quot;</span>, <span class="at">main =</span> <span class="st">&quot;type=&#39;S&#39;&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb8-10"><a href="index.html#cb8-10" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;n&quot;</span>, <span class="at">main =</span> <span class="st">&quot;type=&#39;n&#39;&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<img src="STA504EB_files/figure-html/unnamed-chunk-6-1.png" alt="Different types of normal density function" width="768" />
+<p class="caption">
+Figure 1.3: Different types of normal density function
+</p>
+</div>
+</div>
+<div id="pch-point-shapes" class="section level4 hasAnchor" number="1.3.1.2">
+<h4><span class="header-section-number">1.3.1.2</span> <code>pch</code>: Point Shapes<a href="index.html#pch-point-shapes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The argument <code>pch</code> is point shape which takes a character value representing different shapes of the point you can choose for <code>plot()</code> function. Here is the table of possible point shape.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
+<img src="img01/w01-PointShape.jpg" alt="Point shapes in R" width="60%" />
+<p class="caption">
+Figure 1.4: Point shapes in R
+</p>
+</div>
+<p>In the following figure, we choose a few different shapes to demonstrate the ways of choosing different point shapes.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="index.html#cb9-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>), <span class="at">mar=</span><span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="fl">0.5</span>), <span class="at">oma =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>))</span>
+<span id="cb9-2"><a href="index.html#cb9-2" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">1</span>, <span class="at">main =</span> <span class="st">&quot;pch = 1&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb9-3"><a href="index.html#cb9-3" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">3</span>, <span class="at">main =</span> <span class="st">&quot;pch = 3&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb9-4"><a href="index.html#cb9-4" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">5</span>, <span class="at">main =</span> <span class="st">&quot;pch = 5&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb9-5"><a href="index.html#cb9-5" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">7</span>, <span class="at">main =</span> <span class="st">&quot;pch = 7&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb9-6"><a href="index.html#cb9-6" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">9</span>, <span class="at">main =</span> <span class="st">&quot;pch = 9&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb9-7"><a href="index.html#cb9-7" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">11</span>, <span class="at">main =</span> <span class="st">&quot;pch = 11&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb9-8"><a href="index.html#cb9-8" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">13</span>, <span class="at">main =</span> <span class="st">&quot;pch = 13&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb9-9"><a href="index.html#cb9-9" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">17</span>, <span class="at">main =</span> <span class="st">&quot;pch = 17&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb9-10"><a href="index.html#cb9-10" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">21</span>, <span class="at">main =</span> <span class="st">&quot;pch = 21&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-8"></span>
+<img src="STA504EB_files/figure-html/unnamed-chunk-8-1.png" alt="Different shapes in the plot of normal density function" width="768" />
+<p class="caption">
+Figure 1.5: Different shapes in the plot of normal density function
+</p>
+</div>
+</div>
+<div id="las---axis-label-style" class="section level4 hasAnchor" number="1.3.1.3">
+<h4><span class="header-section-number">1.3.1.3</span> <code>las</code> - Axis Label Style<a href="index.html#las---axis-label-style" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Choosing different values for <code>las</code> changes the orientation angle of the labels. The following table lists the styles of axis labels.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-9"></span>
+<img src="img01/w01-las.jpg" alt="Axis label styles in R" width="55%" />
+<p class="caption">
+Figure 1.6: Axis label styles in R
+</p>
+</div>
+<p>The figure below shows different axis label styles.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="index.html#cb10-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>), <span class="at">mar=</span><span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>), <span class="at">oma =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>))</span>
+<span id="cb10-2"><a href="index.html#cb10-2" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">main =</span> <span class="st">&quot;las = 0&quot;</span>, <span class="at">las =</span> <span class="dv">0</span>, <span class="at">xlab =</span> <span class="st">&quot;x-values&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y-values&quot;</span>)</span>
+<span id="cb10-3"><a href="index.html#cb10-3" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">main =</span> <span class="st">&quot;las = 1&quot;</span>, <span class="at">las =</span> <span class="dv">1</span>, <span class="at">xlab =</span> <span class="st">&quot;x-values&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y-values&quot;</span>)</span>
+<span id="cb10-4"><a href="index.html#cb10-4" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">main =</span> <span class="st">&quot;las = 2&quot;</span>, <span class="at">las =</span> <span class="dv">2</span>, <span class="at">xlab =</span> <span class="st">&quot;x-values&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y-values&quot;</span>)</span>
+<span id="cb10-5"><a href="index.html#cb10-5" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">main =</span> <span class="st">&quot;las = 3&quot;</span>, <span class="at">las =</span> <span class="dv">3</span>, <span class="at">xlab =</span> <span class="st">&quot;x-values&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y-values&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-10"></span>
+<img src="STA504EB_files/figure-html/unnamed-chunk-10-1.png" alt="Different shapes in the plot of normal density function" width="768" />
+<p class="caption">
+Figure 1.7: Different shapes in the plot of normal density function
+</p>
+</div>
+</div>
+<div id="r-colors" class="section level4 hasAnchor" number="1.3.1.4">
+<h4><span class="header-section-number">1.3.1.4</span> R Colors<a href="index.html#r-colors" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>R has hundreds of different colors defined based the base colors:RGB. You can use this link to find the color code for your needs: <a href="https://rstudio-pubs-static.s3.amazonaws.com/3486_79191ad32cf74955b4502b8530aad627.html" class="uri">https://rstudio-pubs-static.s3.amazonaws.com/3486_79191ad32cf74955b4502b8530aad627.html</a></p>
+<p>When plotting, we can use <code>col = colorCode</code> to specify a color for the plot. For point shapes with code 21-25, you can choose different colors for the border and the background respectively.</p>
+<p>The following are few example plots</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="index.html#cb11-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>), <span class="at">mar=</span><span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>), <span class="at">oma =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>))</span>
+<span id="cb11-2"><a href="index.html#cb11-2" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">main =</span> <span class="st">&quot;color code: 2&quot;</span>,  <span class="at">col =</span> <span class="dv">2</span>,         </span>
+<span id="cb11-3"><a href="index.html#cb11-3" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;x-values&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y-values&quot;</span>)</span>
+<span id="cb11-4"><a href="index.html#cb11-4" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">main =</span> <span class="st">&quot;color name: blue&quot;</span>,    <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>,    </span>
+<span id="cb11-5"><a href="index.html#cb11-5" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;x-values&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y-values&quot;</span>)</span>
+<span id="cb11-6"><a href="index.html#cb11-6" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;p&quot;</span>, <span class="at">main =</span> <span class="st">&quot;color name: darkred&quot;</span>, <span class="at">col =</span> <span class="st">&quot;darkred&quot;</span>, <span class="at">pch=</span> <span class="dv">22</span>,  </span>
+<span id="cb11-7"><a href="index.html#cb11-7" tabindex="-1"></a>     <span class="at">bg =</span> <span class="st">&quot;yellow&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;x-values&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y-values&quot;</span>)</span>
+<span id="cb11-8"><a href="index.html#cb11-8" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;p&quot;</span>, <span class="at">main =</span> <span class="st">&quot;color code: 3&quot;</span>,  <span class="at">col =</span> <span class="dv">5</span>, <span class="at">pch=</span> <span class="dv">25</span>,  <span class="at">bg =</span> <span class="st">&quot;red&quot;</span>,   </span>
+<span id="cb11-9"><a href="index.html#cb11-9" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;x-values&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y-values&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-11"></span>
+<img src="STA504EB_files/figure-html/unnamed-chunk-11-1.png" alt="Coloring border and background of points and coloring lines" width="768" />
+<p class="caption">
+Figure 1.8: Coloring border and background of points and coloring lines
+</p>
+</div>
+</div>
+<div id="cex---character-expansion" class="section level4 hasAnchor" number="1.3.1.5">
+<h4><span class="header-section-number">1.3.1.5</span> <code>cex</code> - Character Expansion<a href="index.html#cex---character-expansion" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We can re-scale the the point size of the plot in R. The default size is 1. If the value of <code>cex</code> is less than 1, then the size of the character will be reduced. If assigned value id greater than 1, the size character will be increased.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="index.html#cb12-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">mar=</span><span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>), <span class="at">oma =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>))</span>
+<span id="cb12-2"><a href="index.html#cb12-2" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;p&quot;</span>, <span class="at">main =</span> <span class="st">&quot;border: darkred, bg: yellow&quot;</span>, <span class="at">col =</span> <span class="st">&quot;darkred&quot;</span>, <span class="at">pch=</span> <span class="dv">21</span>,  </span>
+<span id="cb12-3"><a href="index.html#cb12-3" tabindex="-1"></a>     <span class="at">bg =</span> <span class="st">&quot;yellow&quot;</span>, <span class="at">cex =</span> <span class="fl">1.8</span>, <span class="at">xlab =</span> <span class="st">&quot;x-values&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y-values&quot;</span>)</span>
+<span id="cb12-4"><a href="index.html#cb12-4" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;p&quot;</span>, <span class="at">main =</span> <span class="st">&quot;border: skyblue, bg: red&quot;</span>,  <span class="at">col =</span> <span class="st">&quot;skyblue&quot;</span>, <span class="at">pch=</span> <span class="dv">23</span>,  </span>
+<span id="cb12-5"><a href="index.html#cb12-5" tabindex="-1"></a>     <span class="at">bg =</span> <span class="st">&quot;red&quot;</span>, <span class="at">cex =</span> <span class="fl">0.8</span>,  <span class="at">xlab =</span> <span class="st">&quot;x-values&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y-values&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-12"></span>
+<img src="STA504EB_files/figure-html/unnamed-chunk-12-1.png" alt="cex: re-size points" width="768" />
+<p class="caption">
+Figure 1.9: cex: re-size points
+</p>
+</div>
+</div>
+</div>
+<div id="adding-graphic-components-to-base-plot" class="section level3 hasAnchor" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Adding Graphic Components to Base Plot<a href="index.html#adding-graphic-components-to-base-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The above simple plots are made using the generic plot function <code>plot()</code>. We can use the arguments to choose plot types, point characters, colors, sizes, etc. Sometimes we may want to add additional graphic features using associated graphic functions to make the plot more informative and more aesthetically appealing to viewers.</p>
+<div id="adding-a-grid-grid" class="section level4 hasAnchor" number="1.3.2.1">
+<h4><span class="header-section-number">1.3.2.1</span> Adding A Grid: <code>grid()</code><a href="index.html#adding-a-grid-grid" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="index.html#cb13-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>), <span class="at">mar=</span><span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>), <span class="at">oma =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>))</span>
+<span id="cb13-2"><a href="index.html#cb13-2" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">main =</span> <span class="st">&quot;color code: 2&quot;</span>,  <span class="at">col =</span> <span class="dv">2</span>,         </span>
+<span id="cb13-3"><a href="index.html#cb13-3" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;x-values&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y-values&quot;</span>)</span>
+<span id="cb13-4"><a href="index.html#cb13-4" tabindex="-1"></a><span class="fu">grid</span>(<span class="dv">5</span>, <span class="dv">5</span>, <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb13-5"><a href="index.html#cb13-5" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="index.html#cb13-6" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="index.html#cb13-7" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">main =</span> <span class="st">&quot;color name: blue&quot;</span>,    <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>,    </span>
+<span id="cb13-8"><a href="index.html#cb13-8" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;x-values&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y-values&quot;</span>)</span>
+<span id="cb13-9"><a href="index.html#cb13-9" tabindex="-1"></a><span class="fu">grid</span>(<span class="dv">10</span>, <span class="dv">10</span>, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb13-10"><a href="index.html#cb13-10" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="index.html#cb13-11" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;p&quot;</span>, <span class="at">main =</span> <span class="st">&quot;color name: darkred&quot;</span>, <span class="at">col =</span> <span class="st">&quot;darkred&quot;</span>, <span class="at">pch=</span> <span class="dv">22</span>,  </span>
+<span id="cb13-12"><a href="index.html#cb13-12" tabindex="-1"></a>     <span class="at">bg =</span> <span class="st">&quot;yellow&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;x-values&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y-values&quot;</span>)</span>
+<span id="cb13-13"><a href="index.html#cb13-13" tabindex="-1"></a><span class="fu">grid</span>(<span class="dv">15</span>, <span class="dv">15</span>, <span class="at">lty =</span> <span class="dv">3</span>, <span class="at">col =</span> <span class="st">&quot;purple&quot;</span>)</span>
+<span id="cb13-14"><a href="index.html#cb13-14" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="index.html#cb13-15" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">type =</span> <span class="st">&quot;p&quot;</span>, <span class="at">main =</span> <span class="st">&quot;color code: 3&quot;</span>,  <span class="at">col =</span> <span class="dv">5</span>, <span class="at">pch=</span> <span class="dv">25</span>,  <span class="at">bg =</span> <span class="st">&quot;red&quot;</span>,   </span>
+<span id="cb13-16"><a href="index.html#cb13-16" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;x-values&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y-values&quot;</span>)</span>
+<span id="cb13-17"><a href="index.html#cb13-17" tabindex="-1"></a><span class="fu">grid</span>(<span class="dv">20</span>, <span class="dv">20</span>, <span class="at">lty =</span> <span class="dv">4</span>, <span class="at">col =</span> <span class="st">&quot;darkgreen&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-13"></span>
+<img src="STA504EB_files/figure-html/unnamed-chunk-13-1.png" alt="Adding a grid to existing plots" width="768" />
+<p class="caption">
+Figure 1.10: Adding a grid to existing plots
+</p>
+</div>
+</div>
+<div id="add-new-points-and-lines" class="section level4 hasAnchor" number="1.3.2.2">
+<h4><span class="header-section-number">1.3.2.2</span> Add New Points and Lines<a href="index.html#add-new-points-and-lines" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We can also use graphic function <code>points()</code> and <code>lines()</code> to add points and lines with different features discussed in the generic plot created using the generic <code>plot()</code> function. For example, we can find the point(s) that has (have) the biggest vertical coordinate and then make a line that passes through the origin and the top point(s).</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="index.html#cb14-1" tabindex="-1"></a>max.id <span class="ot">=</span> <span class="fu">which</span>(y<span class="sc">==</span><span class="fu">max</span>(y))</span>
+<span id="cb14-2"><a href="index.html#cb14-2" tabindex="-1"></a>max.x <span class="ot">=</span> x[max.id]</span>
+<span id="cb14-3"><a href="index.html#cb14-3" tabindex="-1"></a>max.y <span class="ot">=</span> y[max.id]</span>
+<span id="cb14-4"><a href="index.html#cb14-4" tabindex="-1"></a><span class="fu">plot</span>(x,y, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">&quot;navy&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb14-5"><a href="index.html#cb14-5" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Normal density curve: highest point(s)&quot;</span>)</span>
+<span id="cb14-6"><a href="index.html#cb14-6" tabindex="-1"></a><span class="do">## adding points: the origin and the top point!</span></span>
+<span id="cb14-7"><a href="index.html#cb14-7" tabindex="-1"></a><span class="fu">points</span>(<span class="fu">c</span>(<span class="dv">0</span>,max.x), <span class="fu">c</span>(<span class="dv">0</span>,max.y), <span class="at">pch =</span> <span class="dv">21</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">bg =</span> <span class="st">&quot;yellow&quot;</span>, <span class="at">cex =</span> <span class="dv">2</span>)</span>
+<span id="cb14-8"><a href="index.html#cb14-8" tabindex="-1"></a><span class="do">## Adding parallel line passing through the top point(s)</span></span>
+<span id="cb14-9"><a href="index.html#cb14-9" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">c</span>(<span class="dv">0</span>,max.x), <span class="fu">c</span>(<span class="dv">0</span>,max.y), <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;orange&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-14"></span>
+<img src="STA504EB_files/figure-html/unnamed-chunk-14-1.png" alt="Adding points and lines to the base plot" width="480" />
+<p class="caption">
+Figure 1.11: Adding points and lines to the base plot
+</p>
+</div>
+<p><strong>Note</strong>: If there are only two points, <code>abline()</code> function will do the same trick. If you only want to draw a straight line with given intercept and slop, use <code>abline()</code> and provide the values of intercept and slope. for example, we can add straight line with slope 0.15 and intercept 0.5, the follow code will add the line to the above graph.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="index.html#cb15-1" tabindex="-1"></a><span class="fu">plot</span>(x,y, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">&quot;navy&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb15-2"><a href="index.html#cb15-2" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Normal density curve: highest point(s)&quot;</span>)</span>
+<span id="cb15-3"><a href="index.html#cb15-3" tabindex="-1"></a><span class="do">## adding pa straight line</span></span>
+<span id="cb15-4"><a href="index.html#cb15-4" tabindex="-1"></a><span class="fu">abline</span>(<span class="fl">0.5</span>, <span class="fl">0.15</span>, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb15-5"><a href="index.html#cb15-5" tabindex="-1"></a><span class="do">## add a vertical line passing through the origin</span></span>
+<span id="cb15-6"><a href="index.html#cb15-6" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">3</span>, <span class="at">col =</span> <span class="st">&quot;purple4&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-15"></span>
+<img src="STA504EB_files/figure-html/unnamed-chunk-15-1.png" alt="Adding a straight line to the base plot with given intercept and slope" width="480" />
+<p class="caption">
+Figure 1.12: Adding a straight line to the base plot with given intercept and slope
+</p>
+</div>
+</div>
+<div id="add-a-legend" class="section level4 hasAnchor" number="1.3.2.3">
+<h4><span class="header-section-number">1.3.2.3</span> Add A Legend<a href="index.html#add-a-legend" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>If a plot has multiple graphic information, a legend is needed to tell the story. Dependent on the specific plot, we can choose convenient location to place the legend by specifying the x-coordinate and y-coordinate of the center for the legend. There are several special locations that do not need to specify the two coordinates. The following figure shows these special locations.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-16"></span>
+<img src="img01/w01-legendLocations.jpg" alt="Special locations on a plot to place legend and annotations" width="55%" />
+<p class="caption">
+Figure 1.13: Special locations on a plot to place legend and annotations
+</p>
+</div>
+<p>Next, we add a legend to the above plot. The <code>topleft</code> region is the best location to place the legend.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="index.html#cb16-1" tabindex="-1"></a><span class="fu">plot</span>(x,y, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">&quot;navy&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb16-2"><a href="index.html#cb16-2" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Normal density curve: highest point(s)&quot;</span>)</span>
+<span id="cb16-3"><a href="index.html#cb16-3" tabindex="-1"></a><span class="do">## adding pa straight line</span></span>
+<span id="cb16-4"><a href="index.html#cb16-4" tabindex="-1"></a><span class="fu">abline</span>(<span class="fl">0.5</span>, <span class="fl">0.15</span>, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb16-5"><a href="index.html#cb16-5" tabindex="-1"></a><span class="do">## add a vertical line passing through the origin</span></span>
+<span id="cb16-6"><a href="index.html#cb16-6" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">3</span>, <span class="at">col =</span> <span class="st">&quot;purple4&quot;</span>)</span>
+<span id="cb16-7"><a href="index.html#cb16-7" tabindex="-1"></a><span class="do">###</span></span>
+<span id="cb16-8"><a href="index.html#cb16-8" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;density curve&quot;</span>, <span class="st">&quot;slant line&quot;</span>, <span class="st">&quot;vertical line&quot;</span>), <span class="at">lty=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;navy&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;purple4&quot;</span>), <span class="at">cex =</span> <span class="fl">0.6</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-17"></span>
+<img src="STA504EB_files/figure-html/unnamed-chunk-17-1.png" alt="Adding a straight line to the base plot with given intercept and slope" width="480" />
+<p class="caption">
+Figure 1.14: Adding a straight line to the base plot with given intercept and slope
+</p>
+</div>
+</div>
+<div id="add-line-segments-arrows-and-annotations" class="section level4 hasAnchor" number="1.3.2.4">
+<h4><span class="header-section-number">1.3.2.4</span> Add Line Segments, Arrows and annotations<a href="index.html#add-line-segments-arrows-and-annotations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Sometimes, we need to draw straight lines between two points to highlight specific information. If highlight a specific point or specific curve, we may need arrow to point to the point or curve and then make an annotation (to be illustrated next).</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="index.html#cb17-1" tabindex="-1"></a><span class="fu">plot</span>(x,y, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">&quot;navy&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb17-2"><a href="index.html#cb17-2" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Normal density curve, straight line and line segment&quot;</span>)</span>
+<span id="cb17-3"><a href="index.html#cb17-3" tabindex="-1"></a><span class="do">## adding pa straight line</span></span>
+<span id="cb17-4"><a href="index.html#cb17-4" tabindex="-1"></a><span class="fu">points</span>(<span class="fu">c</span>(x[<span class="dv">3</span>], x[<span class="dv">11</span>]), <span class="fu">c</span>(y[<span class="dv">3</span>], y[<span class="dv">11</span>]), <span class="at">pch =</span> <span class="dv">21</span>, <span class="at">col=</span><span class="st">&quot;darkred&quot;</span>, <span class="at">bg =</span> <span class="st">&quot;yellow&quot;</span>, <span class="at">cex =</span> <span class="fl">1.5</span>)</span>
+<span id="cb17-5"><a href="index.html#cb17-5" tabindex="-1"></a><span class="fu">segments</span>(x[<span class="dv">3</span>], y[<span class="dv">3</span>], x[<span class="dv">11</span>], y[<span class="dv">11</span>], <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb17-6"><a href="index.html#cb17-6" tabindex="-1"></a><span class="do">## add a vertical line passing through the origin</span></span>
+<span id="cb17-7"><a href="index.html#cb17-7" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">3</span>, <span class="at">col =</span> <span class="st">&quot;purple4&quot;</span>)</span>
+<span id="cb17-8"><a href="index.html#cb17-8" tabindex="-1"></a><span class="do">###</span></span>
+<span id="cb17-9"><a href="index.html#cb17-9" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;density curve&quot;</span>, <span class="st">&quot;Line Segment&quot;</span>, <span class="st">&quot;vertical line&quot;</span>), <span class="at">lty=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;navy&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;purple4&quot;</span>), <span class="at">cex =</span> <span class="fl">0.6</span>)</span>
+<span id="cb17-10"><a href="index.html#cb17-10" tabindex="-1"></a><span class="do">###</span></span>
+<span id="cb17-11"><a href="index.html#cb17-11" tabindex="-1"></a><span class="fu">arrows</span>(<span class="fl">0.5</span>, <span class="fl">0.2</span>, <span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">0.38</span>,  <span class="at">length =</span> <span class="fl">0.1</span>, <span class="at">angle =</span> <span class="dv">25</span>, <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb17-12"><a href="index.html#cb17-12" tabindex="-1"></a><span class="do">### annotations</span></span>
+<span id="cb17-13"><a href="index.html#cb17-13" tabindex="-1"></a><span class="fu">text</span>(<span class="fl">0.5</span>, <span class="fl">0.15</span>, <span class="st">&quot;line segment&quot;</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">cex =</span> <span class="fl">0.8</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-18"></span>
+<img src="STA504EB_files/figure-html/unnamed-chunk-18-1.png" alt="curve, straight line, and line segment" width="480" />
+<p class="caption">
+Figure 1.15: curve, straight line, and line segment
+</p>
+</div>
+</div>
+<div id="additional-arguments-in-plot" class="section level4 hasAnchor" number="1.3.2.5">
+<h4><span class="header-section-number">1.3.2.5</span> Additional Arguments in <code>plot()</code><a href="index.html#additional-arguments-in-plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Sometimes, we may have a long title to explain the plot. R will truncate the long title. This will lead to a partial title. There different ways to get this around. We can change the font size of the title, we could also use multiple line title. For example, we next change the title of the above plot to reflect the information in the plot.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="index.html#cb18-1" tabindex="-1"></a><span class="fu">plot</span>(x,y, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">&quot;navy&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb18-2"><a href="index.html#cb18-2" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Normal density curve, vertical line, line sement, arrows to annotate the straight line&quot;</span>)</span>
+<span id="cb18-3"><a href="index.html#cb18-3" tabindex="-1"></a><span class="do">## adding pa straight line</span></span>
+<span id="cb18-4"><a href="index.html#cb18-4" tabindex="-1"></a><span class="fu">points</span>(<span class="fu">c</span>(x[<span class="dv">3</span>], x[<span class="dv">11</span>]), <span class="fu">c</span>(y[<span class="dv">3</span>], y[<span class="dv">11</span>]), <span class="at">pch =</span> <span class="dv">21</span>, <span class="at">col=</span><span class="st">&quot;darkred&quot;</span>, <span class="at">bg =</span> <span class="st">&quot;yellow&quot;</span>,</span>
+<span id="cb18-5"><a href="index.html#cb18-5" tabindex="-1"></a>       <span class="at">cex =</span> <span class="fl">1.5</span>)</span>
+<span id="cb18-6"><a href="index.html#cb18-6" tabindex="-1"></a><span class="fu">segments</span>(x[<span class="dv">3</span>], y[<span class="dv">3</span>], x[<span class="dv">11</span>], y[<span class="dv">11</span>], <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb18-7"><a href="index.html#cb18-7" tabindex="-1"></a><span class="do">## add a vertical line passing through the origin</span></span>
+<span id="cb18-8"><a href="index.html#cb18-8" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">3</span>, <span class="at">col =</span> <span class="st">&quot;purple4&quot;</span>)</span>
+<span id="cb18-9"><a href="index.html#cb18-9" tabindex="-1"></a><span class="do">###</span></span>
+<span id="cb18-10"><a href="index.html#cb18-10" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;density curve&quot;</span>, <span class="st">&quot;Line segment&quot;</span>, <span class="st">&quot;vertical line&quot;</span>), <span class="at">lty=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, </span>
+<span id="cb18-11"><a href="index.html#cb18-11" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;navy&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;purple4&quot;</span>), <span class="at">cex =</span> <span class="fl">0.6</span>)  </span>
+<span id="cb18-12"><a href="index.html#cb18-12" tabindex="-1"></a><span class="fu">arrows</span>(<span class="fl">0.5</span>, <span class="fl">0.2</span>, <span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">0.38</span>,  <span class="at">length =</span> <span class="fl">0.1</span>, <span class="at">angle =</span> <span class="dv">25</span>, <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">lwd =</span> <span class="dv">2</span>, </span>
+<span id="cb18-13"><a href="index.html#cb18-13" tabindex="-1"></a>       <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb18-14"><a href="index.html#cb18-14" tabindex="-1"></a><span class="do">### annotations</span></span>
+<span id="cb18-15"><a href="index.html#cb18-15" tabindex="-1"></a><span class="fu">text</span>(<span class="fl">0.5</span>, <span class="fl">0.15</span>, <span class="st">&quot;line segment&quot;</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">cex =</span> <span class="fl">0.8</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-19"></span>
+<img src="STA504EB_files/figure-html/unnamed-chunk-19-1.png" alt="Plot with an annotation and long title" width="480" />
+<p class="caption">
+Figure 1.16: Plot with an annotation and long title
+</p>
+</div>
+<p>We next use multiple line title and modify the font size and color to make a nice title.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="index.html#cb19-1" tabindex="-1"></a><span class="fu">plot</span>(x,y, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">&quot;navy&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb19-2"><a href="index.html#cb19-2" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Normal density curve, vertical line, line sement, </span></span>
+<span id="cb19-3"><a href="index.html#cb19-3" tabindex="-1"></a><span class="st">             arrows to annotate the straight line&quot;</span>,</span>
+<span id="cb19-4"><a href="index.html#cb19-4" tabindex="-1"></a>     <span class="at">cex.main =</span> <span class="fl">0.8</span>, <span class="at">col.main =</span> <span class="st">&quot;navy&quot;</span>)</span>
+<span id="cb19-5"><a href="index.html#cb19-5" tabindex="-1"></a><span class="do">## adding pa straight line</span></span>
+<span id="cb19-6"><a href="index.html#cb19-6" tabindex="-1"></a><span class="fu">points</span>(<span class="fu">c</span>(x[<span class="dv">3</span>], x[<span class="dv">11</span>]), <span class="fu">c</span>(y[<span class="dv">3</span>], y[<span class="dv">11</span>]), <span class="at">pch =</span> <span class="dv">21</span>, <span class="at">col=</span><span class="st">&quot;darkred&quot;</span>, <span class="at">bg =</span> <span class="st">&quot;yellow&quot;</span>, </span>
+<span id="cb19-7"><a href="index.html#cb19-7" tabindex="-1"></a>       <span class="at">cex =</span> <span class="fl">1.5</span>)</span>
+<span id="cb19-8"><a href="index.html#cb19-8" tabindex="-1"></a><span class="fu">segments</span>(x[<span class="dv">3</span>], y[<span class="dv">3</span>], x[<span class="dv">11</span>], y[<span class="dv">11</span>], <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb19-9"><a href="index.html#cb19-9" tabindex="-1"></a><span class="do">## add a vertical line passing through the origin</span></span>
+<span id="cb19-10"><a href="index.html#cb19-10" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">3</span>, <span class="at">col =</span> <span class="st">&quot;purple4&quot;</span>)</span>
+<span id="cb19-11"><a href="index.html#cb19-11" tabindex="-1"></a><span class="do">###  bty = &quot;n&quot; removes the box around the legend!</span></span>
+<span id="cb19-12"><a href="index.html#cb19-12" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;density curve&quot;</span>, <span class="st">&quot;Line segment&quot;</span>, <span class="st">&quot;vertical line&quot;</span>), <span class="at">lty=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, </span>
+<span id="cb19-13"><a href="index.html#cb19-13" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;navy&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;purple4&quot;</span>), <span class="at">cex =</span> <span class="fl">0.6</span>, <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>)</span>
+<span id="cb19-14"><a href="index.html#cb19-14" tabindex="-1"></a><span class="do">###</span></span>
+<span id="cb19-15"><a href="index.html#cb19-15" tabindex="-1"></a><span class="fu">arrows</span>(<span class="fl">0.5</span>, <span class="fl">0.2</span>, <span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">0.38</span>,  <span class="at">length =</span> <span class="fl">0.1</span>, <span class="at">angle =</span> <span class="dv">25</span>, <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">lwd =</span> <span class="dv">2</span>, </span>
+<span id="cb19-16"><a href="index.html#cb19-16" tabindex="-1"></a>       <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb19-17"><a href="index.html#cb19-17" tabindex="-1"></a><span class="do">### annotations</span></span>
+<span id="cb19-18"><a href="index.html#cb19-18" tabindex="-1"></a><span class="fu">text</span>(<span class="fl">0.5</span>, <span class="fl">0.15</span>, <span class="st">&quot;line segment&quot;</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">cex =</span> <span class="fl">0.8</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-20"></span>
+<img src="STA504EB_files/figure-html/unnamed-chunk-20-1.png" alt="Plot with an annotation and long title" width="480" />
+<p class="caption">
+Figure 1.17: Plot with an annotation and long title
+</p>
+</div>
+<p><br />
+</p>
+<p>With above basics of RMarkdown, LaTex style of mathematics equations, and generic plot functions in R, we should be able to prepare your assignments in a professional digital manner.</p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="review-of-probability-rules.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/pengdsci/STA504EB/edit/master/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["STA504EB.pdf", "STA504EB.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

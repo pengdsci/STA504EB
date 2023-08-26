@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Topic 9 Conditional Distributions and Independence | STA504 E-Pack: Mathematical Statistics with Calc. Rev.</title>
+  <meta name="description" content="The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Topic 9 Conditional Distributions and Independence | STA504 E-Pack: Mathematical Statistics with Calc. Rev." />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/STA504EB" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Topic 9 Conditional Distributions and Independence | STA504 E-Pack: Mathematical Statistics with Calc. Rev." />
+  
+  <meta name="twitter:description" content="The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Cheng Peng" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="joint-distributions-and-marginal-distributions.html"/>
+<link rel="next" href="expectations-and-covariance.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<center><li><a href="./"><font color = "darkred"><b>STA 504 E-Pack: Mathematical Statistics w/ Calc. Rev.</b></font></a><br><font color = "navy">Cheng Peng</font></li></center>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#use-of-technologies"><i class="fa fa-check"></i><b>1.1</b> Use of Technologies</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#greek-letters"><i class="fa fa-check"></i><b>1.1.1</b> Greek Letters</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#operators"><i class="fa fa-check"></i><b>1.1.2</b> Operators</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#power-and-indicies"><i class="fa fa-check"></i><b>1.1.3</b> Power and Indicies</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#fractions-and-binomials"><i class="fa fa-check"></i><b>1.1.4</b> Fractions and Binomials</a></li>
+<li class="chapter" data-level="1.1.5" data-path="index.html"><a href="index.html#radical-roots"><i class="fa fa-check"></i><b>1.1.5</b> Radical Roots</a></li>
+<li class="chapter" data-level="1.1.6" data-path="index.html"><a href="index.html#sums-integrals-and-related-symbols"><i class="fa fa-check"></i><b>1.1.6</b> Sums, Integrals, and Related Symbols</a></li>
+<li class="chapter" data-level="1.1.7" data-path="index.html"><a href="index.html#more-special-symbols"><i class="fa fa-check"></i><b>1.1.7</b> More Special Symbols</a></li>
+<li class="chapter" data-level="1.1.8" data-path="index.html"><a href="index.html#brackets"><i class="fa fa-check"></i><b>1.1.8</b> Brackets</a></li>
+<li class="chapter" data-level="1.1.9" data-path="index.html"><a href="index.html#matrix"><i class="fa fa-check"></i><b>1.1.9</b> Matrix</a></li>
+<li class="chapter" data-level="1.1.10" data-path="index.html"><a href="index.html#aligned-equations"><i class="fa fa-check"></i><b>1.1.10</b> Aligned Equations</a></li>
+<li class="chapter" data-level="1.1.11" data-path="index.html"><a href="index.html#piece-wise-function"><i class="fa fa-check"></i><b>1.1.11</b> Piece-wise Function</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#including-images-and-graphics"><i class="fa fa-check"></i><b>1.2</b> Including Images and Graphics</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#r-plot-function"><i class="fa fa-check"></i><b>1.3</b> R plot() Function</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#the-plot-function"><i class="fa fa-check"></i><b>1.3.1</b> The <code>plot()</code> function</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#adding-graphic-components-to-base-plot"><i class="fa fa-check"></i><b>1.3.2</b> Adding Graphic Components to Base Plot</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html"><i class="fa fa-check"></i><b>2</b> Review of Probability Rules</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#definitions-of-probability"><i class="fa fa-check"></i><b>2.1</b> Definitions of Probability</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#experiments-sample-space-and-event"><i class="fa fa-check"></i><b>2.1.1</b> Experiments, Sample Space, and Event</a></li>
+<li class="chapter" data-level="2.1.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#calculation-of-probability"><i class="fa fa-check"></i><b>2.1.2</b> Calculation of Probability</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#general-addition-rule"><i class="fa fa-check"></i><b>2.2</b> General Addition Rule</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#additive-rule"><i class="fa fa-check"></i><b>2.2.1</b> Additive Rule</a></li>
+<li class="chapter" data-level="2.2.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#special-cases"><i class="fa fa-check"></i><b>2.2.2</b> Special Cases</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#multiplicative-rule-and-independence"><i class="fa fa-check"></i><b>2.3</b> Multiplicative Rule and Independence</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#conditional-probability"><i class="fa fa-check"></i><b>2.3.1</b> Conditional Probability</a></li>
+<li class="chapter" data-level="2.3.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#general-multiplication-rule"><i class="fa fa-check"></i><b>2.3.2</b> General Multiplication Rule</a></li>
+<li class="chapter" data-level="2.3.3" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#checking-independence-using-multiplicative-rule"><i class="fa fa-check"></i><b>2.3.3</b> Checking Independence Using Multiplicative Rule</a></li>
+<li class="chapter" data-level="2.3.4" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#bayes-theorem"><i class="fa fa-check"></i><b>2.3.4</b> Bayes’ Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#appendix-calculus-review-topics"><i class="fa fa-check"></i><b>2.4</b> Appendix: Calculus Review Topics</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#notation-domain-and-range"><i class="fa fa-check"></i><b>2.4.1</b> Notation, Domain, and Range</a></li>
+<li class="chapter" data-level="2.4.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#operations-of-functions"><i class="fa fa-check"></i><b>2.4.2</b> Operations of Functions</a></li>
+<li class="chapter" data-level="2.4.3" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#composite-functions"><i class="fa fa-check"></i><b>2.4.3</b> Composite Functions</a></li>
+<li class="chapter" data-level="2.4.4" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#inverse-function"><i class="fa fa-check"></i><b>2.4.4</b> Inverse Function</a></li>
+<li class="chapter" data-level="2.4.5" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#practice-exercises"><i class="fa fa-check"></i><b>2.4.5</b> Practice Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html"><i class="fa fa-check"></i><b>3</b> Discrete Random Variables and Their Distribution</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#characterization-of-distribution-of-random-variables"><i class="fa fa-check"></i><b>3.1</b> Characterization of Distribution of Random Variables</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#definition-of-rv"><i class="fa fa-check"></i><b>3.1.1</b> Definition of RV</a></li>
+<li class="chapter" data-level="3.1.2" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#expectation-and-variance"><i class="fa fa-check"></i><b>3.1.2</b> Expectation and Variance</a></li>
+<li class="chapter" data-level="3.1.3" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#some-properties-of-expectation-and-variance"><i class="fa fa-check"></i><b>3.1.3</b> Some Properties of Expectation and Variance</a></li>
+<li class="chapter" data-level="3.1.4" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#characterization-of-a-random-variable"><i class="fa fa-check"></i><b>3.1.4</b> Characterization of A Random Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#special-discrete-distributions"><i class="fa fa-check"></i><b>3.2</b> Special Discrete Distributions</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#binomial-distribution"><i class="fa fa-check"></i><b>3.2.1</b> Binomial Distribution</a></li>
+<li class="chapter" data-level="3.2.2" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#poisson-distribution"><i class="fa fa-check"></i><b>3.2.2</b> Poisson Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#cumulative-distributions"><i class="fa fa-check"></i><b>3.3</b> Cumulative Distributions</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#definition-and-notations"><i class="fa fa-check"></i><b>3.3.1</b> Definition and Notations</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#appendix-derivatives-of-functions"><i class="fa fa-check"></i><b>3.4</b> Appendix: Derivatives of Functions</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#definitions-and-notations"><i class="fa fa-check"></i><b>3.4.1</b> Definitions and Notations</a></li>
+<li class="chapter" data-level="3.4.2" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#rules-of-calculus"><i class="fa fa-check"></i><b>3.4.2</b> Rules of Calculus</a></li>
+<li class="chapter" data-level="3.4.3" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#properties-of-derivative"><i class="fa fa-check"></i><b>3.4.3</b> Properties of Derivative</a></li>
+<li class="chapter" data-level="3.4.4" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#practice-exercises-1"><i class="fa fa-check"></i><b>3.4.4</b> Practice Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html"><i class="fa fa-check"></i><b>4</b> Continuous Random Variables and Their Distributions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#continuous-random-variable-and-characterization"><i class="fa fa-check"></i><b>4.1</b> Continuous Random Variable and Characterization</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#cummulative-distribution"><i class="fa fa-check"></i><b>4.1.1</b> Cummulative Distribution</a></li>
+<li class="chapter" data-level="4.1.2" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#cdf-of-continuous-random-variable"><i class="fa fa-check"></i><b>4.1.2</b> CDF of Continuous Random Variable</a></li>
+<li class="chapter" data-level="4.1.3" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#properties-of-cdf-and-cdf-of-continuous-r.v."><i class="fa fa-check"></i><b>4.1.3</b> Properties of CDF and CDF of Continuous R.V.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#expectation-and-variance-1"><i class="fa fa-check"></i><b>4.2</b> Expectation and Variance</a></li>
+<li class="chapter" data-level="4.3" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#uniform-probability-distribution"><i class="fa fa-check"></i><b>4.3</b> Uniform Probability Distribution</a></li>
+<li class="chapter" data-level="4.4" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#calculus-review-integrals-of-functions"><i class="fa fa-check"></i><b>4.4</b> Calculus Review: Integrals of Functions</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#antiderivatives"><i class="fa fa-check"></i><b>4.4.1</b> Antiderivatives</a></li>
+<li class="chapter" data-level="4.4.2" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#rules-and-properties-of-integral"><i class="fa fa-check"></i><b>4.4.2</b> Rules and Properties of Integral</a></li>
+<li class="chapter" data-level="4.4.3" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#practice-exercises-2"><i class="fa fa-check"></i><b>4.4.3</b> Practice Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html"><i class="fa fa-check"></i><b>5</b> Special Continuous Distributions: Normal and Gamma Families</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#review-of-probability-distributions"><i class="fa fa-check"></i><b>5.1</b> Review of Probability Distributions</a></li>
+<li class="chapter" data-level="5.2" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#normal-distribution"><i class="fa fa-check"></i><b>5.2</b> Normal Distribution</a></li>
+<li class="chapter" data-level="5.3" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#gamma-distribution"><i class="fa fa-check"></i><b>5.3</b> Gamma Distribution</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#the-gamma-function"><i class="fa fa-check"></i><b>5.3.1</b> The Gamma Function</a></li>
+<li class="chapter" data-level="5.3.2" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#definition-of-gamma-density"><i class="fa fa-check"></i><b>5.3.2</b> Definition of Gamma Density</a></li>
+<li class="chapter" data-level="5.3.3" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#expectation-and-variance-2"><i class="fa fa-check"></i><b>5.3.3</b> Expectation and Variance</a></li>
+<li class="chapter" data-level="5.3.4" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#special-cases-1"><i class="fa fa-check"></i><b>5.3.4</b> Special Cases</a></li>
+<li class="chapter" data-level="5.3.5" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#use-of-technology"><i class="fa fa-check"></i><b>5.3.5</b> Use of Technology</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#calculus-review-integrals-of-functions-1"><i class="fa fa-check"></i><b>5.4</b> Calculus Review: Integrals of Functions</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#antiderivatives-1"><i class="fa fa-check"></i><b>5.4.1</b> Antiderivatives</a></li>
+<li class="chapter" data-level="5.4.2" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#rules-and-properties-of-integral-1"><i class="fa fa-check"></i><b>5.4.2</b> Rules and Properties of Integral</a></li>
+<li class="chapter" data-level="5.4.3" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#practice-exercises-3"><i class="fa fa-check"></i><b>5.4.3</b> Practice Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="mixture-distributions.html"><a href="mixture-distributions.html"><i class="fa fa-check"></i><b>6</b> Mixture Distributions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="mixture-distributions.html"><a href="mixture-distributions.html#definition-of-mixture-model"><i class="fa fa-check"></i><b>6.1</b> Definition of Mixture Model</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="mixture-distributions.html"><a href="mixture-distributions.html#definition-of-k-component-mixture-distributions"><i class="fa fa-check"></i><b>6.1.1</b> Definition of K-component Mixture Distributions</a></li>
+<li class="chapter" data-level="6.1.2" data-path="mixture-distributions.html"><a href="mixture-distributions.html#properties-of-finite-mixture-distributions"><i class="fa fa-check"></i><b>6.1.2</b> Properties of Finite Mixture Distributions</a></li>
+<li class="chapter" data-level="6.1.3" data-path="mixture-distributions.html"><a href="mixture-distributions.html#variance-decomposition"><i class="fa fa-check"></i><b>6.1.3</b> Variance Decomposition</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="mixture-distributions.html"><a href="mixture-distributions.html#two-component-normal-mixture-distribution"><i class="fa fa-check"></i><b>6.2</b> Two-component Normal Mixture Distribution</a></li>
+<li class="chapter" data-level="6.3" data-path="mixture-distributions.html"><a href="mixture-distributions.html#use-mixture-distributions"><i class="fa fa-check"></i><b>6.3</b> Use Mixture Distributions</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="mixture-distributions.html"><a href="mixture-distributions.html#fitting-complex-data-using-mixture-distributions"><i class="fa fa-check"></i><b>6.3.1</b> Fitting Complex Data Using Mixture Distributions</a></li>
+<li class="chapter" data-level="6.3.2" data-path="mixture-distributions.html"><a href="mixture-distributions.html#clustering-with-mixture-distributions"><i class="fa fa-check"></i><b>6.3.2</b> Clustering with Mixture Distributions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html"><i class="fa fa-check"></i><b>7</b> Moment Generating Functions (MGF)</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#moments-of-rv-and-mgf"><i class="fa fa-check"></i><b>7.1</b> Moments of RV and MGF</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#various-moments-revisited"><i class="fa fa-check"></i><b>7.1.1</b> Various Moments Revisited</a></li>
+<li class="chapter" data-level="7.1.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#mgf"><i class="fa fa-check"></i><b>7.1.2</b> MGF</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#properties-of-mgf"><i class="fa fa-check"></i><b>7.2</b> Properties of MGF</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#review-of-taylor-series"><i class="fa fa-check"></i><b>7.2.1</b> Review of Taylor Series</a></li>
+<li class="chapter" data-level="7.2.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#how-mgf-generates-moments"><i class="fa fa-check"></i><b>7.2.2</b> How MGF Generates Moments?</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#mgf-of-some-special-distributions"><i class="fa fa-check"></i><b>7.3</b> MGF of Some Special Distributions</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#exponential-distribution"><i class="fa fa-check"></i><b>7.3.1</b> Exponential Distribution</a></li>
+<li class="chapter" data-level="7.3.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#normal-distribution-1"><i class="fa fa-check"></i><b>7.3.2</b> Normal Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#use-of-mgf---shape-analysis"><i class="fa fa-check"></i><b>7.4</b> Use of MGF - Shape Analysis</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#skewness"><i class="fa fa-check"></i><b>7.4.1</b> Skewness</a></li>
+<li class="chapter" data-level="7.4.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#kurtosis"><i class="fa fa-check"></i><b>7.4.2</b> Kurtosis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html"><i class="fa fa-check"></i><b>8</b> Joint Distributions and Marginal Distributions</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#joint-distribution-of-categorical-variables"><i class="fa fa-check"></i><b>8.1</b> Joint Distribution of Categorical Variables</a></li>
+<li class="chapter" data-level="8.2" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#discrete-bivariate-distributions"><i class="fa fa-check"></i><b>8.2</b> Discrete Bivariate Distributions</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#joint-distribution-and-properties"><i class="fa fa-check"></i><b>8.2.1</b> Joint Distribution and Properties</a></li>
+<li class="chapter" data-level="8.2.2" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#marginal-distributions"><i class="fa fa-check"></i><b>8.2.2</b> Marginal Distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#continuous-bivariate-distributions"><i class="fa fa-check"></i><b>8.3</b> Continuous Bivariate Distributions</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#continuous-bivariate-distribution"><i class="fa fa-check"></i><b>8.3.1</b> Continuous Bivariate Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#a-review-of-double-integral"><i class="fa fa-check"></i><b>8.4</b> A Review of Double Integral</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#type-i-region"><i class="fa fa-check"></i><b>8.4.1</b> Type I Region</a></li>
+<li class="chapter" data-level="8.4.2" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#type-ii-region"><i class="fa fa-check"></i><b>8.4.2</b> Type II Region</a></li>
+<li class="chapter" data-level="8.4.3" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#summarizing-steps-for-setting-up-iterative-integrals"><i class="fa fa-check"></i><b>8.4.3</b> Summarizing Steps for Setting up Iterative Integrals</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#marginal-distributions-1"><i class="fa fa-check"></i><b>8.5</b> Marginal Distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html"><i class="fa fa-check"></i><b>9</b> Conditional Distributions and Independence</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#conditional-distribution-of-categorical-variables"><i class="fa fa-check"></i><b>9.1</b> Conditional Distribution of Categorical Variables</a></li>
+<li class="chapter" data-level="9.2" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#independence-between-two-discrete-random-variables"><i class="fa fa-check"></i><b>9.2</b> Independence Between Two Discrete Random Variables</a></li>
+<li class="chapter" data-level="9.3" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#discrete-bivariate-distributions-1"><i class="fa fa-check"></i><b>9.3</b> Discrete Bivariate Distributions</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#definition-of-conditional-distributions"><i class="fa fa-check"></i><b>9.3.1</b> Definition of Conditional Distributions</a></li>
+<li class="chapter" data-level="9.3.2" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#definition-of-independence"><i class="fa fa-check"></i><b>9.3.2</b> Definition of Independence</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#conditioning-and-independence-between-two-variables"><i class="fa fa-check"></i><b>9.4</b> Conditioning and Independence between Two Variables</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#conditional-distributions"><i class="fa fa-check"></i><b>9.4.1</b> Conditional Distributions</a></li>
+<li class="chapter" data-level="9.4.2" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#independence-of-random-variables"><i class="fa fa-check"></i><b>9.4.2</b> Independence of Random Variables</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html"><i class="fa fa-check"></i><b>10</b> Expectations and Covariance</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#expectations"><i class="fa fa-check"></i><b>10.1</b> Expectations</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#discrete-distributions"><i class="fa fa-check"></i><b>10.1.1</b> Discrete Distributions</a></li>
+<li class="chapter" data-level="10.1.2" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#expectations-of-bivariate-continuous-distribution"><i class="fa fa-check"></i><b>10.1.2</b> Expectations of Bivariate Continuous Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#some-properties-of-expectations"><i class="fa fa-check"></i><b>10.2</b> Some Properties of Expectations</a></li>
+<li class="chapter" data-level="10.3" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#covariance---measuring-linear-correlation"><i class="fa fa-check"></i><b>10.3</b> Covariance - Measuring Linear Correlation</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#covariance"><i class="fa fa-check"></i><b>10.3.1</b> Covariance</a></li>
+<li class="chapter" data-level="10.3.2" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#pearson-correlation-coefficient"><i class="fa fa-check"></i><b>10.3.2</b> Pearson Correlation Coefficient</a></li>
+<li class="chapter" data-level="10.3.3" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#comcluding-remarks"><i class="fa fa-check"></i><b>10.3.3</b> Comcluding Remarks</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html"><i class="fa fa-check"></i><b>11</b> Linear Function of Random Variables and Conditional Expectations</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#linear-combination-of-two-random-variables"><i class="fa fa-check"></i><b>11.1</b> Linear Combination of Two Random Variables</a></li>
+<li class="chapter" data-level="11.2" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#general-linear-functions-of-rvs"><i class="fa fa-check"></i><b>11.2</b> General Linear Functions of RVs</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#general-linear-functions"><i class="fa fa-check"></i><b>11.2.1</b> General Linear Functions</a></li>
+<li class="chapter" data-level="11.2.2" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#linear-functions-of-iid-rvs"><i class="fa fa-check"></i><b>11.2.2</b> Linear Functions of IID RVs</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#conditional-expectation"><i class="fa fa-check"></i><b>11.3</b> Conditional Expectation</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html"><i class="fa fa-check"></i><b>12</b> Functions of Random Variables: CDF Method</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#the-rationale"><i class="fa fa-check"></i><b>12.1</b> The Rationale</a></li>
+<li class="chapter" data-level="12.2" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#review-of-inverse-function-and-inequality"><i class="fa fa-check"></i><b>12.2</b> Review of Inverse Function and Inequality</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#inverse-function-1"><i class="fa fa-check"></i><b>12.2.1</b> Inverse Function</a></li>
+<li class="chapter" data-level="12.2.2" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#definitions-of-monotonic-functions"><i class="fa fa-check"></i><b>12.2.2</b> Definitions of Monotonic Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#method-of-distribution"><i class="fa fa-check"></i><b>12.3</b> Method of Distribution</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#cdf-method"><i class="fa fa-check"></i><b>12.3.1</b> CDF Method</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html"><i class="fa fa-check"></i><b>13</b> Functions of Random Variables: Transformation Method</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#univariate-transformation-method"><i class="fa fa-check"></i><b>13.1</b> Univariate Transformation Method</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#monotonically-increasing-function"><i class="fa fa-check"></i><b>13.1.1</b> Monotonically Increasing Function</a></li>
+<li class="chapter" data-level="13.1.2" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#monotonically-decreasing-function"><i class="fa fa-check"></i><b>13.1.2</b> Monotonically Decreasing Function</a></li>
+<li class="chapter" data-level="13.1.3" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#univariate-transformation"><i class="fa fa-check"></i><b>13.1.3</b> Univariate Transformation</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#review-of-concepts-matrices"><i class="fa fa-check"></i><b>13.2</b> Review of Concepts Matrices</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#matrix-operations"><i class="fa fa-check"></i><b>13.2.1</b> Matrix Operations</a></li>
+<li class="chapter" data-level="13.2.2" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#section"><i class="fa fa-check"></i><b>13.2.2</b> </a></li>
+<li class="chapter" data-level="13.2.3" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#jacobian-matrix-and-determinant"><i class="fa fa-check"></i><b>13.2.3</b> Jacobian Matrix and Determinant</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#bivariate-transformation"><i class="fa fa-check"></i><b>13.3</b> Bivariate Transformation</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#joint-distribution-of-two-functions-of-rvs"><i class="fa fa-check"></i><b>13.3.1</b> Joint Distribution of Two Functions of RVs</a></li>
+<li class="chapter" data-level="13.3.2" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#applications-of-bivariate-transformations"><i class="fa fa-check"></i><b>13.3.2</b> Applications of Bivariate Transformations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="basic-order-statistics.html"><a href="basic-order-statistics.html"><i class="fa fa-check"></i><b>14</b> Basic Order Statistics</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="basic-order-statistics.html"><a href="basic-order-statistics.html#distribution-of-minimum-statistic-x_1"><i class="fa fa-check"></i><b>14.1</b> Distribution of Minimum Statistic <strong><span class="math inline">\(X_{(1)}\)</span></strong></a></li>
+<li class="chapter" data-level="14.2" data-path="basic-order-statistics.html"><a href="basic-order-statistics.html#distribution-of-minimum-statistic-x_m"><i class="fa fa-check"></i><b>14.2</b> Distribution of Minimum Statistic <strong><span class="math inline">\(X_{(m)}\)</span></strong></a></li>
+<li class="chapter" data-level="14.3" data-path="basic-order-statistics.html"><a href="basic-order-statistics.html#combined-reliability-system"><i class="fa fa-check"></i><b>14.3</b> Combined Reliability System</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">STA504 E-Pack: Mathematical Statistics with Calc. Rev.</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="conditional-distributions-and-independence" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Topic 9</span> Conditional Distributions and Independence<a href="conditional-distributions-and-independence.html#conditional-distributions-and-independence" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><em>(Similar contents can be found in Sections 3 and 4 of chapter 5)</em></p>
+<p>This note is dedicated to the conditional distributions and independence between joint random variables.</p>
+<div id="conditional-distribution-of-categorical-variables" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Conditional Distribution of Categorical Variables<a href="conditional-distributions-and-independence.html#conditional-distribution-of-categorical-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We still use a two-way contingency table as an example to illustrate the conditional distribution of two random variables.</p>
+<p><font color = "red"><strong>Example 1</strong> </font>. A Safety Officer for an auto insurance company in Connecticut was interested in learning how the extent of an individual’s injury in an automobile accident relates to the type of safety restraint the individual was wearing at the time of the accident. As a result, the Safety Officer used statewide ambulance and police records to compile the following two-way (flat) table of joint probabilities.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-106"></span>
+<img src="topic07/example1TwoWayTableInsurance.png" alt="A flat two-way contingency table of joint probability distribution" width="65%" />
+<p class="caption">
+Figure 9.1: A flat two-way contingency table of joint probability distribution
+</p>
+</div>
+<p>The row totals define the marginal distribution of <span class="math inline">\(Y_1\)</span> and the column totals define the marginal distribution of <span class="math inline">\(Y_2\)</span>. Note that we can also reshape the above two-way table in the following <em>long table</em>.</p>
+<p><img src="topic07/example1TwoWayLongTable.png" width="65%" style="display: block; margin: auto;" /></p>
+<p><strong>A conditional distribution</strong> is a distribution of values for one variable that exists specifying the values of other variables. In other words, for random variables (<span class="math inline">\(Y_1, Y_2\)</span>), we can find the distribution of <span class="math inline">\(Y_1\)</span> when <span class="math inline">\(Y_2 = y_2^0\)</span> (<span class="math inline">\(y_2^0\)</span> is a value in the domain of <span class="math inline">\(Y_2\)</span>).</p>
+<p><font color="red"><strong>Example 2</strong></font>. Find the distribution of <span class="math inline">\(Y_1|Y_2 = 1\)</span>. This means, we want to find the probability distribution of <strong>Extent of Injury (<span class="math inline">\(Y_1\)</span>)</strong> for the <em>subpopulation</em> of individuals using <strong>Seat-belts Only</strong> (see the following shaded column).</p>
+<p><img src="topic07/example2TwoWayTableCondDist.png" width="65%" style="display: block; margin: auto;" /></p>
+<p>However, the joint probabilities in the shaded column do not sum up to unity. This does not meet the requirements of a discrete variable. We need to <strong>normalize</strong> the column to make a valid probability distribution by using the definition of the conditional distribution.</p>
+<p>In this example, we need to calculate the following conditional probabilities.</p>
+<p><span class="math display">\[
+P(Y_1=0|Y_2 = 1) = \frac{P(Y_1 =0, Y_2=1)}{P(Y_2=1)} = \frac{0.075}{0.35}= 0.2143
+\]</span>
+<span class="math display">\[
+P(Y_1=1|Y_2 = 1) = \frac{P(Y_1 =1, Y_2=1)}{P(Y_2=1)} = \frac{0.16}{0.35} = 0.4571
+\]</span>
+<span class="math display">\[
+P(Y_1=2|Y_2 = 1) = \frac{P(Y_1 =2, Y_2=1)}{P(Y_2=1)} = \frac{0.1}{0.35}=0.2857
+\]</span>
+<span class="math display">\[
+P(Y_1=3|Y_2 = 1) = \frac{P(Y_1 =3, Y_2=1)}{P(Y_2=1)} = \frac{0.015}{0.35}=0.0429
+\]</span>
+The above conditional probabilities form a probability distribution that is summarized in the following table</p>
+<p><img src="topic07/example2TwoWayTableCondDist01.png" width="65%" style="display: block; margin: auto;" /></p>
+<p>We can similarly find the conditional distribution of <span class="math inline">\(Y_1\)</span> by conditioning on values of <span class="math inline">\(Y_2\)</span>.</p>
+<p><br />
+</p>
+</div>
+<div id="independence-between-two-discrete-random-variables" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Independence Between Two Discrete Random Variables<a href="conditional-distributions-and-independence.html#independence-between-two-discrete-random-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><br />
+</p>
+<p>We have learned the independence of two events: <strong>A</strong> and <strong>B</strong> are independent if and only if <span class="math inline">\(P(A|B) = P(A)\)</span> which is equivalent to <span class="math inline">\(P(A\cap B) = P(A)P(B)\)</span>.</p>
+<p>For two discrete categorical variables, <span class="math inline">\(Y_1 =y_1^i\)</span> (<span class="math inline">\(1 \le i \le I\)</span>) and <span class="math inline">\(Y_2=Y_2^j\)</span> (<span class="math inline">\(1 \le j \le J\)</span>), <strong><span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> are independent</strong> <em>if and only if</em> <span class="math inline">\(P(Y_1=y_1^i, Y_2=y_2^j) = P(Y_1 =y_1^i)P(Y_2 = y_2^j)\)</span> for all <span class="math inline">\(1 \le i \le I\)</span> and <span class="math inline">\(1 \le j \le J\)</span>. This implies that <em><span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> are independent if and only if <font color = "red"><b>every joint probability</b> </font> is equal to the product of the two corresponding marginal probabilities</em>. Otherwise, the two random variables are dependent.</p>
+<p><br />
+</p>
+<p><font color="red"><strong>Example 3</strong></font>. (Example 1 revisited) Are <strong>Extent of Injury (<span class="math inline">\(Y_1\)</span>)</strong> and <strong>Type of Restraint (<span class="math inline">\(Y_2\)</span>)</strong> independent?</p>
+<p><strong>Solution</strong>: Based on the above definition of independence of two categorical random variables, if one of the joint probabilities is NOT equal to the product of the corresponding marginal probabilities, then the two discrete random variables are <strong>dependent</strong>. Since <span class="math inline">\(0.065 = P(Y_1 =0, Y_2 = 0) \ne P(Y_1=0)P(Y_2 =0) = 0.2\times 0.4 = 0.08\)</span>, therefore, <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> are dependent.</p>
+<p><br />
+</p>
+<p><font color="red"><strong>Example 4</strong></font>. Let <span class="math inline">\(Y_1\)</span> be the status of watching online advertisements and <span class="math inline">\(Y_2\)</span> be the status of planning a vacation in New York City next year. Based on a hypothetical survey, we obtain an empirical joint distribution table.</p>
+<p><img src="topic07/independentTwoWayTable.png" width="65%" style="display: block; margin: auto;" /></p>
+<p>Are the categorical variables “a randomly selected person watched the online ad” and “a randomly selected person plans to vacation in New York within the next year” independent or not independent? Justify your answer using probabilities calculated from the information in the table.</p>
+<p><strong>Solution</strong>: We need to check the</p>
+<p><span class="math display">\[
+P[Y_1 =YES|Y_2 = YES] = \frac{P[Y_1=YES\cap Y_2=YES]}{P[Y_2=YES]} = \frac{0.30}{0.40} = 0.75 =P[Y_1=YES]
+\]</span></p>
+<p><span class="math display">\[
+P[Y_1 =NO|Y_2 = YES] = \frac{P[Y_1=NO\cap Y_2=YES]}{P[Y_2=YES]} = \frac{0.10}{0.40} = 0.25 =P[Y_1=NO]
+\]</span></p>
+<p>This means, the conditional distribution of <span class="math inline">\((Y_1, Y_2\)</span> conditioning on <span class="math inline">\(Y_2 = YES\)</span> is equal to the marginal distribution of <span class="math inline">\(Y_1\)</span>. Similarly, we can show that the conditional distribution of <span class="math inline">\((Y_1, Y_2\)</span> conditioning on <span class="math inline">\(Y_2 = NO\)</span> is also equal to the marginal distribution of <span class="math inline">\(Y_1\)</span>. Therefore, <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> are independent.</p>
+<p><br />
+</p>
+<p><strong>In summary, to check the independence of two categorical random variables, we have one of the following equivalent conditions</strong>:</p>
+<ol style="list-style-type: decimal">
+<li><p>The joint probability is equal to the product of the two corresponding marginal probabilities.</p></li>
+<li><p>The conditional distribution of one variable conditioning on any level of the other variable is identical to the marginal distribution of the variable.</p></li>
+</ol>
+<p><br />
+</p>
+</div>
+<div id="discrete-bivariate-distributions-1" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Discrete Bivariate Distributions<a href="conditional-distributions-and-independence.html#discrete-bivariate-distributions-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For discrete bivariate distributions, We can define the distribution using tables, charts, and formulas.</p>
+<p><font color="red"><strong>Example 5</strong></font>. Consider the following bivariate joint distribution table.</p>
+<p><img src="topic07/example05DiscreteDist.png" width="45%" style="display: block; margin: auto;" /></p>
+<p>For illustrative purposes, we define the conditional distribution of <span class="math inline">\(X\)</span> conditioning on <span class="math inline">\(Y=1\)</span> in the following</p>
+<p><span class="math display">\[
+P[X=0|Y=1] = \frac{P[X=0, Y=1]}{P[Y=1]} = \frac{0}{4/8} = 0
+\]</span>
+<span class="math display">\[
+P[X=1|Y=1] = \frac{P[X=1, Y=1]}{P[Y=1]} = \frac{1/8}{4/8} = \frac{1}{4}
+\]</span>
+<span class="math display">\[
+P[X=2|Y=1] = \frac{P[X=2, Y=1]}{P[Y=1]} = \frac{2/8}{4/8} = \frac{1}{2}
+\]</span>
+<span class="math display">\[
+P[X=3|Y=1] = \frac{P[X=3, Y=1]}{P[Y=1]} = \frac{2/8}{4/8} = \frac{1}{4}
+\]</span></p>
+<p>The conditional distribution of <span class="math inline">\(X|Y=1\)</span> is: <span class="math inline">\(\{0, 1/4, 1/2, 1/4\}\)</span>.</p>
+<p>We can simply find the conditional distributions of <span class="math inline">\(X\)</span> conditioning on the other values of <span class="math inline">\(Y\)</span> and conditional distributions of <span class="math inline">\(Y\)</span> conditioning on the values of <span class="math inline">\(X\)</span> as well.</p>
+<p>Similar to what we commented earlier, conditional distributions can be obtained by dividing the corresponding marginal probability by the cell probabilities labeled by the value of the conditioning variable. In <strong>Example 5</strong>, we found the conditional probability of <span class="math inline">\(X\)</span> conditioning on <span class="math inline">\(Y=1\)</span> by dividing the cell probabilities in the column labeled with <span class="math inline">\(Y=1\)</span> by its marginal probability <span class="math inline">\(P(Y=1) = 4/8\)</span> (see the following shaded column in the table).</p>
+<p><img src="topic07/example05DiscreteConditionalProb.png" width="45%" style="display: block; margin: auto;" /></p>
+<div id="definition-of-conditional-distributions" class="section level3 hasAnchor" number="9.3.1">
+<h3><span class="header-section-number">9.3.1</span> Definition of Conditional Distributions<a href="conditional-distributions-and-independence.html#definition-of-conditional-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For discrete random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, the conditional probability distribution functions of <span class="math inline">\(X\)</span> given <span class="math inline">\(Y\)</span> and vice versa are defined as</p>
+<p><span class="math display">\[
+p_{X|Y}(x_i|y_j)=\frac{p_{XY}(x_i,y_j)}{p_Y(y_j)}, \ \ \  p_{Y|X}(y_j|x_i)=\frac{p_{XY}(y_j,x_i)}{p_Y(x_i)}
+\]</span>
+for any <span class="math inline">\(x_i \in R_X\)</span> and <span class="math inline">\(y_j\in R_Y\)</span>. Furthermore,</p>
+<p><span class="math display">\[
+p_{X|Y}(x_i|y_j) = P[X=x_i|Y=y_j]
+\]</span>
+<span class="math display">\[
+p_{XY}(x_i,y_j)=P[X=x_i, Y=y_j]
+\]</span>
+<span class="math display">\[
+p_Y(y_j)=P[Y=y_j], \ \ \ p_X(x_i) = P[X=x_i]
+\]</span></p>
+</div>
+<div id="definition-of-independence" class="section level3 hasAnchor" number="9.3.2">
+<h3><span class="header-section-number">9.3.2</span> Definition of Independence<a href="conditional-distributions-and-independence.html#definition-of-independence" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Independence of two discrete random variables</strong> is defined in the same way as in the bivariate categorical distributions. That is, the cell probability is equal to the product of the two corresponding marginal probabilities.</p>
+<p><font color="red"><strong>Example 6</strong></font>. Consider the following bivariate joint distribution table.</p>
+<p><img src="topic07/example05DiscreteDist.png" width="45%" style="display: block; margin: auto;" />
+Are <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> independent?</p>
+<p><strong>Solution</strong>: We observe that <span class="math inline">\(1/8 = P[X=0, Y=0] \ne P[X=0]\times P[Y=0] (1/8)\times(1/8) = 1/64\)</span>. This implies that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are dependent.</p>
+<p><br />
+</p>
+<p>Some technical rules can be used to test independence between two random variables. For example, if the probability distribution of discrete bivariate random variables (<span class="math inline">\(X,y\)</span>) exists, say, <span class="math inline">\(p(x,y)\)</span>, we use the following result to test the independence of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>:</p>
+<ul>
+<li><p>If <span class="math inline">\(p(x,y) = p(x)p(y)\)</span>, then <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, where <span class="math inline">\(p(x)\)</span> and <span class="math inline">\(p(y)\)</span> are probability distributions of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> respectively. This means that if you can <em>decompose</em> the joint probability distribution function into the product of the corresponding marginal probability distributions, the two underlying random variables are independent.</p></li>
+<li><p>For a given the joint CDF of (<span class="math inline">\(X, Y\)</span>), say, <span class="math inline">\(F(x,y)\)</span>, if we can decompose the CDF as <span class="math inline">\(F(x,y) = F(x)\times F(y)\)</span>, where <span class="math inline">\(F(x)\)</span> and <span class="math inline">\(F(y)\)</span> are the corresponding CDFs of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, then <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent. Otherwise, they are dependent.</p></li>
+</ul>
+<p><br />
+</p>
+<p><font color="red"><strong>Example 7</strong></font>. Consider an experiment of tossing two imbalanced coins A and B. Assume that both coins have the sample probability (<span class="math inline">\(p\)</span>) of observing <em>heads</em>. Let <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> be the corresponding number of trials needed to observe the corresponding first <em>heads</em>. The joint distribution of discrete random variables <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> is as follows</p>
+<p><span class="math display">\[
+p( y_1, y_2) = (1-p)^{y1 + y2 - 2} p^2    
+\]</span>
+for <span class="math inline">\(y_1, y_2 = 1, 2, \cdots,\)</span>. Are <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> independent?</p>
+<p><strong>Solution</strong>: We first look at the probability distribution of <span class="math inline">\(Y_1\)</span>. It is the number of trials needed to observe the first <em>heads</em>. This means that, before observing the <em>heads</em>, we only observed <em>tails</em>. Therefore the probability distribution function of <span class="math inline">\(Y_1\)</span> is given by</p>
+<p><span class="math display">\[
+P[Y_1 = y_1] = (1-p)^{y_1-1}p
+\]</span>
+where <span class="math inline">\((1-p)^{y_1-1}\)</span> is the probability of observing first <span class="math inline">\(y_1-1\)</span> <em>tails</em> and <span class="math inline">\(p\)</span> is probability of observing the first <em>heads</em>. Similarly,</p>
+<p><span class="math display">\[
+P[Y_2=y_2] = (1-p)^{y_2-1}p
+\]</span>
+With the above two marginal probability distribution functions, we can decompose the joint probability function as</p>
+<p><span class="math display">\[
+p(y_1, y_2) = (1-p)^{y_1+y_2-2}p^2 = (1-p)^{y_1-1}p \times (1-p)^{y_2-1}p = p_{Y_1}(y_1) p_{Y_2}(y_2)
+\]</span>
+Therefore, <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> in this example are independent.</p>
+<p><br />
+</p>
+</div>
+</div>
+<div id="conditioning-and-independence-between-two-variables" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> Conditioning and Independence between Two Variables<a href="conditional-distributions-and-independence.html#conditioning-and-independence-between-two-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The definitions of conditional distribution and independence of two continuous random variables are similar to that of discrete random variables. The difference is that all definitions will be based on the joint density functions.</p>
+<div id="conditional-distributions" class="section level3 hasAnchor" number="9.4.1">
+<h3><span class="header-section-number">9.4.1</span> Conditional Distributions<a href="conditional-distributions-and-independence.html#conditional-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> be continuous random variables with joint density function <span class="math inline">\(f(y_1, y_2)\)</span> and CDF <span class="math inline">\(F(x,y)\)</span>. Furthermore, <span class="math inline">\(f_{Y_1}(y_1) = \int_{D_2}f(y_1, y_2)dy_2\)</span> and <span class="math inline">\(f_{Y_2}(y_2) = \int_{D_1}f(y_1, y_2)dy_1\)</span> are the two marginal distributions. We define the conditional probability density distributions as follows</p>
+<p><span class="math display">\[
+f_{Y_1|Y_2}(y_1|y_2) = \frac{f(y_1, y_2)}{f_{Y_2}(y_2)}, \ \ \ f_{Y_2|Y_1}(y_2|y_1) = \frac{f(y_1, y_2)}{f_{Y_1}(y_1)}
+\]</span></p>
+<p><br />
+</p>
+<p><font color="red"><strong>Example 8</strong></font>. Consider the following bisvariate density function of <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span>.</p>
+<p><span class="math display">\[
+\displaystyle f(y_1, y_2) = \begin{cases}
+2y_1 &amp; \text{if $0 \le y_1 \le 1$, $0 \le y_2 \le 1$}, \\  
+0 &amp; \text{otherwise}.
+\end{cases}
+\]</span></p>
+<p>Find the conditional distributions of <span class="math inline">\(Y_2\)</span> conditioning on <span class="math inline">\(Y_1=y_1\)</span> and <span class="math inline">\(Y_1\)</span> conditioning on $Y_2 =y_2 $.</p>
+<p><strong>Solution</strong>: We first find the marginal distribution of <span class="math inline">\(Y_1\)</span> in the following
+<span class="math display">\[
+f_{Y_1}(y_1) = \int_0^1f(y_1, y_2)dy_2=\int_0^12y_1dy_2 = 2y_1\int_0^1dy_2=2y_1.
+\]</span>
+Therefore, the conditional density function of <span class="math inline">\(Y_2|Y_1=y_1\)</span> is given by</p>
+<p><span class="math display">\[
+f_{Y_2|Y_1}(y_1,y_2) = \frac{2y_1}{2y_1} = 1, \ \ 0 \le y_1 \le 1, 0 \le y_2 \le 1.
+\]</span></p>
+<p>Similarly,</p>
+<p><span class="math display">\[
+f_{Y_2}(y_2) = \int_0^1f(y_1, y_2)dy_1 = \int_0^1 2y_1dy_1 = y_1^2\Big|_0^1 = 1.
+\]</span>
+Therefore,
+<span class="math display">\[
+f_{Y_1|Y_2}(y_1) = \frac{f(y_1,y_2)}{f_{Y_2}(y_2)} = 2y_1, \ \ \ 0 \le y_1 \le 1, 0 \le y_2 \le 1.
+\]</span></p>
+<p><br />
+</p>
+<p><font color="red"><strong>Example 9</strong></font>. Consider the bivariate distribution of <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> with joint density function</p>
+<p><span class="math display">\[
+\displaystyle f(y_1, y_2) = \begin{cases}
+30y_1y_2^2 &amp; \text{if $y_1-1 \le y_2 \le 1- y_1$, $0 \le y_1 \le 1$}, \\  
+0 &amp; \text{otherwise}.
+\end{cases}
+\]</span></p>
+<p>a). Derive the marginal density functions of <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span>.</p>
+<p>b). Derive the conditional density of <span class="math inline">\(Y_2\)</span> given <span class="math inline">\(Y_1 = y_1\)</span>.</p>
+<p>c). Find <span class="math inline">\(P(Y_2 &gt; 0|Y_1 = .75)\)</span>.</p>
+<p><strong>Solution</strong>: We first draw the domain of the joint density function in the following
+<img src="topic07/example09Domain.png" width="45%" style="display: block; margin: auto;" /></p>
+<p><strong>(a)</strong>. First of all, we find the marginal function <span class="math inline">\(Y_{Y_2}(y_2)\)</span> using the shape of the domain that is an isosceles triangle. Note that <span class="math inline">\(Y_1\)</span> starts at <span class="math inline">\(y_1=0\)</span> and ends with two sides of the isosceles triangle. So we need two equations to reflect the two parts of the ending boundary of the domain.</p>
+<p><strong>Case 1</strong>: <span class="math inline">\(0 \le y_2 \le 1\)</span></p>
+<p><span class="math display">\[
+f_{Y_2}(y_2) = \int_0^{1-y_2} 30y_1y_2^2dy_1 = 30y_2^2\int_0^{1-y_2}y_1dy_1 =15y_2^2(1-y_2)^2
+\]</span></p>
+<p><strong>Case 2</strong>: <span class="math inline">\(-1 \le y_2 \le 0\)</span></p>
+<p><span class="math display">\[
+f_{Y_2}(y_2) = \int_0^{1+y_2} 30y_1y_2^2dy_1=30y_2^2\int_0^{1+y_2}y_1dy_1 =15y_2^2(1+y_2)^2
+\]</span><br />
+</p>
+<p>The marginal distribution of <span class="math inline">\(Y_1\)</span> given <span class="math inline">\(Y_2 = y_2\)</span> is given below with lower and upper integral limits set up based on the following shape.</p>
+<p><img src="topic07/example09CondY2.png" width="55%" style="display: block; margin: auto;" /></p>
+<p><span class="math display">\[
+f_{Y_1}(y_1) = \int_{-1+y_1}^{1-y_1}30y_1y_2^2dy_2 =10y_1\left[y_2^3\Big|_{-(1-y_1)}^{1-y_1}\right]10y_1\left[ (1-y_1)^3 -(1-y_1)^3\right]=20y_1(1-y_1)^3
+\]</span></p>
+<p><br />
+</p>
+<p><strong>(b)</strong>. By definition, the conditional distribution of <span class="math inline">\(Y_2\)</span> given <span class="math inline">\(Y_1=y_1\)</span> is given by</p>
+<p><span class="math display">\[
+f_{Y_2|Y_1}(y_2|y_1) = \frac{f(y_1,y_2)}{f_{Y_1}(y_1)} = \frac{30y_1y_2^2}{20y_1(1-y_1)^3} = \frac{3y_2^2}{2(1-y_1)^3},
+\]</span></p>
+<p>where <span class="math inline">\(y_1 -1 &lt; y_2 &lt; 1 - y_1.\)</span></p>
+<p><br />
+</p>
+<p><strong>(c)</strong>. We substitute <span class="math inline">\(y_1 = 0.75\)</span> in the conditional density function and obtain
+<span class="math display">\[
+f_{Y_2|Y_1}(y_2|y_1=0.75) =\frac{3y_2^2}{2(1-0.75)^3}=96y_2^2
+\]</span>
+where <span class="math inline">\(0.75-1 &lt; y_2 &lt; 1-0.75\)</span>, i.e, <span class="math inline">\(-0.25 &lt; y_2 &lt; 0.25\)</span>. The density curve of the above conditional distribution is given below.</p>
+<p><img src="topic07/example09CondProb.png" width="55%" style="display: block; margin: auto;" /></p>
+<p>Therefore, using the definition of the probability of the event defined based on the univariate continuous distribution, we have.</p>
+<p><span class="math display">\[
+P[Y_2 &gt; 0|Y_1 = 0.75] = \int_0^{0.25}96y_2^2dy_2 = 32y_2^3\Big|_0^{1/4} = 32\times(1/4)^3 = 0.5.
+\]</span></p>
+<p><br />
+</p>
+</div>
+<div id="independence-of-random-variables" class="section level3 hasAnchor" number="9.4.2">
+<h3><span class="header-section-number">9.4.2</span> Independence of Random Variables<a href="conditional-distributions-and-independence.html#independence-of-random-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We restate the independence of two continuous random variables <span class="math inline">\(Y\)</span> and <span class="math inline">\(Y\)</span>.</p>
+<p><strong>Definition</strong>: Two discrete random variables X and Y are independent <em>if and only if</em>
+<span class="math display">\[
+f_{XY}(x,y)=f_X(x)f_Y(y),
+\]</span>
+for all <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. Equivalently, X and Y are independent <em>if and only if</em>
+<span class="math display">\[
+F_{XY}(x,y)=F_X(x)F_Y(y),
+\]</span></p>
+<p>for all <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
+<p><br />
+</p>
+<p><strong>Example 10</strong>: Consider the random variables <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> with the following joint density function
+<span class="math display">\[
+\displaystyle f(y_1, y_2) = \begin{cases}
+2 &amp; \text{if  $0 \le y_2 \le y_1 \le 1$}, \\  
+0 &amp; \text{otherwise}.
+\end{cases}
+\]</span></p>
+<p>Are <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> independent?</p>
+<p><strong>Solution</strong>. We use the above definitions to check whether the random variables are independent. The shape of the domain is given by</p>
+<p><img src="topic07/example10Domain.png" width="45%" style="display: block; margin: auto;" /></p>
+<p>The two marginal distributions are given by respectively,
+<span class="math display">\[
+f_{Y_1}(y_1) = \int_{0 \le y_2 \le y_1} 2dy_2 = 2\int_0^{y_1}dy_2=2y_1
+\]</span>
+and
+<span class="math display">\[
+f_{Y_2}(y_2) = \int_{y_2 \le y_1 \le 1} 2dy_1 = 2\int_{y_2}^{1}dy_2=2(1-y_2).
+\]</span></p>
+<p>However,</p>
+<p><span class="math display">\[
+f_{Y_1}(y_1)\times f_{Y_2}(y_2) = 2y_1\times 2(1-y_2)=4y_1(1-y_2) \ne 2 = f(y_1, y_2).
+\]</span></p>
+<p>Therefore, <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> are dependent.</p>
+<p><strong>Example 11</strong>: Consider the random variables <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> with the following joint density function
+<span class="math display">\[
+\displaystyle f(y_1, y_2) = \begin{cases}
+(1/8)y_1e^{-(y_1+y_2)/2} &amp; \text{if  $ y_1 &gt; 0,  y_2 &gt; 0$}, \\  
+0 &amp; \text{otherwise}.
+\end{cases}
+\]</span></p>
+<p>Are Y1 and Y2 independent?</p>
+<p><strong>Solution</strong>: The domain of the joint density function is the first quadrant.</p>
+<p><span class="math display">\[
+f_{Y_1}(y_1) = \int_{y_1&gt;0}  (1/8)y_1e^{-(y_1+y_2)/2} dy_2 = \frac{y_1e^{-y_1/2}}{4}\int_0^\infty \frac{1}{2}e^{-y_2/2}dy_2=\frac{y_1e^{-y_1/2}}{4}
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+f_{Y_2}(y_2) = \int_{y_2&gt;0}  (1/8)y_1e^{-(y_1+y_2)/2} dy_1 = \frac{e^{-y_2/2}}{2}\int_0^\infty \frac{y_1^{2-1}e^{-y_1/2}}{2^2\Gamma(2)}dy_1=\frac{e^{-y_2/2}}{2}
+\]</span></p>
+<p>Observe that,</p>
+<p><span class="math display">\[
+f_{Y_1}(y_1) \times f_{Y_2}(y_2) = \frac{y_1e^{-y_1/2}}{4} \times \frac{e^{-y_2/2}}{2} = \frac{y_1e^{-(y_1+y_2)/2}}{8}=f(y_1, y_2).
+\]</span></p>
+<p>By definition, <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> are independent.</p>
+
+<p><br />
+</p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="joint-distributions-and-marginal-distributions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="expectations-and-covariance.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/pengdsci/STA504EB/edit/master/08-ConditionalDistandIndep.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["STA504EB.pdf", "STA504EB.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

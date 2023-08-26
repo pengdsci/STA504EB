@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Topic 2 Review of Probability Rules | STA504 E-Pack: Mathematical Statistics with Calc. Rev.</title>
+  <meta name="description" content="The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Topic 2 Review of Probability Rules | STA504 E-Pack: Mathematical Statistics with Calc. Rev." />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/STA504EB" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Topic 2 Review of Probability Rules | STA504 E-Pack: Mathematical Statistics with Calc. Rev." />
+  
+  <meta name="twitter:description" content="The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Cheng Peng" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="discrete-random-variables-and-their-distribution.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<center><li><a href="./"><font color = "darkred"><b>STA 504 E-Pack: Mathematical Statistics w/ Calc. Rev.</b></font></a><br><font color = "navy">Cheng Peng</font></li></center>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#use-of-technologies"><i class="fa fa-check"></i><b>1.1</b> Use of Technologies</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#greek-letters"><i class="fa fa-check"></i><b>1.1.1</b> Greek Letters</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#operators"><i class="fa fa-check"></i><b>1.1.2</b> Operators</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#power-and-indicies"><i class="fa fa-check"></i><b>1.1.3</b> Power and Indicies</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#fractions-and-binomials"><i class="fa fa-check"></i><b>1.1.4</b> Fractions and Binomials</a></li>
+<li class="chapter" data-level="1.1.5" data-path="index.html"><a href="index.html#radical-roots"><i class="fa fa-check"></i><b>1.1.5</b> Radical Roots</a></li>
+<li class="chapter" data-level="1.1.6" data-path="index.html"><a href="index.html#sums-integrals-and-related-symbols"><i class="fa fa-check"></i><b>1.1.6</b> Sums, Integrals, and Related Symbols</a></li>
+<li class="chapter" data-level="1.1.7" data-path="index.html"><a href="index.html#more-special-symbols"><i class="fa fa-check"></i><b>1.1.7</b> More Special Symbols</a></li>
+<li class="chapter" data-level="1.1.8" data-path="index.html"><a href="index.html#brackets"><i class="fa fa-check"></i><b>1.1.8</b> Brackets</a></li>
+<li class="chapter" data-level="1.1.9" data-path="index.html"><a href="index.html#matrix"><i class="fa fa-check"></i><b>1.1.9</b> Matrix</a></li>
+<li class="chapter" data-level="1.1.10" data-path="index.html"><a href="index.html#aligned-equations"><i class="fa fa-check"></i><b>1.1.10</b> Aligned Equations</a></li>
+<li class="chapter" data-level="1.1.11" data-path="index.html"><a href="index.html#piece-wise-function"><i class="fa fa-check"></i><b>1.1.11</b> Piece-wise Function</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#including-images-and-graphics"><i class="fa fa-check"></i><b>1.2</b> Including Images and Graphics</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#r-plot-function"><i class="fa fa-check"></i><b>1.3</b> R plot() Function</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#the-plot-function"><i class="fa fa-check"></i><b>1.3.1</b> The <code>plot()</code> function</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#adding-graphic-components-to-base-plot"><i class="fa fa-check"></i><b>1.3.2</b> Adding Graphic Components to Base Plot</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html"><i class="fa fa-check"></i><b>2</b> Review of Probability Rules</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#definitions-of-probability"><i class="fa fa-check"></i><b>2.1</b> Definitions of Probability</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#experiments-sample-space-and-event"><i class="fa fa-check"></i><b>2.1.1</b> Experiments, Sample Space, and Event</a></li>
+<li class="chapter" data-level="2.1.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#calculation-of-probability"><i class="fa fa-check"></i><b>2.1.2</b> Calculation of Probability</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#general-addition-rule"><i class="fa fa-check"></i><b>2.2</b> General Addition Rule</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#additive-rule"><i class="fa fa-check"></i><b>2.2.1</b> Additive Rule</a></li>
+<li class="chapter" data-level="2.2.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#special-cases"><i class="fa fa-check"></i><b>2.2.2</b> Special Cases</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#multiplicative-rule-and-independence"><i class="fa fa-check"></i><b>2.3</b> Multiplicative Rule and Independence</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#conditional-probability"><i class="fa fa-check"></i><b>2.3.1</b> Conditional Probability</a></li>
+<li class="chapter" data-level="2.3.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#general-multiplication-rule"><i class="fa fa-check"></i><b>2.3.2</b> General Multiplication Rule</a></li>
+<li class="chapter" data-level="2.3.3" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#checking-independence-using-multiplicative-rule"><i class="fa fa-check"></i><b>2.3.3</b> Checking Independence Using Multiplicative Rule</a></li>
+<li class="chapter" data-level="2.3.4" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#bayes-theorem"><i class="fa fa-check"></i><b>2.3.4</b> Bayes’ Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#appendix-calculus-review-topics"><i class="fa fa-check"></i><b>2.4</b> Appendix: Calculus Review Topics</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#notation-domain-and-range"><i class="fa fa-check"></i><b>2.4.1</b> Notation, Domain, and Range</a></li>
+<li class="chapter" data-level="2.4.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#operations-of-functions"><i class="fa fa-check"></i><b>2.4.2</b> Operations of Functions</a></li>
+<li class="chapter" data-level="2.4.3" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#composite-functions"><i class="fa fa-check"></i><b>2.4.3</b> Composite Functions</a></li>
+<li class="chapter" data-level="2.4.4" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#inverse-function"><i class="fa fa-check"></i><b>2.4.4</b> Inverse Function</a></li>
+<li class="chapter" data-level="2.4.5" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#practice-exercises"><i class="fa fa-check"></i><b>2.4.5</b> Practice Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html"><i class="fa fa-check"></i><b>3</b> Discrete Random Variables and Their Distribution</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#characterization-of-distribution-of-random-variables"><i class="fa fa-check"></i><b>3.1</b> Characterization of Distribution of Random Variables</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#definition-of-rv"><i class="fa fa-check"></i><b>3.1.1</b> Definition of RV</a></li>
+<li class="chapter" data-level="3.1.2" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#expectation-and-variance"><i class="fa fa-check"></i><b>3.1.2</b> Expectation and Variance</a></li>
+<li class="chapter" data-level="3.1.3" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#some-properties-of-expectation-and-variance"><i class="fa fa-check"></i><b>3.1.3</b> Some Properties of Expectation and Variance</a></li>
+<li class="chapter" data-level="3.1.4" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#characterization-of-a-random-variable"><i class="fa fa-check"></i><b>3.1.4</b> Characterization of A Random Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#special-discrete-distributions"><i class="fa fa-check"></i><b>3.2</b> Special Discrete Distributions</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#binomial-distribution"><i class="fa fa-check"></i><b>3.2.1</b> Binomial Distribution</a></li>
+<li class="chapter" data-level="3.2.2" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#poisson-distribution"><i class="fa fa-check"></i><b>3.2.2</b> Poisson Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#cumulative-distributions"><i class="fa fa-check"></i><b>3.3</b> Cumulative Distributions</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#definition-and-notations"><i class="fa fa-check"></i><b>3.3.1</b> Definition and Notations</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#appendix-derivatives-of-functions"><i class="fa fa-check"></i><b>3.4</b> Appendix: Derivatives of Functions</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#definitions-and-notations"><i class="fa fa-check"></i><b>3.4.1</b> Definitions and Notations</a></li>
+<li class="chapter" data-level="3.4.2" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#rules-of-calculus"><i class="fa fa-check"></i><b>3.4.2</b> Rules of Calculus</a></li>
+<li class="chapter" data-level="3.4.3" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#properties-of-derivative"><i class="fa fa-check"></i><b>3.4.3</b> Properties of Derivative</a></li>
+<li class="chapter" data-level="3.4.4" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#practice-exercises-1"><i class="fa fa-check"></i><b>3.4.4</b> Practice Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html"><i class="fa fa-check"></i><b>4</b> Continuous Random Variables and Their Distributions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#continuous-random-variable-and-characterization"><i class="fa fa-check"></i><b>4.1</b> Continuous Random Variable and Characterization</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#cummulative-distribution"><i class="fa fa-check"></i><b>4.1.1</b> Cummulative Distribution</a></li>
+<li class="chapter" data-level="4.1.2" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#cdf-of-continuous-random-variable"><i class="fa fa-check"></i><b>4.1.2</b> CDF of Continuous Random Variable</a></li>
+<li class="chapter" data-level="4.1.3" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#properties-of-cdf-and-cdf-of-continuous-r.v."><i class="fa fa-check"></i><b>4.1.3</b> Properties of CDF and CDF of Continuous R.V.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#expectation-and-variance-1"><i class="fa fa-check"></i><b>4.2</b> Expectation and Variance</a></li>
+<li class="chapter" data-level="4.3" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#uniform-probability-distribution"><i class="fa fa-check"></i><b>4.3</b> Uniform Probability Distribution</a></li>
+<li class="chapter" data-level="4.4" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#calculus-review-integrals-of-functions"><i class="fa fa-check"></i><b>4.4</b> Calculus Review: Integrals of Functions</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#antiderivatives"><i class="fa fa-check"></i><b>4.4.1</b> Antiderivatives</a></li>
+<li class="chapter" data-level="4.4.2" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#rules-and-properties-of-integral"><i class="fa fa-check"></i><b>4.4.2</b> Rules and Properties of Integral</a></li>
+<li class="chapter" data-level="4.4.3" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#practice-exercises-2"><i class="fa fa-check"></i><b>4.4.3</b> Practice Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html"><i class="fa fa-check"></i><b>5</b> Special Continuous Distributions: Normal and Gamma Families</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#review-of-probability-distributions"><i class="fa fa-check"></i><b>5.1</b> Review of Probability Distributions</a></li>
+<li class="chapter" data-level="5.2" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#normal-distribution"><i class="fa fa-check"></i><b>5.2</b> Normal Distribution</a></li>
+<li class="chapter" data-level="5.3" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#gamma-distribution"><i class="fa fa-check"></i><b>5.3</b> Gamma Distribution</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#the-gamma-function"><i class="fa fa-check"></i><b>5.3.1</b> The Gamma Function</a></li>
+<li class="chapter" data-level="5.3.2" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#definition-of-gamma-density"><i class="fa fa-check"></i><b>5.3.2</b> Definition of Gamma Density</a></li>
+<li class="chapter" data-level="5.3.3" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#expectation-and-variance-2"><i class="fa fa-check"></i><b>5.3.3</b> Expectation and Variance</a></li>
+<li class="chapter" data-level="5.3.4" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#special-cases-1"><i class="fa fa-check"></i><b>5.3.4</b> Special Cases</a></li>
+<li class="chapter" data-level="5.3.5" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#use-of-technology"><i class="fa fa-check"></i><b>5.3.5</b> Use of Technology</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#calculus-review-integrals-of-functions-1"><i class="fa fa-check"></i><b>5.4</b> Calculus Review: Integrals of Functions</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#antiderivatives-1"><i class="fa fa-check"></i><b>5.4.1</b> Antiderivatives</a></li>
+<li class="chapter" data-level="5.4.2" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#rules-and-properties-of-integral-1"><i class="fa fa-check"></i><b>5.4.2</b> Rules and Properties of Integral</a></li>
+<li class="chapter" data-level="5.4.3" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#practice-exercises-3"><i class="fa fa-check"></i><b>5.4.3</b> Practice Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="mixture-distributions.html"><a href="mixture-distributions.html"><i class="fa fa-check"></i><b>6</b> Mixture Distributions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="mixture-distributions.html"><a href="mixture-distributions.html#definition-of-mixture-model"><i class="fa fa-check"></i><b>6.1</b> Definition of Mixture Model</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="mixture-distributions.html"><a href="mixture-distributions.html#definition-of-k-component-mixture-distributions"><i class="fa fa-check"></i><b>6.1.1</b> Definition of K-component Mixture Distributions</a></li>
+<li class="chapter" data-level="6.1.2" data-path="mixture-distributions.html"><a href="mixture-distributions.html#properties-of-finite-mixture-distributions"><i class="fa fa-check"></i><b>6.1.2</b> Properties of Finite Mixture Distributions</a></li>
+<li class="chapter" data-level="6.1.3" data-path="mixture-distributions.html"><a href="mixture-distributions.html#variance-decomposition"><i class="fa fa-check"></i><b>6.1.3</b> Variance Decomposition</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="mixture-distributions.html"><a href="mixture-distributions.html#two-component-normal-mixture-distribution"><i class="fa fa-check"></i><b>6.2</b> Two-component Normal Mixture Distribution</a></li>
+<li class="chapter" data-level="6.3" data-path="mixture-distributions.html"><a href="mixture-distributions.html#use-mixture-distributions"><i class="fa fa-check"></i><b>6.3</b> Use Mixture Distributions</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="mixture-distributions.html"><a href="mixture-distributions.html#fitting-complex-data-using-mixture-distributions"><i class="fa fa-check"></i><b>6.3.1</b> Fitting Complex Data Using Mixture Distributions</a></li>
+<li class="chapter" data-level="6.3.2" data-path="mixture-distributions.html"><a href="mixture-distributions.html#clustering-with-mixture-distributions"><i class="fa fa-check"></i><b>6.3.2</b> Clustering with Mixture Distributions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html"><i class="fa fa-check"></i><b>7</b> Moment Generating Functions (MGF)</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#moments-of-rv-and-mgf"><i class="fa fa-check"></i><b>7.1</b> Moments of RV and MGF</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#various-moments-revisited"><i class="fa fa-check"></i><b>7.1.1</b> Various Moments Revisited</a></li>
+<li class="chapter" data-level="7.1.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#mgf"><i class="fa fa-check"></i><b>7.1.2</b> MGF</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#properties-of-mgf"><i class="fa fa-check"></i><b>7.2</b> Properties of MGF</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#review-of-taylor-series"><i class="fa fa-check"></i><b>7.2.1</b> Review of Taylor Series</a></li>
+<li class="chapter" data-level="7.2.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#how-mgf-generates-moments"><i class="fa fa-check"></i><b>7.2.2</b> How MGF Generates Moments?</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#mgf-of-some-special-distributions"><i class="fa fa-check"></i><b>7.3</b> MGF of Some Special Distributions</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#exponential-distribution"><i class="fa fa-check"></i><b>7.3.1</b> Exponential Distribution</a></li>
+<li class="chapter" data-level="7.3.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#normal-distribution-1"><i class="fa fa-check"></i><b>7.3.2</b> Normal Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#use-of-mgf---shape-analysis"><i class="fa fa-check"></i><b>7.4</b> Use of MGF - Shape Analysis</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#skewness"><i class="fa fa-check"></i><b>7.4.1</b> Skewness</a></li>
+<li class="chapter" data-level="7.4.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#kurtosis"><i class="fa fa-check"></i><b>7.4.2</b> Kurtosis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html"><i class="fa fa-check"></i><b>8</b> Joint Distributions and Marginal Distributions</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#joint-distribution-of-categorical-variables"><i class="fa fa-check"></i><b>8.1</b> Joint Distribution of Categorical Variables</a></li>
+<li class="chapter" data-level="8.2" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#discrete-bivariate-distributions"><i class="fa fa-check"></i><b>8.2</b> Discrete Bivariate Distributions</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#joint-distribution-and-properties"><i class="fa fa-check"></i><b>8.2.1</b> Joint Distribution and Properties</a></li>
+<li class="chapter" data-level="8.2.2" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#marginal-distributions"><i class="fa fa-check"></i><b>8.2.2</b> Marginal Distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#continuous-bivariate-distributions"><i class="fa fa-check"></i><b>8.3</b> Continuous Bivariate Distributions</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#continuous-bivariate-distribution"><i class="fa fa-check"></i><b>8.3.1</b> Continuous Bivariate Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#a-review-of-double-integral"><i class="fa fa-check"></i><b>8.4</b> A Review of Double Integral</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#type-i-region"><i class="fa fa-check"></i><b>8.4.1</b> Type I Region</a></li>
+<li class="chapter" data-level="8.4.2" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#type-ii-region"><i class="fa fa-check"></i><b>8.4.2</b> Type II Region</a></li>
+<li class="chapter" data-level="8.4.3" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#summarizing-steps-for-setting-up-iterative-integrals"><i class="fa fa-check"></i><b>8.4.3</b> Summarizing Steps for Setting up Iterative Integrals</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#marginal-distributions-1"><i class="fa fa-check"></i><b>8.5</b> Marginal Distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html"><i class="fa fa-check"></i><b>9</b> Conditional Distributions and Independence</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#conditional-distribution-of-categorical-variables"><i class="fa fa-check"></i><b>9.1</b> Conditional Distribution of Categorical Variables</a></li>
+<li class="chapter" data-level="9.2" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#independence-between-two-discrete-random-variables"><i class="fa fa-check"></i><b>9.2</b> Independence Between Two Discrete Random Variables</a></li>
+<li class="chapter" data-level="9.3" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#discrete-bivariate-distributions-1"><i class="fa fa-check"></i><b>9.3</b> Discrete Bivariate Distributions</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#definition-of-conditional-distributions"><i class="fa fa-check"></i><b>9.3.1</b> Definition of Conditional Distributions</a></li>
+<li class="chapter" data-level="9.3.2" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#definition-of-independence"><i class="fa fa-check"></i><b>9.3.2</b> Definition of Independence</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#conditioning-and-independence-between-two-variables"><i class="fa fa-check"></i><b>9.4</b> Conditioning and Independence between Two Variables</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#conditional-distributions"><i class="fa fa-check"></i><b>9.4.1</b> Conditional Distributions</a></li>
+<li class="chapter" data-level="9.4.2" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#independence-of-random-variables"><i class="fa fa-check"></i><b>9.4.2</b> Independence of Random Variables</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html"><i class="fa fa-check"></i><b>10</b> Expectations and Covariance</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#expectations"><i class="fa fa-check"></i><b>10.1</b> Expectations</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#discrete-distributions"><i class="fa fa-check"></i><b>10.1.1</b> Discrete Distributions</a></li>
+<li class="chapter" data-level="10.1.2" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#expectations-of-bivariate-continuous-distribution"><i class="fa fa-check"></i><b>10.1.2</b> Expectations of Bivariate Continuous Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#some-properties-of-expectations"><i class="fa fa-check"></i><b>10.2</b> Some Properties of Expectations</a></li>
+<li class="chapter" data-level="10.3" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#covariance---measuring-linear-correlation"><i class="fa fa-check"></i><b>10.3</b> Covariance - Measuring Linear Correlation</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#covariance"><i class="fa fa-check"></i><b>10.3.1</b> Covariance</a></li>
+<li class="chapter" data-level="10.3.2" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#pearson-correlation-coefficient"><i class="fa fa-check"></i><b>10.3.2</b> Pearson Correlation Coefficient</a></li>
+<li class="chapter" data-level="10.3.3" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#comcluding-remarks"><i class="fa fa-check"></i><b>10.3.3</b> Comcluding Remarks</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html"><i class="fa fa-check"></i><b>11</b> Linear Function of Random Variables and Conditional Expectations</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#linear-combination-of-two-random-variables"><i class="fa fa-check"></i><b>11.1</b> Linear Combination of Two Random Variables</a></li>
+<li class="chapter" data-level="11.2" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#general-linear-functions-of-rvs"><i class="fa fa-check"></i><b>11.2</b> General Linear Functions of RVs</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#general-linear-functions"><i class="fa fa-check"></i><b>11.2.1</b> General Linear Functions</a></li>
+<li class="chapter" data-level="11.2.2" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#linear-functions-of-iid-rvs"><i class="fa fa-check"></i><b>11.2.2</b> Linear Functions of IID RVs</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#conditional-expectation"><i class="fa fa-check"></i><b>11.3</b> Conditional Expectation</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html"><i class="fa fa-check"></i><b>12</b> Functions of Random Variables: CDF Method</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#the-rationale"><i class="fa fa-check"></i><b>12.1</b> The Rationale</a></li>
+<li class="chapter" data-level="12.2" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#review-of-inverse-function-and-inequality"><i class="fa fa-check"></i><b>12.2</b> Review of Inverse Function and Inequality</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#inverse-function-1"><i class="fa fa-check"></i><b>12.2.1</b> Inverse Function</a></li>
+<li class="chapter" data-level="12.2.2" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#definitions-of-monotonic-functions"><i class="fa fa-check"></i><b>12.2.2</b> Definitions of Monotonic Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#method-of-distribution"><i class="fa fa-check"></i><b>12.3</b> Method of Distribution</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#cdf-method"><i class="fa fa-check"></i><b>12.3.1</b> CDF Method</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html"><i class="fa fa-check"></i><b>13</b> Functions of Random Variables: Transformation Method</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#univariate-transformation-method"><i class="fa fa-check"></i><b>13.1</b> Univariate Transformation Method</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#monotonically-increasing-function"><i class="fa fa-check"></i><b>13.1.1</b> Monotonically Increasing Function</a></li>
+<li class="chapter" data-level="13.1.2" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#monotonically-decreasing-function"><i class="fa fa-check"></i><b>13.1.2</b> Monotonically Decreasing Function</a></li>
+<li class="chapter" data-level="13.1.3" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#univariate-transformation"><i class="fa fa-check"></i><b>13.1.3</b> Univariate Transformation</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#review-of-concepts-matrices"><i class="fa fa-check"></i><b>13.2</b> Review of Concepts Matrices</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#matrix-operations"><i class="fa fa-check"></i><b>13.2.1</b> Matrix Operations</a></li>
+<li class="chapter" data-level="13.2.2" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#section"><i class="fa fa-check"></i><b>13.2.2</b> </a></li>
+<li class="chapter" data-level="13.2.3" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#jacobian-matrix-and-determinant"><i class="fa fa-check"></i><b>13.2.3</b> Jacobian Matrix and Determinant</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#bivariate-transformation"><i class="fa fa-check"></i><b>13.3</b> Bivariate Transformation</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#joint-distribution-of-two-functions-of-rvs"><i class="fa fa-check"></i><b>13.3.1</b> Joint Distribution of Two Functions of RVs</a></li>
+<li class="chapter" data-level="13.3.2" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#applications-of-bivariate-transformations"><i class="fa fa-check"></i><b>13.3.2</b> Applications of Bivariate Transformations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="basic-order-statistics.html"><a href="basic-order-statistics.html"><i class="fa fa-check"></i><b>14</b> Basic Order Statistics</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="basic-order-statistics.html"><a href="basic-order-statistics.html#distribution-of-minimum-statistic-x_1"><i class="fa fa-check"></i><b>14.1</b> Distribution of Minimum Statistic <strong><span class="math inline">\(X_{(1)}\)</span></strong></a></li>
+<li class="chapter" data-level="14.2" data-path="basic-order-statistics.html"><a href="basic-order-statistics.html#distribution-of-minimum-statistic-x_m"><i class="fa fa-check"></i><b>14.2</b> Distribution of Minimum Statistic <strong><span class="math inline">\(X_{(m)}\)</span></strong></a></li>
+<li class="chapter" data-level="14.3" data-path="basic-order-statistics.html"><a href="basic-order-statistics.html#combined-reliability-system"><i class="fa fa-check"></i><b>14.3</b> Combined Reliability System</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">STA504 E-Pack: Mathematical Statistics with Calc. Rev.</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="review-of-probability-rules" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Topic 2</span> Review of Probability Rules<a href="review-of-probability-rules.html#review-of-probability-rules" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This note reviews the basic concepts of probability and important probability rules.</p>
+<div id="definitions-of-probability" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Definitions of Probability<a href="review-of-probability-rules.html#definitions-of-probability" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In general, probability is a measure of the likelihood of some outcome. We use it not to describe what will happen in one particular event, but rather, what the long-term proportion of that outcome will occur.</p>
+<div id="experiments-sample-space-and-event" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Experiments, Sample Space, and Event<a href="review-of-probability-rules.html#experiments-sample-space-and-event" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In probability, <strong>an experiment</strong> is any process where the results are uncertain. We call the <strong>sample space</strong>, S, the collection of all possible outcomes. A <strong>probability event</strong> is any collection of outcomes from the experiment.</p>
+<p><strong>Example 1</strong>: Suppose we have a family with three children, and we consider the sex of those three children.</p>
+<p><strong>Solution</strong>: If we let B represent a boy and G represent a girl, here is the sample space:</p>
+<p><span class="math display">\[S = \{ BBB, BBG, BGB, GBB, BGG, GBG, GGB, GGG\}\]</span></p>
+<p>There are thus 8 outcomes in this experiment. One possible event might be:</p>
+<p>E = the family has exactly two girls = <span class="math inline">\(\{ BGG, GBG, GGB \}\)</span></p>
+<p><strong>Unusual Events</strong>: Typically, we say that an event with a probability less than 5% is <strong>unusual</strong>, but this isn’t a hard cutoff. It depends on the context</p>
+<p>Suppose we’re planning on making a decision one way unless the probability of a particularly “unusual” event is too high. For example, suppose we’re planning a picnic on a nice summer day. If the risk of a rain shower isn’t too high, we’ll plan on the picnic. In this case, we might set our cutoff at 20% - anything less than that is too unusual (or unlikely) to happen, so we’ll risk it.</p>
+</div>
+<div id="calculation-of-probability" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Calculation of Probability<a href="review-of-probability-rules.html#calculation-of-probability" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are two primary methods for calculating probabilities</p>
+<p><strong>Frequency Approach</strong>: The first is to simply look at what has happened in the past and assume the probability is the same as the <strong>relative frequency</strong> of that particular outcome. This is called the empirical probability of that event.</p>
+<p><br />
+</p>
+<p>P(E) <span class="math inline">\(\approx\)</span> relative frequency of E = (frequency of E)/ (total number of trials)</p>
+<p><br />
+</p>
+<p><strong>Example 2</strong>: In a statistics class, 38 out of 50 students earned a grade of B or better (denoting this event as an event E). By the above definition, we have <span class="math inline">\(P(E) \approx 33/60 = 0.55\)</span>.</p>
+<p><strong>Classic Approach</strong>: The second primary method for calculating probabilities is the <strong>classical method</strong>. The key to this method is to assume that all outcomes are equally likely.</p>
+<p><br />
+</p>
+<p>P(E) = (number of ways E can occur)/(total number of possible outcomes) = N(E)/ N(S)</p>
+<p><br />
+</p>
+<p><strong>Example 3</strong>: Let’s consider again the probability experiment of rolling two fair six-sided dice. Let the event E = the sum of the two dice is 6. Find P(E)</p>
+<p><strong>Solution</strong> We first list the elements in the sample space.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="review-of-probability-rules.html#cb20-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;topic01/sixSidedDice.png&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-21"></span>
+<img src="topic01/sixSidedDice.png" alt="Sample space of the experiment of rolling two dice." width="50%" />
+<p class="caption">
+Figure 2.1: Sample space of the experiment of rolling two dice.
+</p>
+</div>
+<p>Since there are five ways to get a sum of 6, <span class="math inline">\(P(E) = 5/36 \approx 0.14\)</span>.</p>
+</div>
+</div>
+<div id="general-addition-rule" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> General Addition Rule<a href="review-of-probability-rules.html#general-addition-rule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>John Venn developed a great way to visualize sets. This visual is usually called the Venn diagram. Because events are sets of outcomes of an experiment, it works well to visualize probability as well.</p>
+<p>Here’s an example of a Venn diagram showing two disjoint outcomes, E and F.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="review-of-probability-rules.html#cb21-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;topic01/venn.png&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-22"></span>
+<img src="topic01/venn.png" alt="The Venn diagram of two events in a sample space." width="30%" />
+<p class="caption">
+Figure 2.2: The Venn diagram of two events in a sample space.
+</p>
+</div>
+<div id="additive-rule" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Additive Rule<a href="review-of-probability-rules.html#additive-rule" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let E and F be defined in a sample space S of an experiment. The General Addition Rule is given by</p>
+<p><span class="math display">\[P(E \mbox{ or } F) = P(E) + P(F) - P(E \mbox{ and } F)\]</span></p>
+<p>The above general additive is depicted in the following Venn diagram</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="review-of-probability-rules.html#cb22-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;topic01/additiveRule.png&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-23"></span>
+<img src="topic01/additiveRule.png" alt="Figure 3. Venn diagram representation of additive rule." width="30%" />
+<p class="caption">
+Figure 2.3: Figure 3. Venn diagram representation of additive rule.
+</p>
+</div>
+<p><strong>Example 4</strong>: Consider a standard playing card. Suppose we draw one card at random from the deck and define the following events:</p>
+<p>E = the card drawn is an ace</p>
+<p>F = the card drawn is a king</p>
+<p>Use these definitions to find P(E or F).</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="review-of-probability-rules.html#cb23-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;topic01/classic-playing-cards-additive-rule.png&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-24"></span>
+<img src="topic01/classic-playing-cards-additive-rule.png" alt="Additive rule - playing card example." width="60%" />
+<p class="caption">
+Figure 2.4: Additive rule - playing card example.
+</p>
+</div>
+<p><strong>Solution</strong>: Since E and F have no outcomes in common, we can use the Addition Rule for Disjoint Events:</p>
+<p><span class="math display">\[P(E \mbox{ or } F) = P(E) + P(F) = 4/52 + 4/52 = 8/52 = 2/13.\]</span></p>
+</div>
+<div id="special-cases" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Special Cases<a href="review-of-probability-rules.html#special-cases" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Case #1</strong>: If the two events are disjoint (mutually exclusive), the general additive rule is reduced to</p>
+<p><span class="math display">\[P(E \mbox{ or } F) = P(E) + P(F)\]</span></p>
+<p><strong>Example 5</strong>: Suppose we have a family with three children, and we consider the sex of those three children. If we let B represent a boy and G represent a girl, here is the sample space:</p>
+<p><span class="math display">\[S = \{ BBB, BBG, BGB, GBB, BGG, GBG, GGB, GGG\}\]</span></p>
+<p>let’s define the following events:</p>
+<p>E = the family has exactly two boys</p>
+<p>F = the family has exactly one boy</p>
+<p>Describe the event <strong>E or F</strong> and find its probability.</p>
+<p><strong>Solution</strong>: <strong>E or F</strong> is the event that the family has either one or two boys.</p>
+<p>Clearly, both of these events can’t occur at the same time, so they are disjoint. The probability of the family having either one or two boys is then:</p>
+<p><span class="math display">\[P(E \mbox{ or } F) = P(E) + P(F) = 3/8 + 3/8 = 6/8 = 3/4.\]</span></p>
+<p><strong>Case #2</strong> - The Complement Rule.</p>
+<p>The complement of E, denoted by <span class="math inline">\(E^c\)</span>, is all outcomes in the sample space that are not in E.</p>
+<p>So essentially, the complement of E is everything but the outcomes in E. In fact, some texts actually write it as “not E”. The following Venn diagram illustrates the event and its complement.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="review-of-probability-rules.html#cb24-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;topic01/complement.jpg&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-25"></span>
+<img src="topic01/complement.jpg" alt="Complementary events." width="30%" />
+<p class="caption">
+Figure 2.5: Complementary events.
+</p>
+</div>
+<p>Since P(S) = 1. Clearly, E and <span class="math inline">\(E^c\)</span> are disjoint, so <span class="math inline">\(P(E or E^c) = P(E) + P(E^c)\)</span> . Combining those two facts, we get the following complementary Rule</p>
+<p><span class="math display">\[P(E) + P(E^c) = 1\]</span></p>
+</div>
+</div>
+<div id="multiplicative-rule-and-independence" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Multiplicative Rule and Independence<a href="review-of-probability-rules.html#multiplicative-rule-and-independence" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Two events E and F are <strong>independent</strong> if the occurrence of event E does not affect the probability of event F.</p>
+<p><strong>Disjoint vs. Independent</strong>: It is very common for students to confuse the concepts of disjoint (mutually exclusive) events with independent events. Recall from the last section:</p>
+<blockquote>
+<p>Two events are disjoint if they have no outcomes in common. (Also commonly known as mutually exclusive events.)</p>
+</blockquote>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="review-of-probability-rules.html#cb25-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;topic01/disjoint-indpemdent.jpg&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-26"></span>
+<img src="topic01/disjoint-indpemdent.jpg" alt="Disjoint and independent events." width="30%" />
+<p class="caption">
+Figure 2.6: Disjoint and independent events.
+</p>
+</div>
+<p>From the above figure, we can see very clearly that if event E occurs (that is, the outcome - gray circle- is in event E), it cannot possibly be in event F. So E and F are mutually exclusive.</p>
+<div id="conditional-probability" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Conditional Probability<a href="review-of-probability-rules.html#conditional-probability" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The notation P(F|E) is read <strong>the probability of F given E</strong> and represents the probability that event F occurs, given that event E has already occurred. Mathematically, the probability of F giving E is given by</p>
+<p><span class="math display">\[P(F|E) = P(E \mbox{ and } F) / P(E)\]</span></p>
+<p><strong>Example 6</strong>: The following Venn diagram illustrates conditional probability.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="review-of-probability-rules.html#cb26-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;topic01/conditional.jpg&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-27"></span>
+<img src="topic01/conditional.jpg" alt="Conditional probability." width="30%" />
+<p class="caption">
+Figure 2.7: Conditional probability.
+</p>
+</div>
+<p>Based on the above Venn diagram, find P(E|F).</p>
+<p><strong>Solution</strong>: P(E|F) is the probability that event E occurs given that event F has already occurred. Let’s change the image a bit. Since F has occurred, we can focus on just those <strong>outcomes</strong> in F. And then of those, we want the probability that the <strong>outcome</strong> is in E. Since there are 2 of those in E, and 5 total,</p>
+<p><span class="math display">\[P(E|F) = P(E \mbox{ and } F) / P(F) = 2/5.\]</span></p>
+</div>
+<div id="general-multiplication-rule" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> General Multiplication Rule<a href="review-of-probability-rules.html#general-multiplication-rule" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The probability that two events E and F both occur can be obtained from the definition of conditional probability in the following form</p>
+<p><span class="math display">\[P(E \mbox{ and } F) = P(E) \times P(F|E)\]</span></p>
+<p>The general multiplicative rule essentially expresses the joint probability as the product of a conditional probability and the probability of the conditioning event.</p>
+<p><strong>Example 7</strong>. Let’s try a new probability experiment. This time, consider a bag of marbles, containing 10 red, 20 blue, and 15 green marbles. Suppose that two marbles are drawn without replacement. (The first marble is not put back in the bag before drawing the second.)</p>
+<p>What is the probability that both marbles drawn are red?</p>
+<p><strong>Solution</strong>: Let’s define a couple of events:</p>
+<p>E = first marble is red</p>
+<p>F = second marble is red</p>
+<p>We want P(E and F). Using the General Multiplication Rule, we see</p>
+<p><span class="math display">\[P(E \mbox{ and } F) = P(E)  \times P(F|E) = (10/45) \times (9/44) \approx 0.0455.\]</span></p>
+</div>
+<div id="checking-independence-using-multiplicative-rule" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Checking Independence Using Multiplicative Rule<a href="review-of-probability-rules.html#checking-independence-using-multiplicative-rule" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Two events E and F are independent if event E’s occurrence does not affect event F’s probability.</p>
+<p>Looking at this in terms of conditional probability, if the occurrence of E doesn’t affect the probability of F, then P(F|E) = P(F). This is a good way to test for independence. In fact, we can redefine independence using this concept.</p>
+<p>Two events E and F are independent if P(F|E) = P(F).</p>
+<p><strong>Example 8</strong>: Consider a survey given to 52 students in an introductory statistics class, with the following responses to the statement <strong>I enjoy statistics.</strong></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="review-of-probability-rules.html#cb27-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;topic01/checkingIndep.png&quot;</span>)</span></code></pre></div>
+<p><img src="topic01/checkingIndep.png" width="45%" style="display: block; margin: auto;" /></p>
+<p>Suppose a student is selected at random from those surveyed and we define the events E and F as follows:</p>
+<p>E = student selected is female</p>
+<p>F = student enjoys math</p>
+<p>Are events E and F independent?</p>
+<p><strong>Solution</strong>: To answer this, we’ll need to see if P(F|E) = P(F).</p>
+<p><span class="math inline">\(P(F) = 38/52 \approx 0.7308\)</span></p>
+<p><span class="math inline">\(P(F|E) = 22/33 \approx 0.6667\)</span></p>
+<p>Since <span class="math inline">\(P(F) \ne P(F|E)\)</span>, events E and F are dependent.</p>
+</div>
+<div id="bayes-theorem" class="section level3 hasAnchor" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> Bayes’ Theorem<a href="review-of-probability-rules.html#bayes-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Bayes’ Theorem (also called Bayes Rule) is a way of finding a (posterior) probability when we know certain other (prior) probabilities.</p>
+<p>The formula is:</p>
+<p><span class="math display">\[P(A|B) =  P(A) \times P(B|A) = P(B)\]</span></p>
+<p><strong>Which tells us</strong>: how often A happens given that B happens, written P(A|B),</p>
+<p><strong>When we know</strong>:<br />
+* how often B happens given that A happens, written P(B|A)
+* how likely A is on its own, written P(A)
+* how likely B is on its own, written P(B)</p>
+<p>Let us say P(Fire) means how often there is fire, and P(Smoke) means how often we see smoke, then:</p>
+<p>P(Fire|Smoke) means how often there is fire when we can see smoke;</p>
+<p>P(Smoke|Fire) means how often we can see smoke when there is fire</p>
+<p>So the formula basically tells us <strong>forward</strong> P(Fire|Smoke) when we know <strong>backward</strong> P(Smoke|Fire)</p>
+<p><br />
+</p>
+<p><strong>Example 9</strong>: Picnic Day - Suppose we are planning a picnic today, but the morning is cloudy.</p>
+<p>Given the following prior information:</p>
+<ul>
+<li>50% of all rainy days start off cloudy!</li>
+<li>But cloudy mornings are common (about 40% of days start cloudy)</li>
+<li>And this is usually a dry month (only 3 of 30 days tend to be rainy, or 10%)</li>
+</ul>
+<p>What is the chance of rain during the day?</p>
+<p><strong>Solution</strong>: We will use Rain to mean rain during the day, and Cloud to mean cloudy morning.</p>
+<p>The chance of Rain given Cloud is written P(Rain|Cloud)</p>
+<p>So let’s put that in the formula:</p>
+<p>P(Rain|Cloud) = P(Rain) P(Cloud|Rain) / P(Cloud)</p>
+<p>P(Rain) is Probability of Rain = 10%</p>
+<p>P(Cloud|Rain) is the Probability of Cloud, given that Rain happens = 50%</p>
+<p>P(Cloud) is Probability of Cloud = 40%</p>
+<p><span class="math inline">\(P(Rain|Cloud) = 0.1 \times 0.5 /0.4 = .125\)</span></p>
+<p>Or a 12.5% chance of rain. Not too bad, let’s have a picnic!</p>
+<p>One of the famous uses for the Bayes Theorem is <strong>False Positives and False Negatives</strong>.</p>
+<p>We use PCR test result of COVID-19 as an example to explain</p>
+<p><strong>False Positives</strong> = A person’s PCR is positive but was not infected with COVID-19.</p>
+<p><strong>False Negatives</strong> = A person’s PCR is negative but was infected with COVID-19.</p>
+<p><br />
+</p>
+<p><strong>Example 9</strong>: Allergy or Not? - Hunter says she is itchy. There is a test for Allergy to Cats, but this test is not always right:</p>
+<ul>
+<li><p>For people that really do have the allergy, the test says <strong>Yes</strong> 80% of the time</p></li>
+<li><p>For people that do not have the allergy, the test says <strong>Yes</strong> 10% of the time (<strong>false positive</strong>)</p></li>
+<li><p>If 1% of the population has the allergy, and Hunter’s test says <strong>Yes</strong>, what are the chances that Hunter really has the allergy?</p></li>
+</ul>
+<p>We want to know the chance of having the allergy when the test says <strong>Yes</strong>, written P(Allergy|Yes)</p>
+<p><strong>Solution</strong>: Let’s get our formula:</p>
+<p>P(Allergy|Yes) = P(Allergy) P(Yes|Allergy) / P(Yes)</p>
+<p>P(Allergy) is Probability of Allergy = 1%</p>
+<p>P(Yes|Allergy) is the probability of the test saying <strong>Yes</strong> for people with allergy = 80%</p>
+<p>We need to find P(Yes) is the probability of the test saying <strong>Yes</strong> (to anyone) = ??%</p>
+<p>We can calculate it by adding up those with, and those without the allergy:</p>
+<ul>
+<li><p>1% have the allergy, and the test says <strong>Yes</strong> to 80% of them</p></li>
+<li><p>99% do not have the allergy and the test says <strong>Yes</strong> to 10% of them</p></li>
+</ul>
+<p>Then <span class="math inline">\(P(Yes) = 1\% \times 80\% + 99\% \times 10\% = 10.7\%\)</span>, which means that about 10.7% of the population will get a <strong>Yes</strong> result. Therefore,</p>
+<p><span class="math display">\[P(Allergy|Yes) =  1\% \times 80\% / 10.7\% = 7.48\%\]</span></p>
+<p>That is, <span class="math inline">\(P(Allergy|Yes) \approx 7\%\)</span>.</p>
+<p><br />
+</p>
+<p><br />
+</p>
+<center>
+<strong>Acknowledgment</strong>
+</center>
+<p>’The content of this note is based on <a href="https://faculty.elgin.edu/dkernler/statistics/ch05/" class="uri">https://faculty.elgin.edu/dkernler/statistics/ch05/</a></p>
+<p><br />
+</p>
+<p><br />
+</p>
+</div>
+</div>
+<div id="appendix-calculus-review-topics" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Appendix: Calculus Review Topics<a href="review-of-probability-rules.html#appendix-calculus-review-topics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This appendix reviews the basics of single variable functions.</p>
+<div id="notation-domain-and-range" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Notation, Domain, and Range<a href="review-of-probability-rules.html#notation-domain-and-range" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong>Notation</strong>: Functions can also be written in the form of <span class="math inline">\(f(x)\)</span>, pronounced <strong>f of x</strong>. When someone says <strong>y is a function of x</strong>, it means that the value of y is determined by the value of x. Here, y is the dependent variable and x is the independent variable. <span class="math inline">\(f(x)\)</span> is just the shortened form of <strong>function of x</strong>.</li>
+</ul>
+<p><strong>Example 10</strong>: A function can be denoted in different forms. The following are the two forms of the same function.</p>
+<p><span class="math display">\[
+y = x^2 + 2 \mbox{   and   } f(x) = x^2 + 2\]</span></p>
+<ul>
+<li><p><strong>Domain</strong>: The domain of a function is all the possible values of the independent variable, <span class="math inline">\(x\)</span>, for which <span class="math inline">\(y\)</span> is defined.</p></li>
+<li><p><strong>Range</strong>: The range of a function is all the possible values of the dependent variable <span class="math inline">\(y\)</span>.</p></li>
+</ul>
+<p><strong>Example 11</strong>: The given function <span class="math inline">\(f(x) = x^2\)</span> has a domain of all real numbers (<span class="math inline">\(x\)</span> can be anything) and a range that is greater than or equal to zero.</p>
+</div>
+<div id="operations-of-functions" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Operations of Functions<a href="review-of-probability-rules.html#operations-of-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We can define new functions based on the existing functions using basic arithmetic operations.</p>
+<p><strong>Example 12</strong> Let <span class="math inline">\(f(x) = x^2 + 1\)</span> and <span class="math inline">\(g(x) = \sqrt{x+1}\)</span>. We can define the following new functions.</p>
+<ul>
+<li><p><span class="math inline">\(h_1(x) = f(x) + g(x) = x^2 + \sqrt{x+1} + 1\)</span>.</p></li>
+<li><p><span class="math inline">\(h_2(x) = f(x) - g(x) = x^2 + 1 -\sqrt{x+1}\)</span>.</p></li>
+<li><p><span class="math inline">\(h_3(x) = f(x)\times g(x) = (x^2 + 1)\times \sqrt{x+1}\)</span>.</p></li>
+<li><p><span class="math inline">\(h_4(x) = f(x) / g(x) = (x^2 + 1)/\sqrt{x+1}\)</span>.</p></li>
+</ul>
+</div>
+<div id="composite-functions" class="section level3 hasAnchor" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> Composite Functions<a href="review-of-probability-rules.html#composite-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>composite function</strong> is a function created when one function is used as the input value for another function. Essentially, the output of the inner function (the function used as the input value) becomes the input of the outer function (the resulting value).</p>
+<ul>
+<li><strong>Notation</strong>: For the functions <span class="math inline">\(f(x)\)</span> and <span class="math inline">\(g(x)\)</span>, when <span class="math inline">\(g(x)\)</span> is used as the <strong>input</strong> of <span class="math inline">\(f(x)\)</span>, the composite function is written as:</li>
+</ul>
+<p><span class="math display">\[(f \circ g)(x)\]</span></p>
+<p>The <span class="math inline">\(\circ\)</span> symbol denotes a composite function - it looks similar to the multiplication symbol, <span class="math inline">\(\cdot\)</span>, but does not mean the same thing. <span class="math inline">\((f \circ g)(x)\)</span> is the same thing as <span class="math inline">\(f(g(x))\)</span>.</p>
+<p><span class="math inline">\((f \circ g)(x)\)</span> is not the same thing as <span class="math inline">\((g \circ f)(x)\)</span>. <span class="math inline">\((g \circ f)(x)\)</span> is the same thing as <span class="math inline">\(g(f(x))\)</span>, which will often be different than <span class="math inline">\(f(g(x))\)</span>.</p>
+<p>You can use composite functions to check if two functions are inverses of each other because they will follow the rule:</p>
+<p><span class="math display">\[(f \circ g)(x) = (g \circ f)(x) = x\]</span></p>
+<p>We can find the composite of two functions by replacing every <span class="math inline">\(x\)</span> in the outer function with the equation for the inner function (the input).</p>
+<p><strong>Example 13</strong>: Given: <span class="math inline">\(f(x) = 4x2 + 3\)</span> and <span class="math inline">\(g(x) = 2x + 1\)</span>.</p>
+<p><span class="math display">\[(f \circ g)(x)    =   f(g(x)) = 4(2x + 1)^2 + 3
+    =   4(4x^2 + 4x + 1) + 3
+    =   16x^2 + 16x + 7\]</span></p>
+<p><span class="math display">\[(g \circ f)(x)    =   g(f(x)) = 2(4x^2 + 3) + 1   =   8x^2 + 6 + 1\]</span></p>
+</div>
+<div id="inverse-function" class="section level3 hasAnchor" number="2.4.4">
+<h3><span class="header-section-number">2.4.4</span> Inverse Function<a href="review-of-probability-rules.html#inverse-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Inverse functions are a way to “undo” a function. In the original function, plugging in <span class="math inline">\(x\)</span> gives back <span class="math inline">\(y\)</span>, but in the inverse function, plugging in <span class="math inline">\(y\)</span> (as the input) gives back <span class="math inline">\(x\)</span> (as the output). If a function were to contain the point (3,5), its inverse would contain the point (5,3).</p>
+<p>If the original function is <span class="math inline">\(f(x)\)</span>, then its inverse <span class="math inline">\(f^{-1}(x)\)</span> is <strong>not the same as</strong> <span class="math inline">\(1/f(x)\)</span> .</p>
+<p>To find the inverse of a function, we need to do the opposite of what the original function does to <span class="math inline">\(x\)</span>. To be more specific, we can use the following steps:</p>
+<ol style="list-style-type: decimal">
+<li><p>In the original equation, replace <span class="math inline">\(f(x)\)</span> with <span class="math inline">\(y\)</span>;</p></li>
+<li><p>Replace every <span class="math inline">\(x\)</span> in the original equation with a <span class="math inline">\(y\)</span> and every <span class="math inline">\(y\)</span> in the original equation with an <span class="math inline">\(x\)</span>;</p></li>
+<li><p>Solve for <span class="math inline">\(y\)</span>;</p></li>
+<li><p>Change <span class="math inline">\(y\)</span> to <span class="math inline">\(f^{-1}(x)\)</span>;</p></li>
+</ol>
+<p><br />
+</p>
+<p><strong>Example 14</strong>: Find the inverse function of <span class="math inline">\(f(x) = 5\sqrt{x+4}-3\)</span>.</p>
+<p><strong>Solution</strong>. We follow the above steps to find the inverse function.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="review-of-probability-rules.html#cb28-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;topic01/inverseFun.png&quot;</span>)</span></code></pre></div>
+<p><img src="topic01/inverseFun.png" width="80%" style="display: block; margin: auto;" /></p>
+<p><br />
+</p>
+</div>
+<div id="practice-exercises" class="section level3 hasAnchor" number="2.4.5">
+<h3><span class="header-section-number">2.4.5</span> Practice Exercises<a href="review-of-probability-rules.html#practice-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The following link <a href="https://github.com/pengdsci/WCUSTA504/raw/main/topic01/FunctionsWorksheet.pdf" class="uri">https://github.com/pengdsci/WCUSTA504/raw/main/topic01/FunctionsWorksheet.pdf</a> gives a list of exercises that reflect the concepts reviewed in this appendix.</p>
+<p><br />
+</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="discrete-random-variables-and-their-distribution.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/pengdsci/STA504EB/edit/master/01-probRule.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["STA504EB.pdf", "STA504EB.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

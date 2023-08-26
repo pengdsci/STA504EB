@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Topic 6 Mixture Distributions | STA504 E-Pack: Mathematical Statistics with Calc. Rev.</title>
+  <meta name="description" content="The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Topic 6 Mixture Distributions | STA504 E-Pack: Mathematical Statistics with Calc. Rev." />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/STA504EB" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Topic 6 Mixture Distributions | STA504 E-Pack: Mathematical Statistics with Calc. Rev." />
+  
+  <meta name="twitter:description" content="The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Cheng Peng" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="special-continuous-distributions-normal-and-gamma-families.html"/>
+<link rel="next" href="moment-generating-functions-mgf.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<center><li><a href="./"><font color = "darkred"><b>STA 504 E-Pack: Mathematical Statistics w/ Calc. Rev.</b></font></a><br><font color = "navy">Cheng Peng</font></li></center>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#use-of-technologies"><i class="fa fa-check"></i><b>1.1</b> Use of Technologies</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#greek-letters"><i class="fa fa-check"></i><b>1.1.1</b> Greek Letters</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#operators"><i class="fa fa-check"></i><b>1.1.2</b> Operators</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#power-and-indicies"><i class="fa fa-check"></i><b>1.1.3</b> Power and Indicies</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#fractions-and-binomials"><i class="fa fa-check"></i><b>1.1.4</b> Fractions and Binomials</a></li>
+<li class="chapter" data-level="1.1.5" data-path="index.html"><a href="index.html#radical-roots"><i class="fa fa-check"></i><b>1.1.5</b> Radical Roots</a></li>
+<li class="chapter" data-level="1.1.6" data-path="index.html"><a href="index.html#sums-integrals-and-related-symbols"><i class="fa fa-check"></i><b>1.1.6</b> Sums, Integrals, and Related Symbols</a></li>
+<li class="chapter" data-level="1.1.7" data-path="index.html"><a href="index.html#more-special-symbols"><i class="fa fa-check"></i><b>1.1.7</b> More Special Symbols</a></li>
+<li class="chapter" data-level="1.1.8" data-path="index.html"><a href="index.html#brackets"><i class="fa fa-check"></i><b>1.1.8</b> Brackets</a></li>
+<li class="chapter" data-level="1.1.9" data-path="index.html"><a href="index.html#matrix"><i class="fa fa-check"></i><b>1.1.9</b> Matrix</a></li>
+<li class="chapter" data-level="1.1.10" data-path="index.html"><a href="index.html#aligned-equations"><i class="fa fa-check"></i><b>1.1.10</b> Aligned Equations</a></li>
+<li class="chapter" data-level="1.1.11" data-path="index.html"><a href="index.html#piece-wise-function"><i class="fa fa-check"></i><b>1.1.11</b> Piece-wise Function</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#including-images-and-graphics"><i class="fa fa-check"></i><b>1.2</b> Including Images and Graphics</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#r-plot-function"><i class="fa fa-check"></i><b>1.3</b> R plot() Function</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#the-plot-function"><i class="fa fa-check"></i><b>1.3.1</b> The <code>plot()</code> function</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#adding-graphic-components-to-base-plot"><i class="fa fa-check"></i><b>1.3.2</b> Adding Graphic Components to Base Plot</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html"><i class="fa fa-check"></i><b>2</b> Review of Probability Rules</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#definitions-of-probability"><i class="fa fa-check"></i><b>2.1</b> Definitions of Probability</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#experiments-sample-space-and-event"><i class="fa fa-check"></i><b>2.1.1</b> Experiments, Sample Space, and Event</a></li>
+<li class="chapter" data-level="2.1.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#calculation-of-probability"><i class="fa fa-check"></i><b>2.1.2</b> Calculation of Probability</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#general-addition-rule"><i class="fa fa-check"></i><b>2.2</b> General Addition Rule</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#additive-rule"><i class="fa fa-check"></i><b>2.2.1</b> Additive Rule</a></li>
+<li class="chapter" data-level="2.2.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#special-cases"><i class="fa fa-check"></i><b>2.2.2</b> Special Cases</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#multiplicative-rule-and-independence"><i class="fa fa-check"></i><b>2.3</b> Multiplicative Rule and Independence</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#conditional-probability"><i class="fa fa-check"></i><b>2.3.1</b> Conditional Probability</a></li>
+<li class="chapter" data-level="2.3.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#general-multiplication-rule"><i class="fa fa-check"></i><b>2.3.2</b> General Multiplication Rule</a></li>
+<li class="chapter" data-level="2.3.3" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#checking-independence-using-multiplicative-rule"><i class="fa fa-check"></i><b>2.3.3</b> Checking Independence Using Multiplicative Rule</a></li>
+<li class="chapter" data-level="2.3.4" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#bayes-theorem"><i class="fa fa-check"></i><b>2.3.4</b> Bayes’ Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#appendix-calculus-review-topics"><i class="fa fa-check"></i><b>2.4</b> Appendix: Calculus Review Topics</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#notation-domain-and-range"><i class="fa fa-check"></i><b>2.4.1</b> Notation, Domain, and Range</a></li>
+<li class="chapter" data-level="2.4.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#operations-of-functions"><i class="fa fa-check"></i><b>2.4.2</b> Operations of Functions</a></li>
+<li class="chapter" data-level="2.4.3" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#composite-functions"><i class="fa fa-check"></i><b>2.4.3</b> Composite Functions</a></li>
+<li class="chapter" data-level="2.4.4" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#inverse-function"><i class="fa fa-check"></i><b>2.4.4</b> Inverse Function</a></li>
+<li class="chapter" data-level="2.4.5" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#practice-exercises"><i class="fa fa-check"></i><b>2.4.5</b> Practice Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html"><i class="fa fa-check"></i><b>3</b> Discrete Random Variables and Their Distribution</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#characterization-of-distribution-of-random-variables"><i class="fa fa-check"></i><b>3.1</b> Characterization of Distribution of Random Variables</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#definition-of-rv"><i class="fa fa-check"></i><b>3.1.1</b> Definition of RV</a></li>
+<li class="chapter" data-level="3.1.2" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#expectation-and-variance"><i class="fa fa-check"></i><b>3.1.2</b> Expectation and Variance</a></li>
+<li class="chapter" data-level="3.1.3" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#some-properties-of-expectation-and-variance"><i class="fa fa-check"></i><b>3.1.3</b> Some Properties of Expectation and Variance</a></li>
+<li class="chapter" data-level="3.1.4" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#characterization-of-a-random-variable"><i class="fa fa-check"></i><b>3.1.4</b> Characterization of A Random Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#special-discrete-distributions"><i class="fa fa-check"></i><b>3.2</b> Special Discrete Distributions</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#binomial-distribution"><i class="fa fa-check"></i><b>3.2.1</b> Binomial Distribution</a></li>
+<li class="chapter" data-level="3.2.2" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#poisson-distribution"><i class="fa fa-check"></i><b>3.2.2</b> Poisson Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#cumulative-distributions"><i class="fa fa-check"></i><b>3.3</b> Cumulative Distributions</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#definition-and-notations"><i class="fa fa-check"></i><b>3.3.1</b> Definition and Notations</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#appendix-derivatives-of-functions"><i class="fa fa-check"></i><b>3.4</b> Appendix: Derivatives of Functions</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#definitions-and-notations"><i class="fa fa-check"></i><b>3.4.1</b> Definitions and Notations</a></li>
+<li class="chapter" data-level="3.4.2" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#rules-of-calculus"><i class="fa fa-check"></i><b>3.4.2</b> Rules of Calculus</a></li>
+<li class="chapter" data-level="3.4.3" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#properties-of-derivative"><i class="fa fa-check"></i><b>3.4.3</b> Properties of Derivative</a></li>
+<li class="chapter" data-level="3.4.4" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#practice-exercises-1"><i class="fa fa-check"></i><b>3.4.4</b> Practice Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html"><i class="fa fa-check"></i><b>4</b> Continuous Random Variables and Their Distributions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#continuous-random-variable-and-characterization"><i class="fa fa-check"></i><b>4.1</b> Continuous Random Variable and Characterization</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#cummulative-distribution"><i class="fa fa-check"></i><b>4.1.1</b> Cummulative Distribution</a></li>
+<li class="chapter" data-level="4.1.2" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#cdf-of-continuous-random-variable"><i class="fa fa-check"></i><b>4.1.2</b> CDF of Continuous Random Variable</a></li>
+<li class="chapter" data-level="4.1.3" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#properties-of-cdf-and-cdf-of-continuous-r.v."><i class="fa fa-check"></i><b>4.1.3</b> Properties of CDF and CDF of Continuous R.V.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#expectation-and-variance-1"><i class="fa fa-check"></i><b>4.2</b> Expectation and Variance</a></li>
+<li class="chapter" data-level="4.3" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#uniform-probability-distribution"><i class="fa fa-check"></i><b>4.3</b> Uniform Probability Distribution</a></li>
+<li class="chapter" data-level="4.4" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#calculus-review-integrals-of-functions"><i class="fa fa-check"></i><b>4.4</b> Calculus Review: Integrals of Functions</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#antiderivatives"><i class="fa fa-check"></i><b>4.4.1</b> Antiderivatives</a></li>
+<li class="chapter" data-level="4.4.2" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#rules-and-properties-of-integral"><i class="fa fa-check"></i><b>4.4.2</b> Rules and Properties of Integral</a></li>
+<li class="chapter" data-level="4.4.3" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#practice-exercises-2"><i class="fa fa-check"></i><b>4.4.3</b> Practice Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html"><i class="fa fa-check"></i><b>5</b> Special Continuous Distributions: Normal and Gamma Families</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#review-of-probability-distributions"><i class="fa fa-check"></i><b>5.1</b> Review of Probability Distributions</a></li>
+<li class="chapter" data-level="5.2" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#normal-distribution"><i class="fa fa-check"></i><b>5.2</b> Normal Distribution</a></li>
+<li class="chapter" data-level="5.3" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#gamma-distribution"><i class="fa fa-check"></i><b>5.3</b> Gamma Distribution</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#the-gamma-function"><i class="fa fa-check"></i><b>5.3.1</b> The Gamma Function</a></li>
+<li class="chapter" data-level="5.3.2" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#definition-of-gamma-density"><i class="fa fa-check"></i><b>5.3.2</b> Definition of Gamma Density</a></li>
+<li class="chapter" data-level="5.3.3" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#expectation-and-variance-2"><i class="fa fa-check"></i><b>5.3.3</b> Expectation and Variance</a></li>
+<li class="chapter" data-level="5.3.4" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#special-cases-1"><i class="fa fa-check"></i><b>5.3.4</b> Special Cases</a></li>
+<li class="chapter" data-level="5.3.5" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#use-of-technology"><i class="fa fa-check"></i><b>5.3.5</b> Use of Technology</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#calculus-review-integrals-of-functions-1"><i class="fa fa-check"></i><b>5.4</b> Calculus Review: Integrals of Functions</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#antiderivatives-1"><i class="fa fa-check"></i><b>5.4.1</b> Antiderivatives</a></li>
+<li class="chapter" data-level="5.4.2" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#rules-and-properties-of-integral-1"><i class="fa fa-check"></i><b>5.4.2</b> Rules and Properties of Integral</a></li>
+<li class="chapter" data-level="5.4.3" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#practice-exercises-3"><i class="fa fa-check"></i><b>5.4.3</b> Practice Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="mixture-distributions.html"><a href="mixture-distributions.html"><i class="fa fa-check"></i><b>6</b> Mixture Distributions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="mixture-distributions.html"><a href="mixture-distributions.html#definition-of-mixture-model"><i class="fa fa-check"></i><b>6.1</b> Definition of Mixture Model</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="mixture-distributions.html"><a href="mixture-distributions.html#definition-of-k-component-mixture-distributions"><i class="fa fa-check"></i><b>6.1.1</b> Definition of K-component Mixture Distributions</a></li>
+<li class="chapter" data-level="6.1.2" data-path="mixture-distributions.html"><a href="mixture-distributions.html#properties-of-finite-mixture-distributions"><i class="fa fa-check"></i><b>6.1.2</b> Properties of Finite Mixture Distributions</a></li>
+<li class="chapter" data-level="6.1.3" data-path="mixture-distributions.html"><a href="mixture-distributions.html#variance-decomposition"><i class="fa fa-check"></i><b>6.1.3</b> Variance Decomposition</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="mixture-distributions.html"><a href="mixture-distributions.html#two-component-normal-mixture-distribution"><i class="fa fa-check"></i><b>6.2</b> Two-component Normal Mixture Distribution</a></li>
+<li class="chapter" data-level="6.3" data-path="mixture-distributions.html"><a href="mixture-distributions.html#use-mixture-distributions"><i class="fa fa-check"></i><b>6.3</b> Use Mixture Distributions</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="mixture-distributions.html"><a href="mixture-distributions.html#fitting-complex-data-using-mixture-distributions"><i class="fa fa-check"></i><b>6.3.1</b> Fitting Complex Data Using Mixture Distributions</a></li>
+<li class="chapter" data-level="6.3.2" data-path="mixture-distributions.html"><a href="mixture-distributions.html#clustering-with-mixture-distributions"><i class="fa fa-check"></i><b>6.3.2</b> Clustering with Mixture Distributions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html"><i class="fa fa-check"></i><b>7</b> Moment Generating Functions (MGF)</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#moments-of-rv-and-mgf"><i class="fa fa-check"></i><b>7.1</b> Moments of RV and MGF</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#various-moments-revisited"><i class="fa fa-check"></i><b>7.1.1</b> Various Moments Revisited</a></li>
+<li class="chapter" data-level="7.1.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#mgf"><i class="fa fa-check"></i><b>7.1.2</b> MGF</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#properties-of-mgf"><i class="fa fa-check"></i><b>7.2</b> Properties of MGF</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#review-of-taylor-series"><i class="fa fa-check"></i><b>7.2.1</b> Review of Taylor Series</a></li>
+<li class="chapter" data-level="7.2.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#how-mgf-generates-moments"><i class="fa fa-check"></i><b>7.2.2</b> How MGF Generates Moments?</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#mgf-of-some-special-distributions"><i class="fa fa-check"></i><b>7.3</b> MGF of Some Special Distributions</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#exponential-distribution"><i class="fa fa-check"></i><b>7.3.1</b> Exponential Distribution</a></li>
+<li class="chapter" data-level="7.3.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#normal-distribution-1"><i class="fa fa-check"></i><b>7.3.2</b> Normal Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#use-of-mgf---shape-analysis"><i class="fa fa-check"></i><b>7.4</b> Use of MGF - Shape Analysis</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#skewness"><i class="fa fa-check"></i><b>7.4.1</b> Skewness</a></li>
+<li class="chapter" data-level="7.4.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#kurtosis"><i class="fa fa-check"></i><b>7.4.2</b> Kurtosis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html"><i class="fa fa-check"></i><b>8</b> Joint Distributions and Marginal Distributions</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#joint-distribution-of-categorical-variables"><i class="fa fa-check"></i><b>8.1</b> Joint Distribution of Categorical Variables</a></li>
+<li class="chapter" data-level="8.2" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#discrete-bivariate-distributions"><i class="fa fa-check"></i><b>8.2</b> Discrete Bivariate Distributions</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#joint-distribution-and-properties"><i class="fa fa-check"></i><b>8.2.1</b> Joint Distribution and Properties</a></li>
+<li class="chapter" data-level="8.2.2" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#marginal-distributions"><i class="fa fa-check"></i><b>8.2.2</b> Marginal Distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#continuous-bivariate-distributions"><i class="fa fa-check"></i><b>8.3</b> Continuous Bivariate Distributions</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#continuous-bivariate-distribution"><i class="fa fa-check"></i><b>8.3.1</b> Continuous Bivariate Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#a-review-of-double-integral"><i class="fa fa-check"></i><b>8.4</b> A Review of Double Integral</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#type-i-region"><i class="fa fa-check"></i><b>8.4.1</b> Type I Region</a></li>
+<li class="chapter" data-level="8.4.2" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#type-ii-region"><i class="fa fa-check"></i><b>8.4.2</b> Type II Region</a></li>
+<li class="chapter" data-level="8.4.3" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#summarizing-steps-for-setting-up-iterative-integrals"><i class="fa fa-check"></i><b>8.4.3</b> Summarizing Steps for Setting up Iterative Integrals</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#marginal-distributions-1"><i class="fa fa-check"></i><b>8.5</b> Marginal Distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html"><i class="fa fa-check"></i><b>9</b> Conditional Distributions and Independence</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#conditional-distribution-of-categorical-variables"><i class="fa fa-check"></i><b>9.1</b> Conditional Distribution of Categorical Variables</a></li>
+<li class="chapter" data-level="9.2" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#independence-between-two-discrete-random-variables"><i class="fa fa-check"></i><b>9.2</b> Independence Between Two Discrete Random Variables</a></li>
+<li class="chapter" data-level="9.3" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#discrete-bivariate-distributions-1"><i class="fa fa-check"></i><b>9.3</b> Discrete Bivariate Distributions</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#definition-of-conditional-distributions"><i class="fa fa-check"></i><b>9.3.1</b> Definition of Conditional Distributions</a></li>
+<li class="chapter" data-level="9.3.2" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#definition-of-independence"><i class="fa fa-check"></i><b>9.3.2</b> Definition of Independence</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#conditioning-and-independence-between-two-variables"><i class="fa fa-check"></i><b>9.4</b> Conditioning and Independence between Two Variables</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#conditional-distributions"><i class="fa fa-check"></i><b>9.4.1</b> Conditional Distributions</a></li>
+<li class="chapter" data-level="9.4.2" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#independence-of-random-variables"><i class="fa fa-check"></i><b>9.4.2</b> Independence of Random Variables</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html"><i class="fa fa-check"></i><b>10</b> Expectations and Covariance</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#expectations"><i class="fa fa-check"></i><b>10.1</b> Expectations</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#discrete-distributions"><i class="fa fa-check"></i><b>10.1.1</b> Discrete Distributions</a></li>
+<li class="chapter" data-level="10.1.2" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#expectations-of-bivariate-continuous-distribution"><i class="fa fa-check"></i><b>10.1.2</b> Expectations of Bivariate Continuous Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#some-properties-of-expectations"><i class="fa fa-check"></i><b>10.2</b> Some Properties of Expectations</a></li>
+<li class="chapter" data-level="10.3" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#covariance---measuring-linear-correlation"><i class="fa fa-check"></i><b>10.3</b> Covariance - Measuring Linear Correlation</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#covariance"><i class="fa fa-check"></i><b>10.3.1</b> Covariance</a></li>
+<li class="chapter" data-level="10.3.2" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#pearson-correlation-coefficient"><i class="fa fa-check"></i><b>10.3.2</b> Pearson Correlation Coefficient</a></li>
+<li class="chapter" data-level="10.3.3" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#comcluding-remarks"><i class="fa fa-check"></i><b>10.3.3</b> Comcluding Remarks</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html"><i class="fa fa-check"></i><b>11</b> Linear Function of Random Variables and Conditional Expectations</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#linear-combination-of-two-random-variables"><i class="fa fa-check"></i><b>11.1</b> Linear Combination of Two Random Variables</a></li>
+<li class="chapter" data-level="11.2" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#general-linear-functions-of-rvs"><i class="fa fa-check"></i><b>11.2</b> General Linear Functions of RVs</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#general-linear-functions"><i class="fa fa-check"></i><b>11.2.1</b> General Linear Functions</a></li>
+<li class="chapter" data-level="11.2.2" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#linear-functions-of-iid-rvs"><i class="fa fa-check"></i><b>11.2.2</b> Linear Functions of IID RVs</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#conditional-expectation"><i class="fa fa-check"></i><b>11.3</b> Conditional Expectation</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html"><i class="fa fa-check"></i><b>12</b> Functions of Random Variables: CDF Method</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#the-rationale"><i class="fa fa-check"></i><b>12.1</b> The Rationale</a></li>
+<li class="chapter" data-level="12.2" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#review-of-inverse-function-and-inequality"><i class="fa fa-check"></i><b>12.2</b> Review of Inverse Function and Inequality</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#inverse-function-1"><i class="fa fa-check"></i><b>12.2.1</b> Inverse Function</a></li>
+<li class="chapter" data-level="12.2.2" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#definitions-of-monotonic-functions"><i class="fa fa-check"></i><b>12.2.2</b> Definitions of Monotonic Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#method-of-distribution"><i class="fa fa-check"></i><b>12.3</b> Method of Distribution</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#cdf-method"><i class="fa fa-check"></i><b>12.3.1</b> CDF Method</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html"><i class="fa fa-check"></i><b>13</b> Functions of Random Variables: Transformation Method</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#univariate-transformation-method"><i class="fa fa-check"></i><b>13.1</b> Univariate Transformation Method</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#monotonically-increasing-function"><i class="fa fa-check"></i><b>13.1.1</b> Monotonically Increasing Function</a></li>
+<li class="chapter" data-level="13.1.2" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#monotonically-decreasing-function"><i class="fa fa-check"></i><b>13.1.2</b> Monotonically Decreasing Function</a></li>
+<li class="chapter" data-level="13.1.3" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#univariate-transformation"><i class="fa fa-check"></i><b>13.1.3</b> Univariate Transformation</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#review-of-concepts-matrices"><i class="fa fa-check"></i><b>13.2</b> Review of Concepts Matrices</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#matrix-operations"><i class="fa fa-check"></i><b>13.2.1</b> Matrix Operations</a></li>
+<li class="chapter" data-level="13.2.2" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#section"><i class="fa fa-check"></i><b>13.2.2</b> </a></li>
+<li class="chapter" data-level="13.2.3" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#jacobian-matrix-and-determinant"><i class="fa fa-check"></i><b>13.2.3</b> Jacobian Matrix and Determinant</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#bivariate-transformation"><i class="fa fa-check"></i><b>13.3</b> Bivariate Transformation</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#joint-distribution-of-two-functions-of-rvs"><i class="fa fa-check"></i><b>13.3.1</b> Joint Distribution of Two Functions of RVs</a></li>
+<li class="chapter" data-level="13.3.2" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#applications-of-bivariate-transformations"><i class="fa fa-check"></i><b>13.3.2</b> Applications of Bivariate Transformations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="basic-order-statistics.html"><a href="basic-order-statistics.html"><i class="fa fa-check"></i><b>14</b> Basic Order Statistics</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="basic-order-statistics.html"><a href="basic-order-statistics.html#distribution-of-minimum-statistic-x_1"><i class="fa fa-check"></i><b>14.1</b> Distribution of Minimum Statistic <strong><span class="math inline">\(X_{(1)}\)</span></strong></a></li>
+<li class="chapter" data-level="14.2" data-path="basic-order-statistics.html"><a href="basic-order-statistics.html#distribution-of-minimum-statistic-x_m"><i class="fa fa-check"></i><b>14.2</b> Distribution of Minimum Statistic <strong><span class="math inline">\(X_{(m)}\)</span></strong></a></li>
+<li class="chapter" data-level="14.3" data-path="basic-order-statistics.html"><a href="basic-order-statistics.html#combined-reliability-system"><i class="fa fa-check"></i><b>14.3</b> Combined Reliability System</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">STA504 E-Pack: Mathematical Statistics with Calc. Rev.</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="mixture-distributions" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Topic 6</span> Mixture Distributions<a href="mixture-distributions.html#mixture-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><em>(Expanded from Section 4.11)</em></p>
+<p>We have outlined both discrete and continuous probability distributions and a few special families of distributions. In practical situations, single well-known distribution may not be able to characterize certain distributions well. For example, the log of income is usually considered to be log-normally distributed. According to <em>the National Association of Colleges and Employers</em>, a survey of 563,000 recent college grads finds the gender pay gap already impacting the class of 2020.</p>
+<p><img src="topic04/sallaryGapGender.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>Assume that the log salaries of each of the three categories follow a normal distribution. The overall distribution of the mixture of the three distributions may not be a normal distribution. The general shape of a mixture density could be the following form.</p>
+<p><img src="topic04/mixtureDensityCurve.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><br />
+</p>
+<div id="definition-of-mixture-model" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Definition of Mixture Model<a href="mixture-distributions.html#definition-of-mixture-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The idea is to find the density function of a population that contains several sub-populations with different probability distributions. Recall that a function <span class="math inline">\(f(x)\)</span> is a density function of random variable <span class="math inline">\(X\)</span> <code>if and only if</code></p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(f(x) \ge 0\)</span>;</p></li>
+<li><p><span class="math inline">\(\int f(x) dx = 1.\)</span></p></li>
+</ol>
+<p>Before we introduce the formal definition of mixture mode, let’s look at the following example.</p>
+<p><strong>Example 1</strong>: Starting salary of college graduates is an important factor in college ranking used by US News and Report. Assume that we are interested in the distribution of starting salary of WCU students. There are about 20% are graduate students. Since the pay scales are different between graduate and undergraduate students. Therefore, the starting salary of undergraduate students is different from that of graduate students. Let <span class="math inline">\(X_1\)</span> be the random variable representing the starting salary with density function <span class="math inline">\(f_(x)\)</span> and <span class="math inline">\(X_2\)</span> be the random variable representing the starting salary of graduate students with density function <span class="math inline">\(f_2(x)\)</span>. Now let <span class="math inline">\(X\)</span> be the random variable representing the starting of all WCU graduates with density <span class="math inline">\(f(x)\)</span>, the density function can be defined as
+<span class="math display">\[
+f(x) = (1-0.8)f_1(x) + 0.2f_2(x)
+\]</span>
+We can check that <span class="math inline">\(f(x)\)</span> is a valid density function in the following:</p>
+<ol style="list-style-type: decimal">
+<li><p>Since <span class="math inline">\(f_1(x) \ge 0\)</span> and <span class="math inline">\(f_2(x) \ge 0\)</span>, therefore, <span class="math inline">\(f(x) = 0.8f_1(x) + 0.2f_2(x) \ge 0\)</span>;</p></li>
+<li><p>Note that <span class="math inline">\(\int f_1(x) = 1\)</span> and <span class="math inline">\(\int f_2(x) = 1\)</span>. Therefore, <span class="math inline">\(\int f(x) = \int [0.8 f_1(x) + 0.2f_2(x)]\)</span> <span class="math inline">\(= 0.8\int f_1(x) + 0.2 \int f_2(x) = 0.8\times 1 + 0.2 \times 1 = 1.0\)</span></p></li>
+</ol>
+<p><em><strong>Remarks</strong>. Here are several remarks about the mixture distribution.</em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>Unlike in the above example, we know the proportion of the graduate student population which is 20%. In general, the proportion of sub-populations may not be known in practice. In this case, the proportion is considered as a population parameter that can be estimated from the sample. For example, we assume the graduate population to be <span class="math inline">\(\alpha\)</span>, then the undergraduate proportion is <span class="math inline">\(1-\alpha\)</span>. The above density function can then be written as <span class="math inline">\(f(x) = (1-\alpha)f_1(x) + \alpha f_2(x)\)</span>. In other words, <strong>the density function of a mixture distribution is equal to the <font color = "red">weighted average</font> of the density functions of the sub-populations</strong></em>.</p></li>
+<li><p><em>The density of the weighted average of random variable <span class="math inline">\((1-\alpha)X_1 + \alpha X_2\)</span> is <strong>NOT</strong> <span class="math inline">\((1-\alpha)f_1(x) + \alpha f_2(x)\)</span>. We will discuss the distribution of the linear combination of </em>independent* random variables later this semester.*</p></li>
+<li><p><em>We can also replace the density functions with the corresponding cumulative distributions (CDF) in the above definition of the mixture distribution.</em></p></li>
+</ol>
+<div id="definition-of-k-component-mixture-distributions" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Definition of K-component Mixture Distributions<a href="mixture-distributions.html#definition-of-k-component-mixture-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The following is the definition of a k-component mixture distribution.</p>
+<p><strong>Definition</strong>: Let <span class="math inline">\(f_1(x), f_2(x), \cdots, f_k(x)\)</span> be the density functions of k sub-populations. The density function of the mixture of these sub-populations is given by
+<span class="math display">\[
+f(x) = p_1f_1(x) + p_2f_2(x) + \cdots + p_kf_k(x)
+\]</span>
+where <span class="math inline">\(p_1, p_2, \cdots, p_k\)</span> (<span class="math inline">\(0 \le p_i\le 1\)</span>) are the corresponding proportions in the mixture of k sub-populations with <span class="math inline">\(p_1 +p_2 + \cdots + p_k = 1\)</span>.</p>
+<p><em><strong>Remarks</strong>: Since the above definition involves finite sub-populations, we it <strong>finite mixture</strong> distribution. There are mixture distributions that may involve infinite sub-populations or even uncountably infinite sub-populations (e.g., compound distribution). The finite mixture model is commonly used in practice.</em></p>
+</div>
+<div id="properties-of-finite-mixture-distributions" class="section level3 hasAnchor" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> Properties of Finite Mixture Distributions<a href="mixture-distributions.html#properties-of-finite-mixture-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In previous notes, we introduced the steps for characterizing the distribution of a random variable:</p>
+<ol style="list-style-type: decimal">
+<li><p>Explicitly define the random variable;</p></li>
+<li><p>Define the probability distribution (i.e., specified distribution functions such as density or mass functions);</p></li>
+<li><p>Provide formulas to calculate the key numerical characteristics such as mean, variance, etc. More generally, provide formulas to calculate moments of the distribution.</p></li>
+</ol>
+<p><br />
+</p>
+<p>Recall also that the expectation of a single continuous variable with density function <span class="math inline">\(f(x)\)</span> is defined in the following form</p>
+<p><span class="math display">\[
+E[X] = \int_{-\infty}^\infty xf(x)dx
+\]</span>
+If the random variable is discrete with probability distribution function <span class="math inline">\(P(X = x)\)</span>, then expectation of <span class="math inline">\(X\)</span> is then defined to be</p>
+<p><span class="math display">\[
+E[X] = \sum_{x}xP(X = x)
+\]</span></p>
+<p>In <strong>Example 1</strong>, we have explicitly defined the random variable that and the associated density function. We did not discuss the expectation and variance, etc. Next, we introduce a property of a general moment of mixture distributions.</p>
+<p><strong>Property 1</strong>: Let <span class="math inline">\(X_1, X_2, \cdots, X_k\)</span> denote random variables from the <span class="math inline">\(k\)</span>-component distributions, and let X denote a random variable from the mixture distribution. Then, for any function <span class="math inline">\(h(\cdot)\)</span> for which <span class="math inline">\(E[h(X_i)]\)</span> exists, and assuming that the component densities <span class="math inline">\(f_i(x)\)</span> exist, for <span class="math inline">\(i = 1, 2, \cdots, k\)</span>, then
+<span class="math display">\[
+E[h(X)] = \int_{-\infty}^\infty h(x)\sum_{i=1}^k p_i f_i(x) dx = \sum_{i=1}^k p_i\int_{-\infty}^\infty h(x)f_i(x) dx = \sum_{i=1}^k p_i E[h(X_i)]
+\]</span></p>
+<p><strong>k-th Moment</strong>: Let <span class="math inline">\(X\)</span> be a random variable with density function <span class="math inline">\(f(x)\)</span>, the <em>k-th</em> of <span class="math inline">\(X\)</span> is defined to be
+<span class="math display">\[
+\mu^k = \int_{-\infty}^\infty x^k f(x) dx
+\]</span></p>
+<p>The first moment of the expectation. The variance <span class="math inline">\(E[(X-\mu)^2] = E[X^2] - \mu^2\)</span>, the difference between the 2nd moment and the square of the first moment.</p>
+<p><br />
+</p>
+<p><strong>Example 2</strong>: Let <span class="math inline">\(X\)</span> be the mixture distribution of two uniform distributions <span class="math inline">\(U_1(0, 10)\)</span> and <span class="math inline">\(U_2(8, 14)\)</span> with mixing proportions <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span> respectively. Clearly, the two uniform density functions are given by</p>
+<p><span class="math display">\[
+f(x) = \left\{\begin{aligned}
+&amp; 1/(10-1), &amp; x \in (0,10)\\
+&amp;0, &amp;  x \notin (0,10)
+\end{aligned},
+\right.
+\]</span>
+and
+<span class="math display">\[
+f(x) = \left\{\begin{aligned}
+&amp; 1/(14-8), &amp; x \in (8,14)\\
+&amp;0, &amp;  x \notin (8,14)
+\end{aligned}.
+\right.
+\]</span>
+The expectations of the two uniform distributions are <span class="math inline">\(\mu_1 = (10 + 0)/2 = 5\)</span> and <span class="math inline">\(\mu_2 = (8 + 14) / 2 = 11\)</span>.</p>
+<p>Now using the above property, we have
+<span class="math display">\[
+E[X] = \int_{-\infty}^\infty xf(x)dx = \int_{-\infty}^\infty x[p_1f_1(x) + p_2f_2(x)]dx \\ = p_1\int_{-\infty}^\infty xf_1(x)dx + p_2\int_{-\infty}^\infty xf_2(x)dx = p_1\mu_1 +p_2\mu_2 = 5p_1 + 11p_2.
+\]</span>
+since <span class="math inline">\(p_1 + p_2 = 1\)</span>.</p>
+<p>With a closer look at the above formula of expectation, we can see that expectation of the mixture distribution is equal to the weighted average of expectations of the sub-populations. That is, it is the expected mean (“expectation of sub-population means”) if we consider the sub-population mean as a random variable with mixing proportions as their corresponding probabilities.</p>
+<p>To be more specific, we can define a new random variable <span class="math inline">\(Y\)</span> with the following probability distribution table</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">RV (Y)</th>
+<th align="center">P(<span class="math inline">\(Y=y\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E[X|Y=1] = E[X_1] = \mu_1 = 5\)</span></td>
+<td align="center"><span class="math inline">\(p_1\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(E[X|Y=2] = E[X_2] = \mu_2 = 11\)</span></td>
+<td align="center"><span class="math inline">\(p_2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Using the above probability distribution of <span class="math inline">\(Y\)</span>, we can then rewrite the expectation of the mixture distribution as</p>
+<p><span class="math display">\[
+E_X[X]  = p_1\mu_1 +p_2\mu_2 = p_1E[X|Y=1] + p_2E[X|Y=2] \stackrel{def}{=} E_Y(E_X[X|Y]).
+\]</span></p>
+<p>This leads to the definition of conditional expectation in the following. Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Assume that <span class="math inline">\(X\)</span> is a continuous variable, the density of <span class="math inline">\(X\)</span> conditioning on <span class="math inline">\(Y\)</span> is <span class="math inline">\(f(x|Y)\)</span>. The <strong>conditional expectation</strong> of <span class="math inline">\(X|Y\)</span> (<em>reads <span class="math inline">\(X\)</span> conditioning on <span class="math inline">\(Y\)</span></em>) is given by</p>
+<p><span class="math display">\[
+E[X|Y] = E_X[X|Y] = \int_{-\infty}^\infty xf(x|Y)dx.
+\]</span></p>
+<p>Obviously, <span class="math inline">\(E[X|Y]\)</span> is random because <span class="math inline">\(Y\)</span> is random. In finite mixture distribution, <span class="math inline">\(Y\)</span> represents the subpopulation. Therefore, the expectation of the overall mixture distribution is</p>
+<p><span class="math display">\[
+E_X[X] = E_X[E_Y(X|Y)] = p_1\int_{-\infty}^\infty xf(x|Y=1)dx + p_2 \int_{-\infty}^\infty xf(x|Y=2)dx \\ = p_1\mu_1 + p_2\mu_2.
+\]</span></p>
+<p>The above equation is correct in general for any two random variables.</p>
+<p><strong>Property 2</strong>: <em>Conditional Expectation</em> For <em>any</em> given random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, the following property holds
+<span class="math display">\[
+E_X[X] = E_X[E_Y(X|Y)] .
+\]</span></p>
+<p><br />
+</p>
+</div>
+<div id="variance-decomposition" class="section level3 hasAnchor" number="6.1.3">
+<h3><span class="header-section-number">6.1.3</span> Variance Decomposition<a href="mixture-distributions.html#variance-decomposition" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We have introduced conditional expectation and its property. In this section, we introduce the variance decomposition formula using conditional expectation. We will also use these formulas in later chapters of this course.</p>
+<p>We have expressed the overall expectation of the mixture distribution in terms of the expectations of individual subpopulations. A natural question is whether the variance can be decomposed into the variances of individual subpopulations.</p>
+<p>The following variance decomposition property answers the question.</p>
+<p><strong>Property 3</strong>: <em>Variance Decomposition</em>: Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Then
+<span class="math display">\[
+Var[X] = E[Var(X|Y)] + Var[E(X|Y)
+\]</span>
+<strong>Proof</strong>: First of all, we note that <span class="math inline">\(Var[X] = E(X - E[X])^2 = E[X^2] - (E[X])^2\)</span>.
+This implies that
+<span class="math display">\[
+Var(X|Y) = E(X^2|Y) - [E(X|Y)]^2
+\]</span>
+Similar to the conditional expectation, the conditional variance is also a random variable. Therefore,</p>
+<p><span class="math display">\[
+\begin{aligned}
+E_Y[Var(X|Y)] &amp; =E_Y[E(X^2|Y)] - E_Y\{ [E(X|Y)]^2\} &amp;\\
+     &amp; = E[X^2] - E_Y\{ [E(X|Y)]^2\} &amp;\\
+     &amp; = \{E[X^2] - (E[X])^2 \} - \{ E_Y\{ [E(X|Y)]^2\} - (E[X])^2 \}\} &amp;\\
+     &amp; = Var[X] - \{ E_Y\{ [E(X|Y)]^2\} - \{E_Y[E(X|Y)]\}^2 \} &amp;\\
+     &amp; = Var[X] - Var_Y[E_X(X|Y)]
+\end{aligned}
+\]</span>
+Moving the terms around, we have
+<span class="math display">\[
+Var[X] = E_Y[Var(X|Y)] + Var_Y[E_X(X|Y)]
+\]</span>
+This completes the proof.</p>
+<p><em><strong>Remark</strong>: The right hand of the variance decomposition formula only involves the conditional random variable. We can express the right-hand formula in terms of individual variances, expectations, and mixing proportions.</em></p>
+<p><br />
+</p>
+<p><strong>Example 3</strong>. Let <span class="math inline">\(X\)</span> be the mixture distribution defined based on two distributions with density functions <span class="math inline">\(f_1(x)\)</span> and <span class="math inline">\(f_2(x)\)</span>. Assume the expectation and the variance of the two subpopulations are <span class="math inline">\((\mu_1, \sigma_1^2)\)</span> and <span class="math inline">\((\mu_2, \sigma_2^2)\)</span> respectively. Assume further that the mixing proportions are <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span> with <span class="math inline">\(p_1 + p_2 = 1\)</span>. Find the variance of the mixture distribution Var[X].</p>
+<p><strong>Solution</strong>: We two different methods to find the variance.</p>
+<p><em><strong>Method 1:</strong> Using the variance decomposition formula.</em></p>
+<p>By the definition of expectation and variance, we obtain the two terms on the right side of the formula in the following.
+<span class="math display">\[
+\begin{aligned}
+E_Y[Var(X|Y)] &amp; = p_1\sigma_1^2 + p_2\sigma_2^2  &amp;\\
+\end{aligned}
+\]</span>
+Note that <span class="math inline">\(E\{E[X|Y]\} = p_1\mu_1 + p_2\mu_2\)</span>. Therefore,</p>
+<p><span class="math display">\[
+\begin{aligned}
+Var_Y[E(X|Y)] &amp; =  E_Y\{E(X|Y) - E_Y[E(X|Y)]\}^2  &amp;\\
+              &amp; =  E_Y\{E(X|Y) - (p_1\mu_1 + p_2\mu_2)\}^2  &amp;\\
+              &amp; =  p_1(\mu_1-p_1\mu_1-p_2\mu_2)^2 + p_2(\mu_2-p_1\mu_1-p_2\mu_2)^2 &amp;\\
+              &amp; =  p_1[\mu_1^2 -2\mu_1 (p_1\mu_1+p_2\mu_2) + (p_1\mu_1+p_2\mu_2)^2]   &amp;\\
+              &amp;   + p_2[\mu_2^2 -2\mu_2 (p_1\mu_1+p_2\mu_2) + (p_1\mu_1+p_2\mu_2)^2] &amp;\\
+              &amp; = p_1\mu_1^2 + p_2\mu_2^2 -2(p_1\mu_2+p_2\mu_2)^2 + (p_1+p_2)(p_1\mu_2+p_2\mu_2)^2 &amp;\\
+              &amp; = p_1\mu_1^2 + p_2\mu_2^2 -(p_1\mu_2+p_2\mu_2)^2.
+\end{aligned}
+\]</span>
+Therefore,</p>
+<p><span class="math display">\[
+Var[X] =  p_1\sigma_1^2 + p_2\sigma_2^2  + p_1\mu_1^2 + p_2\mu_2^2 -(p_1\mu_2+p_2\mu_2)^2.
+\]</span><br />
+</p>
+<p><strong>Method 2</strong>: Using the moment formula and the relation <span class="math inline">\(Var[X] = E[X^2] - (E[X])^2\)</span>.
+Note that <span class="math inline">\(E[X] = p_1\mu_1 + p_2\mu_2\)</span>. From <em>Property 1</em>, we can find the 2nd moment of <span class="math inline">\(X\)</span> in the following
+<span class="math display">\[
+E[X^2] = p_1\mu_1^{(2)} + p_2\mu_2^{(2)}
+\]</span>
+where <span class="math inline">\(\mu_1^{(2)}\)</span> and <span class="math inline">\(\mu_2^{(2)}\)</span> are the 2nd moment of the individual sub-populations which can be expressed in terms of the individual means and variance as follows
+<span class="math display">\[
+\mu_1^{(2)} = \sigma_1^2 + \mu_1^2 \mbox{ and } \mu_2^{(2)} = \sigma_2^2 + \mu_2^2
+\]</span>
+With the above facts, we have
+<span class="math display">\[
+E[X^2] = p_1(\sigma_1^2 + \mu_1^2) + p_2(\sigma_2^2 + \mu_2^2)
+\]</span>
+Therefore,</p>
+<p><span class="math display">\[
+Var[X]   = p_1(\sigma_1^2 + \mu_1^2) + p_2(\sigma_2^2 + \mu_2^2) - ( p_1\mu_1 + p_2\mu_2)^2,
+\]</span>
+which is identical to the result obtained in <em>Method 1</em>.</p>
+<p><br />
+</p>
+</div>
+</div>
+<div id="two-component-normal-mixture-distribution" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Two-component Normal Mixture Distribution<a href="mixture-distributions.html#two-component-normal-mixture-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> be two normal distributions with distributions <span class="math inline">\(N_1(\mu_1, \sigma_1)\)</span> and <span class="math inline">\(N_2(\mu_2, \sigma_2)\)</span>, respectively and <span class="math inline">\(X\)</span> be the random variable representing the mixture distribution of the two normal populations with proportions <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span> respectively.</p>
+<p>The explicit expression of the mixture density function is given by
+<span class="math display">\[
+f(x) = \frac{p_1}{\sqrt{2\pi}\sigma_1}e^{-\frac{(x-\mu_1)}{2\sigma_1^2}} +  \frac{p_2}{\sqrt{2\pi}\sigma_2}e^{-\frac{(x-\mu_2)}{2\sigma_2^2}}
+\]</span></p>
+<p>The expectation and variance in <strong>Example 4</strong> apply to this two-component normal mixture distribution.</p>
+<p><strong>Some Special Cases</strong>: In general, the mixture distribution of finite normal distribution is NOT a normal distribution. Next, we use the two-component normal mixture distribution as an example to show that a finite normal mixture can be a normal distribution only in some special cases.</p>
+<ol style="list-style-type: decimal">
+<li><p>For a two-component normal mixture distribution, if one of the mixing proportions is zero (i.e., <span class="math inline">\(p_1 = 0\)</span> or <span class="math inline">\(p_2 = 0\)</span>), then the resulting mixture is a normal distribution.</p></li>
+<li><p>If <span class="math inline">\(\mu_=\mu_2\)</span> and <span class="math inline">\(\sigma_1 = \sigma_2\)</span>, then the resulting mixture is also a normal distribution.</p></li>
+</ol>
+<p>The following figure shows the general two-component normal mixture.</p>
+<p><br />
+</p>
+<p><img src="topic04/twoComponentGaussianMixture.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>The above figure is based on simulated data from <span class="math inline">\(N_1(\mu_1, \sigma) = N_1(-2.8, 0.48)\)</span> and <span class="math inline">\(N_2(\mu_2, \sigma_2) = N_2(1.86, 0.88)\)</span> with mixing proportion <span class="math inline">\(p_1 = 0.4\)</span> and <span class="math inline">\(p_2 = 0.6\)</span>, respectively.</p>
+<p><br />
+</p>
+</div>
+<div id="use-mixture-distributions" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Use Mixture Distributions<a href="mixture-distributions.html#use-mixture-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Mixture distributions are widely used in both classical statistics and modern machine learning areas.</p>
+<div id="fitting-complex-data-using-mixture-distributions" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Fitting Complex Data Using Mixture Distributions<a href="mixture-distributions.html#fitting-complex-data-using-mixture-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In real-world applications, it is quite often that a single well-established distribution does not fit the data with a complex structure. In this case, we may use mixture distributions to characterize the complex pattern.</p>
+<p><strong>Example 5</strong>: Pearson fit a mixture of two normal distributions to Naples’ crab data (1989). The hypothesis was that the data was in fact a mixture of two different species of crabs. Although the empirical data histogram is single-peaked, the mixture of two normal produced a better fit.</p>
+<p>(<em>Source: K. Pearson: Contributions to the Mathematical Theory of Evolution. Philosophical Transactions of the Royal Society of London. A, 1894.</em>)</p>
+<p>The following figure shows the histogram and actually fitted density curve of the two-component normal mixture distribution.</p>
+<p><img src="topic04/PearsonCrabData.png" width="50%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="clustering-with-mixture-distributions" class="section level3 hasAnchor" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Clustering with Mixture Distributions<a href="mixture-distributions.html#clustering-with-mixture-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Clustering analysis is one of the most important tasks in both classical statistics and modern machine learning. There are many well-established algorithms for clustering. Mixture model-based clustering is a statistical-based method that has a solid theoretical base. It is one of the most powerful unsupervised machine learning algorithms.</p>
+<p>One of the questions in many applications is to find data points that have <em>some sort of similarity</em> and then cluster them to define several groups to reduce variations in modeling. One task in clustering is to decide the optimal number of clusters to group the data. Too many groups and too few groups will increase the heterogeneity of the data when modeling. This means when using mixture distribution, the number of mixture components needs to be determined. We can use goodness-of-fit metrics to determine the appropriate number of mixing components.</p>
+<p>The following figure shows an empirical distribution (the black unsmooth curve). Three candidate mixture distributions were fit to the data.</p>
+<p><img src="topic04/Clustering.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>We can see that the leftmost figure shows the fit of a two-component normal mixture, the middle figure represents a three-component normal mixture and the right-hand side is a four-component normal mixture distribution. It turns out the three-component normal mixture has the best fit.</p>
+<p><br />
+</p>
+
+<p><br />
+</p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="special-continuous-distributions-normal-and-gamma-families.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="moment-generating-functions-mgf.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/pengdsci/STA504EB/edit/master/05-MixtureDist.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["STA504EB.pdf", "STA504EB.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

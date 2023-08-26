@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Topic 5 Special Continuous Distributions: Normal and Gamma Families | STA504 E-Pack: Mathematical Statistics with Calc. Rev.</title>
+  <meta name="description" content="The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Topic 5 Special Continuous Distributions: Normal and Gamma Families | STA504 E-Pack: Mathematical Statistics with Calc. Rev." />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/STA504EB" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Topic 5 Special Continuous Distributions: Normal and Gamma Families | STA504 E-Pack: Mathematical Statistics with Calc. Rev." />
+  
+  <meta name="twitter:description" content="The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Cheng Peng" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="continuous-random-variables-and-their-distributions.html"/>
+<link rel="next" href="mixture-distributions.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<center><li><a href="./"><font color = "darkred"><b>STA 504 E-Pack: Mathematical Statistics w/ Calc. Rev.</b></font></a><br><font color = "navy">Cheng Peng</font></li></center>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#use-of-technologies"><i class="fa fa-check"></i><b>1.1</b> Use of Technologies</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#greek-letters"><i class="fa fa-check"></i><b>1.1.1</b> Greek Letters</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#operators"><i class="fa fa-check"></i><b>1.1.2</b> Operators</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#power-and-indicies"><i class="fa fa-check"></i><b>1.1.3</b> Power and Indicies</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#fractions-and-binomials"><i class="fa fa-check"></i><b>1.1.4</b> Fractions and Binomials</a></li>
+<li class="chapter" data-level="1.1.5" data-path="index.html"><a href="index.html#radical-roots"><i class="fa fa-check"></i><b>1.1.5</b> Radical Roots</a></li>
+<li class="chapter" data-level="1.1.6" data-path="index.html"><a href="index.html#sums-integrals-and-related-symbols"><i class="fa fa-check"></i><b>1.1.6</b> Sums, Integrals, and Related Symbols</a></li>
+<li class="chapter" data-level="1.1.7" data-path="index.html"><a href="index.html#more-special-symbols"><i class="fa fa-check"></i><b>1.1.7</b> More Special Symbols</a></li>
+<li class="chapter" data-level="1.1.8" data-path="index.html"><a href="index.html#brackets"><i class="fa fa-check"></i><b>1.1.8</b> Brackets</a></li>
+<li class="chapter" data-level="1.1.9" data-path="index.html"><a href="index.html#matrix"><i class="fa fa-check"></i><b>1.1.9</b> Matrix</a></li>
+<li class="chapter" data-level="1.1.10" data-path="index.html"><a href="index.html#aligned-equations"><i class="fa fa-check"></i><b>1.1.10</b> Aligned Equations</a></li>
+<li class="chapter" data-level="1.1.11" data-path="index.html"><a href="index.html#piece-wise-function"><i class="fa fa-check"></i><b>1.1.11</b> Piece-wise Function</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#including-images-and-graphics"><i class="fa fa-check"></i><b>1.2</b> Including Images and Graphics</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#r-plot-function"><i class="fa fa-check"></i><b>1.3</b> R plot() Function</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#the-plot-function"><i class="fa fa-check"></i><b>1.3.1</b> The <code>plot()</code> function</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#adding-graphic-components-to-base-plot"><i class="fa fa-check"></i><b>1.3.2</b> Adding Graphic Components to Base Plot</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html"><i class="fa fa-check"></i><b>2</b> Review of Probability Rules</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#definitions-of-probability"><i class="fa fa-check"></i><b>2.1</b> Definitions of Probability</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#experiments-sample-space-and-event"><i class="fa fa-check"></i><b>2.1.1</b> Experiments, Sample Space, and Event</a></li>
+<li class="chapter" data-level="2.1.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#calculation-of-probability"><i class="fa fa-check"></i><b>2.1.2</b> Calculation of Probability</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#general-addition-rule"><i class="fa fa-check"></i><b>2.2</b> General Addition Rule</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#additive-rule"><i class="fa fa-check"></i><b>2.2.1</b> Additive Rule</a></li>
+<li class="chapter" data-level="2.2.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#special-cases"><i class="fa fa-check"></i><b>2.2.2</b> Special Cases</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#multiplicative-rule-and-independence"><i class="fa fa-check"></i><b>2.3</b> Multiplicative Rule and Independence</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#conditional-probability"><i class="fa fa-check"></i><b>2.3.1</b> Conditional Probability</a></li>
+<li class="chapter" data-level="2.3.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#general-multiplication-rule"><i class="fa fa-check"></i><b>2.3.2</b> General Multiplication Rule</a></li>
+<li class="chapter" data-level="2.3.3" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#checking-independence-using-multiplicative-rule"><i class="fa fa-check"></i><b>2.3.3</b> Checking Independence Using Multiplicative Rule</a></li>
+<li class="chapter" data-level="2.3.4" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#bayes-theorem"><i class="fa fa-check"></i><b>2.3.4</b> Bayes’ Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#appendix-calculus-review-topics"><i class="fa fa-check"></i><b>2.4</b> Appendix: Calculus Review Topics</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#notation-domain-and-range"><i class="fa fa-check"></i><b>2.4.1</b> Notation, Domain, and Range</a></li>
+<li class="chapter" data-level="2.4.2" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#operations-of-functions"><i class="fa fa-check"></i><b>2.4.2</b> Operations of Functions</a></li>
+<li class="chapter" data-level="2.4.3" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#composite-functions"><i class="fa fa-check"></i><b>2.4.3</b> Composite Functions</a></li>
+<li class="chapter" data-level="2.4.4" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#inverse-function"><i class="fa fa-check"></i><b>2.4.4</b> Inverse Function</a></li>
+<li class="chapter" data-level="2.4.5" data-path="review-of-probability-rules.html"><a href="review-of-probability-rules.html#practice-exercises"><i class="fa fa-check"></i><b>2.4.5</b> Practice Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html"><i class="fa fa-check"></i><b>3</b> Discrete Random Variables and Their Distribution</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#characterization-of-distribution-of-random-variables"><i class="fa fa-check"></i><b>3.1</b> Characterization of Distribution of Random Variables</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#definition-of-rv"><i class="fa fa-check"></i><b>3.1.1</b> Definition of RV</a></li>
+<li class="chapter" data-level="3.1.2" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#expectation-and-variance"><i class="fa fa-check"></i><b>3.1.2</b> Expectation and Variance</a></li>
+<li class="chapter" data-level="3.1.3" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#some-properties-of-expectation-and-variance"><i class="fa fa-check"></i><b>3.1.3</b> Some Properties of Expectation and Variance</a></li>
+<li class="chapter" data-level="3.1.4" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#characterization-of-a-random-variable"><i class="fa fa-check"></i><b>3.1.4</b> Characterization of A Random Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#special-discrete-distributions"><i class="fa fa-check"></i><b>3.2</b> Special Discrete Distributions</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#binomial-distribution"><i class="fa fa-check"></i><b>3.2.1</b> Binomial Distribution</a></li>
+<li class="chapter" data-level="3.2.2" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#poisson-distribution"><i class="fa fa-check"></i><b>3.2.2</b> Poisson Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#cumulative-distributions"><i class="fa fa-check"></i><b>3.3</b> Cumulative Distributions</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#definition-and-notations"><i class="fa fa-check"></i><b>3.3.1</b> Definition and Notations</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#appendix-derivatives-of-functions"><i class="fa fa-check"></i><b>3.4</b> Appendix: Derivatives of Functions</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#definitions-and-notations"><i class="fa fa-check"></i><b>3.4.1</b> Definitions and Notations</a></li>
+<li class="chapter" data-level="3.4.2" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#rules-of-calculus"><i class="fa fa-check"></i><b>3.4.2</b> Rules of Calculus</a></li>
+<li class="chapter" data-level="3.4.3" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#properties-of-derivative"><i class="fa fa-check"></i><b>3.4.3</b> Properties of Derivative</a></li>
+<li class="chapter" data-level="3.4.4" data-path="discrete-random-variables-and-their-distribution.html"><a href="discrete-random-variables-and-their-distribution.html#practice-exercises-1"><i class="fa fa-check"></i><b>3.4.4</b> Practice Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html"><i class="fa fa-check"></i><b>4</b> Continuous Random Variables and Their Distributions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#continuous-random-variable-and-characterization"><i class="fa fa-check"></i><b>4.1</b> Continuous Random Variable and Characterization</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#cummulative-distribution"><i class="fa fa-check"></i><b>4.1.1</b> Cummulative Distribution</a></li>
+<li class="chapter" data-level="4.1.2" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#cdf-of-continuous-random-variable"><i class="fa fa-check"></i><b>4.1.2</b> CDF of Continuous Random Variable</a></li>
+<li class="chapter" data-level="4.1.3" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#properties-of-cdf-and-cdf-of-continuous-r.v."><i class="fa fa-check"></i><b>4.1.3</b> Properties of CDF and CDF of Continuous R.V.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#expectation-and-variance-1"><i class="fa fa-check"></i><b>4.2</b> Expectation and Variance</a></li>
+<li class="chapter" data-level="4.3" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#uniform-probability-distribution"><i class="fa fa-check"></i><b>4.3</b> Uniform Probability Distribution</a></li>
+<li class="chapter" data-level="4.4" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#calculus-review-integrals-of-functions"><i class="fa fa-check"></i><b>4.4</b> Calculus Review: Integrals of Functions</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#antiderivatives"><i class="fa fa-check"></i><b>4.4.1</b> Antiderivatives</a></li>
+<li class="chapter" data-level="4.4.2" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#rules-and-properties-of-integral"><i class="fa fa-check"></i><b>4.4.2</b> Rules and Properties of Integral</a></li>
+<li class="chapter" data-level="4.4.3" data-path="continuous-random-variables-and-their-distributions.html"><a href="continuous-random-variables-and-their-distributions.html#practice-exercises-2"><i class="fa fa-check"></i><b>4.4.3</b> Practice Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html"><i class="fa fa-check"></i><b>5</b> Special Continuous Distributions: Normal and Gamma Families</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#review-of-probability-distributions"><i class="fa fa-check"></i><b>5.1</b> Review of Probability Distributions</a></li>
+<li class="chapter" data-level="5.2" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#normal-distribution"><i class="fa fa-check"></i><b>5.2</b> Normal Distribution</a></li>
+<li class="chapter" data-level="5.3" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#gamma-distribution"><i class="fa fa-check"></i><b>5.3</b> Gamma Distribution</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#the-gamma-function"><i class="fa fa-check"></i><b>5.3.1</b> The Gamma Function</a></li>
+<li class="chapter" data-level="5.3.2" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#definition-of-gamma-density"><i class="fa fa-check"></i><b>5.3.2</b> Definition of Gamma Density</a></li>
+<li class="chapter" data-level="5.3.3" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#expectation-and-variance-2"><i class="fa fa-check"></i><b>5.3.3</b> Expectation and Variance</a></li>
+<li class="chapter" data-level="5.3.4" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#special-cases-1"><i class="fa fa-check"></i><b>5.3.4</b> Special Cases</a></li>
+<li class="chapter" data-level="5.3.5" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#use-of-technology"><i class="fa fa-check"></i><b>5.3.5</b> Use of Technology</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#calculus-review-integrals-of-functions-1"><i class="fa fa-check"></i><b>5.4</b> Calculus Review: Integrals of Functions</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#antiderivatives-1"><i class="fa fa-check"></i><b>5.4.1</b> Antiderivatives</a></li>
+<li class="chapter" data-level="5.4.2" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#rules-and-properties-of-integral-1"><i class="fa fa-check"></i><b>5.4.2</b> Rules and Properties of Integral</a></li>
+<li class="chapter" data-level="5.4.3" data-path="special-continuous-distributions-normal-and-gamma-families.html"><a href="special-continuous-distributions-normal-and-gamma-families.html#practice-exercises-3"><i class="fa fa-check"></i><b>5.4.3</b> Practice Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="mixture-distributions.html"><a href="mixture-distributions.html"><i class="fa fa-check"></i><b>6</b> Mixture Distributions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="mixture-distributions.html"><a href="mixture-distributions.html#definition-of-mixture-model"><i class="fa fa-check"></i><b>6.1</b> Definition of Mixture Model</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="mixture-distributions.html"><a href="mixture-distributions.html#definition-of-k-component-mixture-distributions"><i class="fa fa-check"></i><b>6.1.1</b> Definition of K-component Mixture Distributions</a></li>
+<li class="chapter" data-level="6.1.2" data-path="mixture-distributions.html"><a href="mixture-distributions.html#properties-of-finite-mixture-distributions"><i class="fa fa-check"></i><b>6.1.2</b> Properties of Finite Mixture Distributions</a></li>
+<li class="chapter" data-level="6.1.3" data-path="mixture-distributions.html"><a href="mixture-distributions.html#variance-decomposition"><i class="fa fa-check"></i><b>6.1.3</b> Variance Decomposition</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="mixture-distributions.html"><a href="mixture-distributions.html#two-component-normal-mixture-distribution"><i class="fa fa-check"></i><b>6.2</b> Two-component Normal Mixture Distribution</a></li>
+<li class="chapter" data-level="6.3" data-path="mixture-distributions.html"><a href="mixture-distributions.html#use-mixture-distributions"><i class="fa fa-check"></i><b>6.3</b> Use Mixture Distributions</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="mixture-distributions.html"><a href="mixture-distributions.html#fitting-complex-data-using-mixture-distributions"><i class="fa fa-check"></i><b>6.3.1</b> Fitting Complex Data Using Mixture Distributions</a></li>
+<li class="chapter" data-level="6.3.2" data-path="mixture-distributions.html"><a href="mixture-distributions.html#clustering-with-mixture-distributions"><i class="fa fa-check"></i><b>6.3.2</b> Clustering with Mixture Distributions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html"><i class="fa fa-check"></i><b>7</b> Moment Generating Functions (MGF)</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#moments-of-rv-and-mgf"><i class="fa fa-check"></i><b>7.1</b> Moments of RV and MGF</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#various-moments-revisited"><i class="fa fa-check"></i><b>7.1.1</b> Various Moments Revisited</a></li>
+<li class="chapter" data-level="7.1.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#mgf"><i class="fa fa-check"></i><b>7.1.2</b> MGF</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#properties-of-mgf"><i class="fa fa-check"></i><b>7.2</b> Properties of MGF</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#review-of-taylor-series"><i class="fa fa-check"></i><b>7.2.1</b> Review of Taylor Series</a></li>
+<li class="chapter" data-level="7.2.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#how-mgf-generates-moments"><i class="fa fa-check"></i><b>7.2.2</b> How MGF Generates Moments?</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#mgf-of-some-special-distributions"><i class="fa fa-check"></i><b>7.3</b> MGF of Some Special Distributions</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#exponential-distribution"><i class="fa fa-check"></i><b>7.3.1</b> Exponential Distribution</a></li>
+<li class="chapter" data-level="7.3.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#normal-distribution-1"><i class="fa fa-check"></i><b>7.3.2</b> Normal Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#use-of-mgf---shape-analysis"><i class="fa fa-check"></i><b>7.4</b> Use of MGF - Shape Analysis</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#skewness"><i class="fa fa-check"></i><b>7.4.1</b> Skewness</a></li>
+<li class="chapter" data-level="7.4.2" data-path="moment-generating-functions-mgf.html"><a href="moment-generating-functions-mgf.html#kurtosis"><i class="fa fa-check"></i><b>7.4.2</b> Kurtosis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html"><i class="fa fa-check"></i><b>8</b> Joint Distributions and Marginal Distributions</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#joint-distribution-of-categorical-variables"><i class="fa fa-check"></i><b>8.1</b> Joint Distribution of Categorical Variables</a></li>
+<li class="chapter" data-level="8.2" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#discrete-bivariate-distributions"><i class="fa fa-check"></i><b>8.2</b> Discrete Bivariate Distributions</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#joint-distribution-and-properties"><i class="fa fa-check"></i><b>8.2.1</b> Joint Distribution and Properties</a></li>
+<li class="chapter" data-level="8.2.2" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#marginal-distributions"><i class="fa fa-check"></i><b>8.2.2</b> Marginal Distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#continuous-bivariate-distributions"><i class="fa fa-check"></i><b>8.3</b> Continuous Bivariate Distributions</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#continuous-bivariate-distribution"><i class="fa fa-check"></i><b>8.3.1</b> Continuous Bivariate Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#a-review-of-double-integral"><i class="fa fa-check"></i><b>8.4</b> A Review of Double Integral</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#type-i-region"><i class="fa fa-check"></i><b>8.4.1</b> Type I Region</a></li>
+<li class="chapter" data-level="8.4.2" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#type-ii-region"><i class="fa fa-check"></i><b>8.4.2</b> Type II Region</a></li>
+<li class="chapter" data-level="8.4.3" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#summarizing-steps-for-setting-up-iterative-integrals"><i class="fa fa-check"></i><b>8.4.3</b> Summarizing Steps for Setting up Iterative Integrals</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="joint-distributions-and-marginal-distributions.html"><a href="joint-distributions-and-marginal-distributions.html#marginal-distributions-1"><i class="fa fa-check"></i><b>8.5</b> Marginal Distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html"><i class="fa fa-check"></i><b>9</b> Conditional Distributions and Independence</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#conditional-distribution-of-categorical-variables"><i class="fa fa-check"></i><b>9.1</b> Conditional Distribution of Categorical Variables</a></li>
+<li class="chapter" data-level="9.2" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#independence-between-two-discrete-random-variables"><i class="fa fa-check"></i><b>9.2</b> Independence Between Two Discrete Random Variables</a></li>
+<li class="chapter" data-level="9.3" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#discrete-bivariate-distributions-1"><i class="fa fa-check"></i><b>9.3</b> Discrete Bivariate Distributions</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#definition-of-conditional-distributions"><i class="fa fa-check"></i><b>9.3.1</b> Definition of Conditional Distributions</a></li>
+<li class="chapter" data-level="9.3.2" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#definition-of-independence"><i class="fa fa-check"></i><b>9.3.2</b> Definition of Independence</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#conditioning-and-independence-between-two-variables"><i class="fa fa-check"></i><b>9.4</b> Conditioning and Independence between Two Variables</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#conditional-distributions"><i class="fa fa-check"></i><b>9.4.1</b> Conditional Distributions</a></li>
+<li class="chapter" data-level="9.4.2" data-path="conditional-distributions-and-independence.html"><a href="conditional-distributions-and-independence.html#independence-of-random-variables"><i class="fa fa-check"></i><b>9.4.2</b> Independence of Random Variables</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html"><i class="fa fa-check"></i><b>10</b> Expectations and Covariance</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#expectations"><i class="fa fa-check"></i><b>10.1</b> Expectations</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#discrete-distributions"><i class="fa fa-check"></i><b>10.1.1</b> Discrete Distributions</a></li>
+<li class="chapter" data-level="10.1.2" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#expectations-of-bivariate-continuous-distribution"><i class="fa fa-check"></i><b>10.1.2</b> Expectations of Bivariate Continuous Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#some-properties-of-expectations"><i class="fa fa-check"></i><b>10.2</b> Some Properties of Expectations</a></li>
+<li class="chapter" data-level="10.3" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#covariance---measuring-linear-correlation"><i class="fa fa-check"></i><b>10.3</b> Covariance - Measuring Linear Correlation</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#covariance"><i class="fa fa-check"></i><b>10.3.1</b> Covariance</a></li>
+<li class="chapter" data-level="10.3.2" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#pearson-correlation-coefficient"><i class="fa fa-check"></i><b>10.3.2</b> Pearson Correlation Coefficient</a></li>
+<li class="chapter" data-level="10.3.3" data-path="expectations-and-covariance.html"><a href="expectations-and-covariance.html#comcluding-remarks"><i class="fa fa-check"></i><b>10.3.3</b> Comcluding Remarks</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html"><i class="fa fa-check"></i><b>11</b> Linear Function of Random Variables and Conditional Expectations</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#linear-combination-of-two-random-variables"><i class="fa fa-check"></i><b>11.1</b> Linear Combination of Two Random Variables</a></li>
+<li class="chapter" data-level="11.2" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#general-linear-functions-of-rvs"><i class="fa fa-check"></i><b>11.2</b> General Linear Functions of RVs</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#general-linear-functions"><i class="fa fa-check"></i><b>11.2.1</b> General Linear Functions</a></li>
+<li class="chapter" data-level="11.2.2" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#linear-functions-of-iid-rvs"><i class="fa fa-check"></i><b>11.2.2</b> Linear Functions of IID RVs</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="linear-function-of-random-variables-and-conditional-expectations.html"><a href="linear-function-of-random-variables-and-conditional-expectations.html#conditional-expectation"><i class="fa fa-check"></i><b>11.3</b> Conditional Expectation</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html"><i class="fa fa-check"></i><b>12</b> Functions of Random Variables: CDF Method</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#the-rationale"><i class="fa fa-check"></i><b>12.1</b> The Rationale</a></li>
+<li class="chapter" data-level="12.2" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#review-of-inverse-function-and-inequality"><i class="fa fa-check"></i><b>12.2</b> Review of Inverse Function and Inequality</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#inverse-function-1"><i class="fa fa-check"></i><b>12.2.1</b> Inverse Function</a></li>
+<li class="chapter" data-level="12.2.2" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#definitions-of-monotonic-functions"><i class="fa fa-check"></i><b>12.2.2</b> Definitions of Monotonic Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#method-of-distribution"><i class="fa fa-check"></i><b>12.3</b> Method of Distribution</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="functions-of-random-variables-cdf-method.html"><a href="functions-of-random-variables-cdf-method.html#cdf-method"><i class="fa fa-check"></i><b>12.3.1</b> CDF Method</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html"><i class="fa fa-check"></i><b>13</b> Functions of Random Variables: Transformation Method</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#univariate-transformation-method"><i class="fa fa-check"></i><b>13.1</b> Univariate Transformation Method</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#monotonically-increasing-function"><i class="fa fa-check"></i><b>13.1.1</b> Monotonically Increasing Function</a></li>
+<li class="chapter" data-level="13.1.2" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#monotonically-decreasing-function"><i class="fa fa-check"></i><b>13.1.2</b> Monotonically Decreasing Function</a></li>
+<li class="chapter" data-level="13.1.3" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#univariate-transformation"><i class="fa fa-check"></i><b>13.1.3</b> Univariate Transformation</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#review-of-concepts-matrices"><i class="fa fa-check"></i><b>13.2</b> Review of Concepts Matrices</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#matrix-operations"><i class="fa fa-check"></i><b>13.2.1</b> Matrix Operations</a></li>
+<li class="chapter" data-level="13.2.2" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#section"><i class="fa fa-check"></i><b>13.2.2</b> </a></li>
+<li class="chapter" data-level="13.2.3" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#jacobian-matrix-and-determinant"><i class="fa fa-check"></i><b>13.2.3</b> Jacobian Matrix and Determinant</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#bivariate-transformation"><i class="fa fa-check"></i><b>13.3</b> Bivariate Transformation</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#joint-distribution-of-two-functions-of-rvs"><i class="fa fa-check"></i><b>13.3.1</b> Joint Distribution of Two Functions of RVs</a></li>
+<li class="chapter" data-level="13.3.2" data-path="functions-of-random-variables-transformation-method.html"><a href="functions-of-random-variables-transformation-method.html#applications-of-bivariate-transformations"><i class="fa fa-check"></i><b>13.3.2</b> Applications of Bivariate Transformations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="basic-order-statistics.html"><a href="basic-order-statistics.html"><i class="fa fa-check"></i><b>14</b> Basic Order Statistics</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="basic-order-statistics.html"><a href="basic-order-statistics.html#distribution-of-minimum-statistic-x_1"><i class="fa fa-check"></i><b>14.1</b> Distribution of Minimum Statistic <strong><span class="math inline">\(X_{(1)}\)</span></strong></a></li>
+<li class="chapter" data-level="14.2" data-path="basic-order-statistics.html"><a href="basic-order-statistics.html#distribution-of-minimum-statistic-x_m"><i class="fa fa-check"></i><b>14.2</b> Distribution of Minimum Statistic <strong><span class="math inline">\(X_{(m)}\)</span></strong></a></li>
+<li class="chapter" data-level="14.3" data-path="basic-order-statistics.html"><a href="basic-order-statistics.html#combined-reliability-system"><i class="fa fa-check"></i><b>14.3</b> Combined Reliability System</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">STA504 E-Pack: Mathematical Statistics with Calc. Rev.</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="special-continuous-distributions-normal-and-gamma-families" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Topic 5</span> Special Continuous Distributions: Normal and Gamma Families<a href="special-continuous-distributions-normal-and-gamma-families.html#special-continuous-distributions-normal-and-gamma-families" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>We have introduced the procedures for characterizing the general continuous random variables and used the simplest well-known uniform distribution and some not-well-known distributions as examples to illustrate the properties/requirements of continuous distributions.</p>
+<div id="review-of-probability-distributions" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Review of Probability Distributions<a href="special-continuous-distributions-normal-and-gamma-families.html#review-of-probability-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The following is a summary.</p>
+<ul>
+<li><strong>Requirements for a probability density function (pdf)</strong></li>
+</ul>
+<p>If function <span class="math inline">\(f(x)\)</span> is a density function some random variable <span class="math inline">\(X\)</span> <em>if and only if</em> both of the following conditions are satisfied</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(f(x) \ge 0\)</span>;</p></li>
+<li><p><span class="math inline">\(\int_{-\infty}^\infty f(x) dx = 1\)</span>.</p></li>
+</ol>
+<ul>
+<li><strong>Definition of cumulative distribution function (CDF)</strong></li>
+</ul>
+<p>Let <span class="math inline">\(f(x)\)</span> be a pdf of random variable <span class="math inline">\(X\)</span>, and the CDF of <span class="math inline">\(X\)</span> is defined to be</p>
+<p><span class="math display">\[
+P(X \le x) = F(x) = \int_{-\infty}^x f(t)dt.
+\]</span></p>
+<p>Note that the above CDF is defined based on the cumulative probability. Therefore, we should consider using the CDF to address problems probability associated with continuous random variables.</p>
+<p><br />
+</p>
+<ul>
+<li><strong>Requirements for cumulative distribution function (CDF)</strong></li>
+</ul>
+<p>if function <span class="math inline">\(F(x)\)</span> is a CDF of a random variable <span class="math inline">\(X\)</span> <em>if and only if</em> all of the following conditions are satisfied.</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(0 \le F(x) \le 1\)</span>;</p></li>
+<li><p><span class="math inline">\(F(x)\)</span> is non-decreasing;</p></li>
+<li><p><span class="math inline">\(\lim_{x \to -\infty}F(x) = 0\)</span> and <span class="math inline">\(\lim_{x \to \infty}F(x) = 1\)</span>.</p></li>
+</ol>
+<ul>
+<li><strong>Relationship between pdf and CDF</strong></li>
+</ul>
+<p>The relationship between pdf and CDF can be easily observed from the definition of CDF: <span class="math inline">\(F^\prime(x) = f(x)\)</span>.</p>
+<ul>
+<li><strong>Expectations and Properties</strong></li>
+</ul>
+<p>Let <span class="math inline">\(f(x)\)</span> be the density function of <span class="math inline">\(X\)</span> and <span class="math inline">\(g(X)\)</span> is a function of random variable <span class="math inline">\(X\)</span>. Apparently, $G(X) is also a random variable.</p>
+<ol style="list-style-type: decimal">
+<li><p>Expectation of <span class="math inline">\(X\)</span> is defined as <span class="math inline">\(\mu = E[X] = \int_{-\infty}^\infty x f(x)dx\)</span>.</p></li>
+<li><p>The expectation of <span class="math inline">\(g(X)\)</span> is defined to be <span class="math inline">\(E[g(X)] = \int_{-\infty}^\infty g(x) f(x)dx\)</span>.</p></li>
+</ol>
+<p>As a special case of the above property 2. We can find the variance of <span class="math inline">\(X\)</span> in the following</p>
+<ol start="3" style="list-style-type: decimal">
+<li><span class="math inline">\(V[X] = E[(X - \mu)^2] = \int_{-\infty}^\infty (X - \mu)^2f(x)dx = E[X^2] - \mu^2.\)</span></li>
+</ol>
+<p><br />
+</p>
+<p>The next example is related to a very well-known distribution. We need to use two important rules of integral: integral by part and substitution.</p>
+<p><strong>Example 1</strong>: A random variable <span class="math inline">\(Y\)</span> has the density function</p>
+<p><span class="math display">\[
+\displaystyle f(y) = \begin{cases}
+\theta e^{-\theta y} &amp; \text{if $y \ge 0$}, \\  
+0 &amp; \text{otherwise}.
+\end{cases}
+\]</span></p>
+<p>a). Prove that <span class="math inline">\(f(y)\)</span> is a valid density function.</p>
+<p>b). Find the CDF of <span class="math inline">\(Y\)</span>.</p>
+<p>c). Find <span class="math inline">\(E[Y]\)</span> and <span class="math inline">\(V[Y]\)</span>.</p>
+<p>d). Find <span class="math inline">\(E[e^{3Y/2}]\)</span>.</p>
+<p><strong>Solution</strong> See the <em>board work</em> in the class.</p>
+<p>a). <span class="math inline">\(\int_0^\infty f(y)dy = \int_0^\infty \theta e^{-\theta y} dy = - \int_0^\infty e^{-\theta y} d(\theta y) = -\theta e^{-\theta y}|_0^\infty = - (0 - 1) = 1\)</span>. This implies that the given function is a valid density function for <span class="math inline">\(\theta &gt;0\)</span>.</p>
+<p>We have used substitution in the above derivation (the first equation): if letting <span class="math inline">\(w = -\theta y\)</span> (substitution!), then <span class="math inline">\(\int_0^\infty e^{-\theta y} d(-\theta y) = \int_0^\infty e^wdw = e^w|_0^\infty\)</span>.</p>
+<p>b). The CDF for <span class="math inline">\(Y\)</span> is defined to be
+<span class="math display">\[
+F(y) = \int_{-\infty}^y f(x)dx = \int_0^y \theta e^{-\theta x} dx = -\int_0^y e^{-\theta y}d(-\theta y) = -e^{-\theta y}|_0^y = -(e^{-\theta y} - 1) = 1 - e^{-\theta y}.
+\]</span></p>
+<p>for <span class="math inline">\(y \ge 0\)</span>. <span class="math inline">\(F(x) = 0\)</span> if <span class="math inline">\(y&lt;0\)</span>. We have used substitution in the above derivation (the third equation) implicitly.</p>
+<p>c). <span class="math inline">\(E[Y] = \int_0^\infty y \theta e^{-\theta y}dy =-\int_0^\infty y e^{-\theta y}d(-\theta y)\)</span> (substitution)<br>
+<span class="math inline">\(= -y \int_0^\infty y d(e^{-\theta y}) = -[ye^{-\theta y}|_0^\infty-\int_0^\infty e^{-\theta y} dy]\)</span> (integral by parts)<br>
+<span class="math inline">\(= -[(0 - 0) - \int_0^\infty e^{-\theta y} dy] = (1/\theta) \int_0^\infty \theta e^{-\theta y} dy = 1/\theta.\)</span></p>
+<p>Note that the variance <span class="math inline">\(V[Y] = E[Y^2] - \mu^2\)</span>. To find the variance, we only need to calculate the second moment.
+<span class="math display">\[
+E[Y^2] = \int_0^\infty y^2 \theta e^{-\theta y}dy = -\int_0^\infty y^2 e^{-\theta y}d(-\theta y)dy = -\int_0^\infty y^2 d(e^{-\theta y})dy \\ =  -[y^2e^{-\theta y}|_0^\infty -\int_0^\infty e^{-\theta y }dy^2] = \int_0^\infty e^{-\theta y}(2y)dy = 2\int_0^\infty ye^{-\theta y}dy \\ = \frac{2}{\theta} \int_0^\infty y \theta e^{-\theta y}dy
+= \frac{2}{\theta} \times \frac{1}{\theta} = \frac{2}{\theta^2}
+\]</span></p>
+<p>Therefore,
+<span class="math display">\[
+V[Y] = E[Y^2] - \mu^2 = \frac{2}{\theta^2} - (\frac{1}{\theta})^2 = \frac{1}{\theta^2}.
+\]</span></p>
+<p>d). <span class="math inline">\(E[e^{3Y/2}] = \int_0^\infty e^{3y/2} \theta e^{-\theta y} dy = \int_0^\infty \theta e^{3y/2-\theta y}dy = \int_0^\infty \theta e^{-(\theta - 3/2)y}dy\)</span> <span class="math inline">\(= \frac{\theta}{\theta-3/2} \int_0^\infty (\theta-3/2)e^{-(\theta-3/2)y} dy = \frac{\theta}{\theta - 3/2}\)</span>.</p>
+<p><br />
+</p>
+</div>
+<div id="normal-distribution" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Normal Distribution<a href="special-continuous-distributions-normal-and-gamma-families.html#normal-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>(Similar contents can be found in Section 4.5)</em></p>
+<p><br />
+</p>
+<p>Let <span class="math inline">\(X\)</span> be a normal random variable or is normally distributed with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span> if the pdf of <span class="math inline">\(X\)</span> is given by</p>
+<p><span class="math display">\[
+f(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)}{2\sigma^2}}
+\]</span>
+with <span class="math inline">\(-\infty &lt; x &lt; \infty\)</span>.</p>
+<p>After some algebra, we can check the expectation and variance of X in the following.</p>
+<p><span class="math display">\[
+E[X] = \int_{-\infty}^\infty xf(x)dx = \mu
+\]</span>
+and</p>
+<p><span class="math display">\[
+V[X] = \int_{-\infty}^\infty (x-\mu)^2f(x)dx = \sigma^2
+\]</span></p>
+<p>The density curve of the normal distribution has the following form</p>
+<p><img src="topic03/normalDensity.png" width="40%" style="display: block; margin: auto;" /></p>
+<p><strong>Special Case - Standard Normal Distribution</strong>:</p>
+<p>When <span class="math inline">\(\mu = 0\)</span> and <span class="math inline">\(\sigma = 1\)</span>, the general normal distribution reduces to the standard normal distribution.</p>
+<p><br />
+</p>
+<p>The two basic types of questions: finding probability and finding quantile</p>
+<p><br />
+</p>
+<p><img src="topic03/normalTailArea.png" width="40%" style="display: block; margin: auto;" /></p>
+<p><strong>Finding Probabilities</strong></p>
+<p>Finding <span class="math inline">\(P(X &lt; x)\)</span> (i.e., the left-tail area) for given <span class="math inline">\(x\)</span>.</p>
+<p><strong>Finding Percentiles</strong></p>
+<p>Finding <span class="math inline">\(x\)</span> from <span class="math inline">\(P(X&lt;x) = p\)</span> for given <span class="math inline">\(p\)</span> (the left-tail area).</p>
+<p>There are no formulas for finding probability and quantile based on the normal distribution. We can use either <strong>software programs</strong> or the <strong>standard normal table</strong> to answer the above two types of questions.</p>
+<p>In R, there are functions to find probabilities and quantiles.</p>
+<pre><code>dnorm(x, mean = 0, sd = 1, log = FALSE)
+# left-tail probability
+pnorm(q, mean = 0, sd = 1, lower.tail = TRUE, log.p = FALSE)   
+# quantile for given left-tail probability
+qnorm(p, mean = 0, sd = 1, lower.tail = TRUE, log.p = FALSE)   
+rnorm(n, mean = 0, sd = 1)</code></pre>
+<p><strong>Example 2</strong>. The final exam scores in a statistics class were normally distributed with a mean of 63 and a standard deviation of five.</p>
+<ol style="list-style-type: decimal">
+<li><p>Find the probability that a randomly selected student scored more than 65 on the exam.</p></li>
+<li><p>Find the probability that a randomly selected student scored less than 85.</p></li>
+<li><p>Find the 90th percentile (that is, find the score <span class="math inline">\(k\)</span> that has 90% of the scores below <span class="math inline">\(k\)</span> and 10% of the scores above <span class="math inline">\(k\)</span>).</p></li>
+<li><p>Find the 70th percentile (that is, find the score <span class="math inline">\(k\)</span> such that 70% of scores are below <span class="math inline">\(k\)</span> and 30% of the scores are above <span class="math inline">\(k\)</span>).</p></li>
+</ol>
+<p><strong>Solution</strong>: We will use R functions to answer the above questions.</p>
+<ol style="list-style-type: decimal">
+<li>We want to find the right-tail area. R function <code>pnorm</code> can be used to find either left-tail or right-tail area. By default, it yields the left-tail area.</li>
+</ol>
+<p><img src="topic03/exmple5-1.jpg" width="40%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="special-continuous-distributions-normal-and-gamma-families.html#cb40-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q =</span> <span class="dv">65</span>, <span class="at">mean =</span> <span class="dv">63</span>, <span class="at">sd =</span> <span class="dv">5</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] 0.3445783</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>This probability is equal to the left-tail area and can be found in the following R function</li>
+</ol>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="special-continuous-distributions-normal-and-gamma-families.html#cb42-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q =</span> <span class="dv">85</span>, <span class="at">mean =</span> <span class="dv">63</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] 0.9999946</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>We need to use R quantile function <code>qnorm()</code> to find the quantile.</li>
+</ol>
+<p><img src="topic03/exmple5-2.png" width="40%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="special-continuous-distributions-normal-and-gamma-families.html#cb44-1" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="at">p =</span> <span class="fl">0.9</span>, <span class="at">mean =</span> <span class="dv">63</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] 69.40776</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>70th percentile can be found using the following R command.</li>
+</ol>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="special-continuous-distributions-normal-and-gamma-families.html#cb46-1" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="at">p =</span> <span class="fl">0.7</span>, <span class="at">mean =</span> <span class="dv">63</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] 65.622</code></pre>
+<p><br />
+</p>
+<p><strong>Example 3</strong>. A personal computer is used for office work at home, research, communication, personal finances, education, entertainment, social networking, and a myriad of other things. Suppose that the average number of hours a household personal computer is used for entertainment is two hours per day. Assume the times for entertainment are normally distributed and the standard deviation for the times is half an hour.</p>
+<ol style="list-style-type: decimal">
+<li><p>Find the probability that a household personal computer is used for entertainment between 1.8 and 2.75 hours per day.</p></li>
+<li><p>Find the maximum number of hours per day that the bottom quartile of households uses a personal computer for entertainment.</p></li>
+</ol>
+<p><strong>Solution</strong>. We still use R functions to answer these two questions.</p>
+<ol style="list-style-type: decimal">
+<li>We find probability <span class="math inline">\(P(1.8 &lt; X &lt; 2.75)\)</span>.</li>
+</ol>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="special-continuous-distributions-normal-and-gamma-families.html#cb48-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q =</span> <span class="fl">2.75</span>, <span class="at">mean =</span> <span class="dv">2</span>, <span class="at">sd =</span> <span class="fl">0.5</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="at">q =</span> <span class="fl">1.8</span>, <span class="at">mean =</span> <span class="dv">2</span>, <span class="at">sd =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<pre><code>## [1] 0.5886145</code></pre>
+<p><img src="topic03/example6-1.png" width="40%" style="display: block; margin: auto;" /></p>
+<p>The probability that a household personal computer is used between 1.8 and 2.75 hours per day for entertainment is 0.5886.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>This is percentile question. R function <code>qnorm()</code> will be used.</li>
+</ol>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="special-continuous-distributions-normal-and-gamma-families.html#cb50-1" tabindex="-1"></a><span class="fu">qnorm</span>(<span class="at">p =</span> <span class="fl">0.25</span>, <span class="at">mean =</span> <span class="dv">2</span>, <span class="at">sd =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<pre><code>## [1] 1.662755</code></pre>
+<p><img src="topic03/example6-2.png" width="40%" style="display: block; margin: auto;" /></p>
+<p>The maximum number of hours per day that the bottom quartile of households uses a personal computer for entertainment is 1.66 hours.</p>
+<p><br />
+</p>
+</div>
+<div id="gamma-distribution" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Gamma Distribution<a href="special-continuous-distributions-normal-and-gamma-families.html#gamma-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>(Similar contents can be found in Section 4.6)</em></p>
+<p><br />
+</p>
+<p>The gamma distribution contains two special and practically important members: exponential and <span class="math inline">\(\chi^2\)</span> distributions. The PDF of gamma involves a special gamma function.</p>
+<div id="the-gamma-function" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> The Gamma Function<a href="special-continuous-distributions-normal-and-gamma-families.html#the-gamma-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The gamma function is defined by</p>
+<p><span class="math display">\[
+\Gamma(r) = \int_0^\infty r^{r-1}e^{-t}dt, r &gt; 0.
+\]</span></p>
+<p>It has the property that</p>
+<p><span class="math display">\[
+\Gamma(r+1) = r\Gamma(r), r &gt; 1.
+\]</span>
+For a positive integer <span class="math inline">\(n\)</span>, <span class="math inline">\(\Gamma(n+1) = n\Gamma(n) = \cdots = n!\)</span>.</p>
+<p>.</p>
+</div>
+<div id="definition-of-gamma-density" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Definition of Gamma Density<a href="special-continuous-distributions-normal-and-gamma-families.html#definition-of-gamma-density" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Gamma distribution has two different forms (reparameterization). Our textbook uses the following form</p>
+<p><span class="math display">\[
+\displaystyle f(x) = \begin{cases}
+\frac{x^{\alpha-1}e^{-x/\beta}}{\beta^\alpha\Gamma(\alpha)} &amp; \text{if $0 &lt; x &lt; \infty$} \\  
+0 &amp; \text{otherwise}  
+\end{cases}
+\]</span></p>
+<p>Density curves with various values of parameters <span class="math inline">\(\alpha\)</span> (shape) and <span class="math inline">\(\beta\)</span> (scale).</p>
+<p>The CDF is defined as</p>
+<p><span class="math display">\[
+F(x) = \int_0^y \frac{y^{\alpha-1}e^{-y/\beta}}{\beta^\alpha\Gamma(\alpha)} dy
+\]</span></p>
+<p>The following figures show the density curves and their corresponding CDF curves based on different values of gamma parameters.</p>
+<p><img src="topic03/gammaCDF-PDF.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><br />
+</p>
+</div>
+<div id="expectation-and-variance-2" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Expectation and Variance<a href="special-continuous-distributions-normal-and-gamma-families.html#expectation-and-variance-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using the definition of expectation and variance, we can derive the formulas of the expectation and variance of gamma distribution in the following:</p>
+<p><span class="math display">\[
+E[X] = \int_0^\infty x \frac{x^{\alpha-1}e^{-x/\beta}}{\beta^\alpha\Gamma(\alpha)} dx = \alpha\beta
+\]</span>
+and</p>
+<p><span class="math display">\[
+V[X] = \int_0^\infty (x-\alpha\beta)^2 \frac{x^{\alpha-1}e^{-x/\beta}}{\beta^\alpha\Gamma(\alpha)} dx = \alpha\beta^2
+\]</span></p>
+<p>The detailed derivation of the above two formulas can be found on page 187 of the textbook.</p>
+<p><br />
+</p>
+</div>
+<div id="special-cases-1" class="section level3 hasAnchor" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> Special Cases<a href="special-continuous-distributions-normal-and-gamma-families.html#special-cases-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>If <span class="math inline">\(\alpha = 1\)</span>, the gamma distribution is reduced to the well-known exponential distribution with the following density function.</li>
+</ul>
+<p><span class="math display">\[
+\displaystyle f(x) = \begin{cases}
+\frac{e^{-x/\beta}}{\beta} &amp; \text{if $0 &lt; x &lt; \infty$} \\  
+0 &amp; \text{otherwise}  
+\end{cases}
+\]</span></p>
+<p>The expectation and variance of the exponential distribution are <span class="math inline">\(E[X] = \beta\)</span> and <span class="math inline">\(V[X] = \beta^2\)</span>.</p>
+<p>The exponential distribution has been widely used in reliability and survival analysis as a base model since it is mathematically simple.</p>
+<ul>
+<li>If <span class="math inline">\(a = \nu/2\)</span> and <span class="math inline">\(\beta = 2\)</span>, the gamma distribution is reduced to the well-known <span class="math inline">\(\chi^2\)</span> distribution with <span class="math inline">\(\nu\)</span> degrees of freedom. We define the <span class="math inline">\(\chi^2\)</span> from the normal distribution in subsequent notes.</li>
+</ul>
+<p>The expectation and variance of <span class="math inline">\(\chi_\nu^2\)</span> is simple: <span class="math inline">\(E[X] = \nu\)</span> and <span class="math inline">\(V[X] = 2\nu\)</span>.</p>
+<p><br />
+</p>
+</div>
+<div id="use-of-technology" class="section level3 hasAnchor" number="5.3.5">
+<h3><span class="header-section-number">5.3.5</span> Use of Technology<a href="special-continuous-distributions-normal-and-gamma-families.html#use-of-technology" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The exponential and <span class="math inline">\(\chi^2\)</span> distributions are special members of the gamma family. R has standalone sets of functions for these distributions.</p>
+<p>Special attention should be paid to the form (reparameterization) of the gamma and exponential distributions. R uses the same form as what we used in this note. We will use several examples to show how to use these R functions.</p>
+<div id="related-r-functions-for-gamma-distributions" class="section level4 hasAnchor" number="5.3.5.1">
+<h4><span class="header-section-number">5.3.5.1</span> Related R Functions for Gamma Distributions<a href="special-continuous-distributions-normal-and-gamma-families.html#related-r-functions-for-gamma-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><em>(Help document: <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/GammaDist.html" class="uri">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/GammaDist.html</a>)</em></p>
+<pre><code>dgamma(x, shape, rate = 1, scale = 1/rate, log = FALSE)
+pgamma(q, shape, rate = 1, scale = 1/rate, lower.tail = TRUE, log.p = FALSE)
+qgamma(p, shape, rate = 1, scale = 1/rate, lower.tail = TRUE, log.p = FALSE)
+rgamma(n, shape, rate = 1, scale = 1/rate)</code></pre>
+<p><strong>Example 4</strong>. Engineers designing the next generation of space shuttles plan to include two fuel pumps —one active, the other in reserve. If the primary pump malfunctions, the second is automatically brought online. Suppose that the time to failure of the first pump, denoted by <span class="math inline">\(X\)</span>, is a gamma distribution with a mean of 200 and a variance of 20000. What are the chances that such a fuel pump system would not remain functioning for the full 50 hours?</p>
+<p><strong>Solution</strong>. Since <span class="math inline">\(E[X] = \alpha\beta = 200\)</span> and <span class="math inline">\(V[X] = \alpha \beta^2 = 20000\)</span>, we solve the shape (<span class="math inline">\(\alpha\)</span>) and scale (<span class="math inline">\(\beta\)</span>) and obtain <span class="math inline">\(\alpha = 2\)</span> and <span class="math inline">\(\beta = 100\)</span>. Therefore, the density function of this gamma distribution is given by</p>
+<p><span class="math display">\[
+f(x) = \frac{1}{100^2\Gamma(2)}e^{-x/100} x^{2-1} = \frac{1}{10000}ye^{-x/100}, \mbox{ for } x \ge 0.
+\]</span>
+The probability <span class="math inline">\(P(X &lt; 50)\)</span> can be found using R function <code>pgamma()</code>.</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="special-continuous-distributions-normal-and-gamma-families.html#cb53-1" tabindex="-1"></a><span class="fu">pgamma</span>(<span class="at">q=</span><span class="dv">50</span>, <span class="at">shape =</span> <span class="dv">2</span>, <span class="at">scale =</span> <span class="dv">100</span>)</span></code></pre></div>
+<pre><code>## [1] 0.09020401</code></pre>
+<p>The area of the shaded region in the following density curve is the probability.</p>
+<p><img src="STA504EB_files/figure-html/unnamed-chunk-61-1.png" width="672" style="display: block; margin: auto;" /><br />
+</p>
+</div>
+<div id="related-r-functions-for-exponential-distributions" class="section level4 hasAnchor" number="5.3.5.2">
+<h4><span class="header-section-number">5.3.5.2</span> Related R Functions for Exponential Distributions<a href="special-continuous-distributions-normal-and-gamma-families.html#related-r-functions-for-exponential-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><em>(Help Document: <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Exponential.html" class="uri">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Exponential.html</a>)</em></p>
+<pre><code>dexp(x, rate = 1, log = FALSE)
+pexp(q, rate = 1, lower.tail = TRUE, log.p = FALSE)
+qexp(p, rate = 1, lower.tail = TRUE, log.p = FALSE)
+rexp(n, rate = 1)</code></pre>
+<p><strong>Example 5</strong>. The number of miles that a particular car can run before its battery wears out is exponentially distributed with an average of 10,000 miles. The owner of the car needs to take a 5000-mile trip. What is the probability that he will be able to complete the trip without having to replace the car battery?</p>
+<p><strong>Solution</strong>: In R, the exponential related R function uses the following form
+<span class="math display">\[
+f(x) = \lambda e^{-\lambda x}, \mbox{ for } x \ge 0.
+\]</span></p>
+<p>Based on the above density form, we have <span class="math inline">\(E[X] = 1/\lambda\)</span>. Since <span class="math inline">\(1/\lambda = 10000\)</span>, <span class="math inline">\(\lambda = 1/10000\)</span>. Therefore, the desired probability <span class="math inline">\(P(X &gt; 5000)\)</span> (upper tail) can be found using the following R function.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="special-continuous-distributions-normal-and-gamma-families.html#cb56-1" tabindex="-1"></a><span class="fu">pexp</span>(<span class="dv">5000</span>, <span class="at">rate =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">10000</span>,  <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] 0.6065307</code></pre>
+<p><img src="STA504EB_files/figure-html/unnamed-chunk-63-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><br />
+</p>
+</div>
+<div id="related-r-functions-for-chi_df2-distributions" class="section level4 hasAnchor" number="5.3.5.3">
+<h4><span class="header-section-number">5.3.5.3</span> Related R Functions for <span class="math inline">\(\chi_{df}^2\)</span> Distributions<a href="special-continuous-distributions-normal-and-gamma-families.html#related-r-functions-for-chi_df2-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><em>(Help Document: <a href="https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Chisquare.html" class="uri">https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Chisquare.html</a>)</em></p>
+<pre><code>dchisq(x, df, ncp = 0, log = FALSE)
+pchisq(q, df, ncp = 0, lower.tail = TRUE, log.p = FALSE)
+qchisq(p, df, ncp = 0, lower.tail = TRUE, log.p = FALSE)
+rchisq(n, df, ncp = 0)</code></pre>
+<p>The <span class="math inline">\(\chi^2\)</span> distribution is one of the most commonly used distributions and will be used to define the <span class="math inline">\(\chi^2\)</span> test. We will not present examples in this note. But it will be used later.</p>
+<p><br />
+</p>
+</div>
+</div>
+</div>
+<div id="calculus-review-integrals-of-functions-1" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Calculus Review: Integrals of Functions<a href="special-continuous-distributions-normal-and-gamma-families.html#calculus-review-integrals-of-functions-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Finding the integral of a function is an <strong>opposite</strong> process of finding a derivative of a function - <strong>antiderivative</strong>.</p>
+<div id="antiderivatives-1" class="section level3 hasAnchor" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Antiderivatives<a href="special-continuous-distributions-normal-and-gamma-families.html#antiderivatives-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>An antiderivative (sometimes also called <code>inverse derivative</code>) of a function f is a differentiable function <span class="math inline">\(F(x)\)</span> whose derivative is equal to the original function <span class="math inline">\(f(x)\)</span>.</p>
+<p><strong>Example 1</strong>. Let <span class="math inline">\(f(x) = 2x\)</span>. From the power rule of derivative, we know that <span class="math inline">\([x^2]^\prime = 2x\)</span>. This means that <span class="math inline">\(F(x) = x^2\)</span> is the antiderivative of <span class="math inline">\(f(x) = 2x\)</span>. Note also that, <span class="math inline">\([x^2 + 5]^\prime = 2x\)</span>, that is <span class="math inline">\(G(x) = x^2 +5\)</span>. Therefore, the antiderivative of a function not unique. In general, the difference between two antiderivatives of the same original function is a constant.</p>
+</div>
+<div id="rules-and-properties-of-integral-1" class="section level3 hasAnchor" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> Rules and Properties of Integral<a href="special-continuous-distributions-normal-and-gamma-families.html#rules-and-properties-of-integral-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="basic-rules-1" class="section level4 hasAnchor" number="5.4.2.1">
+<h4><span class="header-section-number">5.4.2.1</span> Basic Rules<a href="special-continuous-distributions-normal-and-gamma-families.html#basic-rules-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The following are rules of integrals. <span class="math inline">\(C\)</span> is a real number and called <strong>coefficient of integral</strong>.</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(f(x) = a\)</span>, then <span class="math inline">\(F(x) = \int f(x)dx = ax + C\)</span></p></li>
+<li><p><span class="math inline">\(f(x) = x^k\)</span> (k is a constant and <span class="math inline">\(k \ne -1\)</span>), then <span class="math inline">\(F(x) = \int x^k dx = x^{k+1}/(k+1) + C.\)</span></p></li>
+<li><p><span class="math inline">\(f(x) = 1/x = x^{-1}\)</span>, then <span class="math inline">\(F(x) = \int (1/x) dx = \ln(x) + C\)</span></p></li>
+<li><p><span class="math inline">\(f(x) = e^x\)</span>, then <span class="math inline">\(F(x) = \int e^x dx = e^x +C\)</span></p></li>
+</ol>
+<p>4.1. <span class="math inline">\(f(x) = a^x\)</span> (<span class="math inline">\(a &gt; 0\)</span> and <span class="math inline">\(a \ne 1\)</span>), then <span class="math inline">\(F(x) = a^x \ln(a)\)</span></p>
+<ol start="5" style="list-style-type: decimal">
+<li><span class="math inline">\(f(x) = \ln(x)\)</span>, then <span class="math inline">\(F(x) = \int \ln(x) dx = x\ln(x) - x + C\)</span></li>
+</ol>
+<p><br />
+</p>
+</div>
+<div id="properties-of-integrals-1" class="section level4 hasAnchor" number="5.4.2.2">
+<h4><span class="header-section-number">5.4.2.2</span> Properties of Integrals<a href="special-continuous-distributions-normal-and-gamma-families.html#properties-of-integrals-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li><p>Multiplying a constant: <span class="math inline">\(\int af(x)dx = a\int f(x)dx\)</span></p></li>
+<li><p>Additive property: <span class="math inline">\(\int [f(x) + g(x)]dx = \int f(x)dx + \int g(x)dx\)</span></p></li>
+<li><p>Difference property: <span class="math inline">\(\int [f(x) - g(x)]dx = \int f(x)dx - \int g(x)dx\)</span></p></li>
+<li><p>Integral by parts: <span class="math inline">\(\int f(x)dg(x) = f(x)g(x) - \int g(x)df(x)\)</span></p></li>
+<li><p>Change of variable (substitution): <span class="math inline">\(\int f[g(x)] g^\prime(x)dx = \int f[g(x)] dg(x) = \int f(u)du\)</span>, where substitution <span class="math inline">\(u = g(x)\)</span>.</p></li>
+</ol>
+<p><br />
+</p>
+</div>
+<div id="definite-integrals-1" class="section level4 hasAnchor" number="5.4.2.3">
+<h4><span class="header-section-number">5.4.2.3</span> Definite Integrals<a href="special-continuous-distributions-normal-and-gamma-families.html#definite-integrals-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This is the type integrals we used to calculate the probability of an event (i.e., the union of intervals) defined based on a continuous distribution.</p>
+<p>A <strong>Definite Integral</strong> has start and end values: in other words there is an interval <span class="math inline">\([a, b]\)</span>. <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> (called limits, bounds or boundaries) are put at the bottom and top of the integral sign <span class="math inline">\(\int\)</span>,</p>
+<p><img src="topic03/Definite-Indefite.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>Let <span class="math inline">\(F(x) = \int_{-\infty}^x f(t) dt\)</span>, then definite integral <span class="math inline">\(\int_a^b f(t)dt = F(b) - F(a)\)</span>. This is called the <strong>Fundamental Theorem of Calculus</strong>. It is used to calculate the definite integral for a given function and the two integral limits.</p>
+<p><br />
+</p>
+<p><strong>Some Properties and Rules of Integrals</strong></p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(\int_a^b [f(x) \pm g(x)]dx = \int_a^b f(x)dx \pm \int_a^b g(x)dx\)</span></p></li>
+<li><p><span class="math inline">\(\int_a^b f(x)dx = -\int_b^a f(x) dx\)</span></p></li>
+<li><p><span class="math inline">\(\int_a^b f(x)dx = \int_a^c f(x)dx + \int_c^b f(x)dx\)</span> for any constant <span class="math inline">\(c\)</span> (<span class="math inline">\(c\)</span> is not necessarily between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>).</p></li>
+</ol>
+<p><br />
+</p>
+</div>
+</div>
+<div id="practice-exercises-3" class="section level3 hasAnchor" number="5.4.3">
+<h3><span class="header-section-number">5.4.3</span> Practice Exercises<a href="special-continuous-distributions-normal-and-gamma-families.html#practice-exercises-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There two set of exercises you can practice. Ignore all problems involves trigonometric functions.</p>
+<ol style="list-style-type: decimal">
+<li><p>Exercises with answer keys. <a href="https://github.com/pengdsci/WCUSTA504/raw/main/topic03/Basic-Integration-Problems.pdf" class="uri">https://github.com/pengdsci/WCUSTA504/raw/main/topic03/Basic-Integration-Problems.pdf</a></p></li>
+<li><p>Worksheets: <a href="https://pengdsci.github.io/WCUSTA504/Worksheet%20Bundle.pdf" class="uri">https://pengdsci.github.io/WCUSTA504/Worksheet%20Bundle.pdf</a></p></li>
+</ol>
+<ul>
+<li><p>Worksheet #20: Fundamental Theorem of Calculus.</p></li>
+<li><p>Worksheet #21: Definite Integrals</p></li>
+</ul>
+<p><br />
+</p>
+<p><br />
+</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="continuous-random-variables-and-their-distributions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="mixture-distributions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/pengdsci/STA504EB/edit/master/04-NormaGammaRV.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["STA504EB.pdf", "STA504EB.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
